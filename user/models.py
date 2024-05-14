@@ -27,7 +27,7 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username = None
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=15, unique=True)
     contract_number = models.CharField(max_length=10, unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -37,12 +37,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     completion_date = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=50)
     user_type = models.CharField(max_length=10, choices=[('client', 'Клиент'), ('manager', 'Менеджер')])
-    # is_active = models.BooleanField(default=True)
-    # is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
-    USERNAME_FIELD = 'contract_number'
+    USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = ['email']
 
     def __str__(self):
