@@ -46,8 +46,8 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'user.CustomUser'
 
 DJOSER = {
-    'USER_ID_FIELD': 'contract_number',
-    'USERNAME_FIELD': 'contract_number',
+    'USER_ID_FIELD': 'phone_number',
+    'USERNAME_FIELD': 'phone_number',
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': False,
     'SERIALIZERS': {

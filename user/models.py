@@ -26,24 +26,31 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(phone_number, email, password, **extra_fields)
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    username = None
+    username = None  # Отключение поля username
     phone_number = models.CharField(max_length=15, unique=True)
-    contract_number = models.CharField(max_length=10, unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    email = models.EmailField()
-    service_type = models.CharField(max_length=50)
-    contract_date = models.DateField(null=True, blank=True)
-    completion_date = models.DateField(null=True, blank=True)
-    status = models.CharField(max_length=50)
-    user_type = models.CharField(max_length=10, choices=[('client', 'Клиент'), ('manager', 'Менеджер')])
+    email = models.EmailField(unique=True)
+    user_type = models.CharField(max_length=10, choices=[('client', 'Client'), ('manager', 'Manager')])
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = ['email']
+
+    def __str__(self):
+        return self.phone_number
+
+class Contract(models.Model):
+    user = models.ForeignKey(CustomUser, related_name='contracts', on_delete=models.CASCADE)
+    contract_number = models.CharField(max_length=100, unique=True)
+    service_type = models.CharField(max_length=50)
+    contract_date = models.DateField()
+    completion_date = models.DateField(null=True, blank=True)
+    status = models.CharField(max_length=50)
 
     def __str__(self):
         return self.contract_number
