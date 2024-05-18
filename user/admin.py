@@ -8,7 +8,7 @@ class CustomUserAdmin(BaseUserAdmin):
         (None, {'fields': ('phone_number', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
-        (_('Important dates'), {'fields': ('last_login',)}),  # Поле 'fields' должно быть списком или кортежем
+        (_('Important dates'), {'fields': ('last_login',)}),
     )
     add_fieldsets = (
         (None, {
