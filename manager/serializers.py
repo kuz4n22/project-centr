@@ -17,7 +17,6 @@ class ManagerUserSerializer(serializers.ModelSerializer):
             service_type=validated_data['service_type'],
             contract_date=validated_data['contract_date'],
             status=validated_data['status'],
-            user_type='client'
         )
         user.set_password(validated_data['password'])
         user.save()
