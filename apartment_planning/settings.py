@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'djoser',
     'manager',
     'user',
-    # 'auth',
+    'custom_auth',
     'django_browser_reload',
 ]
 
