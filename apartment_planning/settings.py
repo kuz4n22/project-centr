@@ -51,6 +51,14 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
+# Бэкенд почты исходящей почты
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru' 
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'адрес почты' 
+EMAIL_HOST_PASSWORD = 'пароль' 
 
 DJOSER = {
     'USER_ID_FIELD': 'phone_number',
@@ -79,7 +87,7 @@ AUTHENTICATION_BACKENDS = (
     'auth.auth_backends.PhoneBackend',
 )
 
-# LOGIN_URL = 'user-profile'
+LOGIN_URL = 'login'
 
 # настройка токена для авторизации
 SIMPLE_JWT = {
