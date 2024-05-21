@@ -7,7 +7,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'contracts', views.ContractViewSet)
 
 urlpatterns = [
-    path('profile/', views.user_profile, name='user-profile'),
+    path('profile/', views.user_profile, name='user_profile'),
     path('', include(router.urls)),
 
 ]

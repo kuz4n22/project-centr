@@ -1,17 +1,12 @@
-# from rest_framework import generics
-from rest_framework import viewsets
-from user.models import CustomUser
-from user.serializers import UserSerializer
-from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from custom_auth.decorators import manager_required
 
-# class RegisterView(generics.CreateAPIView):
-#     serializer_class = RegisterSerializer
-#     permission_classes = [AllowAny]
-    
-class ManagerUserViewSet(viewsets.ModelViewSet):
-    queryset = CustomUser.objects.filter(is_staff=False)
-    serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
-
-    def perform_create(self, serializer):
-        serializer.save()
+@login_required
+@manager_required
+def manager_dashboard(request):
+    manager = request.user
+    context = {
+        "manager": manager
+    }
+    return render(request, 'manager/dashboard.html', context)
