@@ -6,4 +6,5 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('manager/', include('manager.urls')),
     path('', include('auth.urls')),
+    path('__reload__/', include('django_browser_reload.urls')),
 ]
