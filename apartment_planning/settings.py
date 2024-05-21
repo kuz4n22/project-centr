@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'djoser',
     'manager',
     'user',
+    'django_browser_reload',
 ]
 
 AUTH_USER_MODEL = 'user.CustomUser'
@@ -76,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'apartment_planning.urls'

@@ -8,4 +8,5 @@ urlpatterns = [
     path('api/', include('user.urls')),
     path('user/', include('user.urls')),
     path('manager/', include('manager.urls')),
+    path('__reload__/', include('django_browser_reload.urls')),
 ]
