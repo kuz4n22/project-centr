@@ -6,8 +6,6 @@ class CustomUserManager(BaseUserManager):
     def create_user(self, phone_number, email, password=None, **extra_fields):
         if not phone_number:
             raise ValueError(_('Номер телефона должен быть указан'))
-        if not email:
-            raise ValueError(_('Электронная почта должна быть указана'))
         email = self.normalize_email(email)
         user = self.model(phone_number=phone_number, email=email, **extra_fields)
         user.set_password(password)
@@ -30,7 +28,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(max_length=15, unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    email = models.EmailField(unique=True, blank=True)
+    email = models.EmailField(unique=True, blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -38,10 +36,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'phone_number'
-    REQUIRED_FIELDS = ['email']
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.phone_number
+    
 
 class Contract(models.Model):
     user = models.ForeignKey(CustomUser, related_name='contracts', on_delete=models.CASCADE)
