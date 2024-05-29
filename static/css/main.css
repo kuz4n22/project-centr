@@ -1,0 +1,254 @@
+/* base */
+
+.content-container, .content-container-img {
+  margin: 100px auto;
+  max-width: 1120px;
+}
+
+
+
+.btn {
+  display: flex;
+  width: 232px;
+  height: 40px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #222220; 
+}
+
+
+/* header */
+
+.content-container-img {
+  position: relative;
+  max-width: 1120px;
+  height: 561px;
+  background: url(../img/main/header_img.png) 50% / cover no-repeat;
+}
+
+.content-container-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222220;
+  opacity: 0.9;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.header-content {
+  position: absolute;
+  top: 400px;
+  left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 819px;
+  height: 64px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 30px 20px;
+  color: #FFF;
+}
+
+.header-content h2 {
+  line-height: 32px;
+  letter-spacing: 0.48px; 
+}
+
+/* offers */ 
+
+.content-container h2 {
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+
+
+.offers-slider { 
+  position: relative;
+  width: 1120px;
+  overflow: visible;
+}
+
+.flickity-viewport {
+  width: 1200px;
+}
+
+.slider-element {
+  padding: 30px 20px;
+  position: relative;
+  width: 280px;
+  height: 308px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  margin-right: 50px;
+}
+
+.slider-element h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.slider-element p {
+  font-weight: 400;
+  line-height: 24px;
+  position: absolute;
+  top: 104px;
+}
+
+.slider-element a {
+  position: absolute;
+  top: 278px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 280px;
+  height: 60px;
+  background-color:#222220;
+  border-radius: 20px;
+  color: #FFF;
+}
+
+/* complex offer */
+
+.complex-preview {
+  display: flex;
+  justify-self: start;
+  gap: 80px;
+}
+
+.complex-element {
+  position: relative;
+  width: 280px;
+  height: 534px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  padding: 30px 20px;
+}
+
+.complex-element h3 {
+  position: absolute;
+  top: 30px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.element-description {
+  position: absolute;
+  top: 73px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.element-price {
+  position: absolute;
+  top: 147px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.complex-content {
+  position: absolute;
+  top: 224px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content-element {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.content-element p{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.complex-btn {
+  position: absolute;
+  top: 504px;
+}
+
+
+/* calculator */
+
+.calculator-img {
+  width: 1068px;
+  height: 288px;
+  border-radius: 10px;
+  background: url(../img/main/calc_img.png) 100% / cover no-repeat;
+  padding-top: 127px;
+  padding-left: 52px;
+  gap: 20px;
+}
+
+.calculator-img h2 {
+  margin-bottom: 20px;
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* plan */
+
+.plan-preview {
+  display: flex;
+  justify-content: flex-start;
+  gap: 80px;
+}
+
+.plan-element {
+  padding: 30px 20px;
+  position: relative;
+  width: 280px;
+  height: 206px;
+  border-radius: 20px;
+  background-color: #222220;
+  color: #FFF;
+  padding: 30px 20px;
+}
+
+.plan-element h3 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.plan-element p {
+  position: absolute;
+  top: 116px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; 
+  letter-spacing: 0.32px;
+}
+

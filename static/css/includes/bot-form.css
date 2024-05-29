@@ -1,0 +1,102 @@
+/* base */
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 100px auto;
+}
+
+/* text */
+.form-container-text {
+  max-width: 412px;
+}
+
+.form-container-text h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.form-container-text p {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* radio */
+
+.radio-container {
+  display: grid;
+  grid-template-areas: "a b" "c d";
+  gap: 20px 50px;
+}
+
+.radio-button {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 230px;
+  height: 40px;
+  border-radius: 20px;
+  background: #F3F3F3;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  text-align: center;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .radio-button {
+  background: #222220;
+  color: white;
+}
+
+/* input area */
+
+.input-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-areas: 
+            "a b"
+            "c c"
+            "d d";
+  gap: 20px 50px;
+}
+
+.input-name input, .input-tel input, .input-message input {
+  border: none;
+  outline: 0;
+  border-bottom: 2px solid rgba(142, 142, 142, 0.2);;
+}
+
+.input-message input {
+  padding: 0;
+  max-width: 510px;
+  height: 26px;
+  resize: none; 
+}
+
+
+
+.input-checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-checkbox label {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,0 +1,79 @@
+
+@import url('fonts.css');
+@import url('normalize.css');
+
+
+
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  color: #222220;
+}
+
+a:visited {
+  color: #FFF;
+}
+
+h1,h2,h3,p {
+  margin: 0;
+  padding: 0;
+}
+
+nav a:visited {
+  color: #222220;
+}
+
+.container {
+  max-width: 1280px;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+nav {
+  max-width: 1080px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color:#F3F3F3;
+  border-radius: 10px;
+}
+
+.nav__logo {
+  height: 34px;
+}
+
+.nav__controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.nav__controls a {
+  font-weight: 400;
+}
+
+.nav__btns {
+  display: flex;
+  gap: 19px;
+  align-items: center;
+}
+
+.nav__application {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 24px;
+  background-color: #FFF;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.nav__lk {
+  height: 32px;
+}

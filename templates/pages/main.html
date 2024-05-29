@@ -1,8 +1,171 @@
-{% extends 'user/layout.html' %}
+{% extends 'layout.html' %}
+{% load static %}
 
-{% block title %}Главная страница{% endblock %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
+
+{% block title %}Проектный центр{% endblock %}
 
 {% block content %}
-  <h1>Главная страница</h1>
-  <p>Главная страница</p>
+  <div class="content-container-img">
+      <div class="header-content">
+        <h2>Проектный Центр – ваш надежный<br>партнёр в реализации перепланировок</h2>
+        <a href="" class="header-btn btn">Подать заявку</a>
+      </div>
+  </div>
+
+  <div class="content-container">
+    <h2>Услуги</h2>
+    <div class="offers-slider" data-flickity='{
+      "freeScroll": true, 
+      "contain": true, 
+      "prevNextButtons": false, 
+      "pageDots": false 
+    }'>
+      <div class="slider-element">
+        <h3>Перепланировка квартир</h3>
+        <p>Наша компания позволит избежать трудностей при согласовании проектной документации с контролирующими инстанциями, тем самым сэкономив Ваши силы и нервы.</p>
+        <a href="">Подробнее</a>
+      </div>
+      <div class="slider-element">
+        <h3>Перепланировка<br>нежилого помещения</h3>
+        <p>Мы гарантируем быстрое и качественное согласование перепланировки  в нежилом помещении. Доверьтесь нам – мы обеспечим его идеальное обновление.</p>
+        <a href="">Подробнее</a>
+      </div>
+      <div class="slider-element">
+        <h3>Перепланировка<br>нежилого здания</h3>
+        <p>Наши эксперты гарантируют профессиональное согласование перепланировки в нежилых зданиях, учитывая все строительные и законодательные нормы.</p>
+        <a href="">Подробнее</a>
+      </div>
+      <div class="slider-element">
+        <h3>Кадастровые<br>работы</h3>
+        <p>Наша компания выполняет все виды кадастровых работ, в том числе изготовление технических планов, технических паспортов и обмерных планов в отношении любых объектов недвижимости.</p>
+        <a href="">Подробнее</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <h2>Пакетные предложения</h2>
+    <div class="complex-preview">
+      <div class="complex-element">
+        <h3>Старт пакет</h3>
+        <p class="element-description">Начните свой проект с нами<br>(проект + документы)</p>
+        <p class="element-price">от 20 000 ₽</p>
+        <div class="complex-content">
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Технический паспорт</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Согласование перепланировки</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Проект перепланировки</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Проект переустройства здания</p>
+          </div>
+        </div>
+        
+        <a href="" class="complex-btn btn">Подать заявку</a>
+      </div>
+      <div class="complex-element">
+        <h3>Стандарт пакет</h3>
+        <p class="element-description">Улучшенный путь к вашему идеальному проекту</p>
+        <p class="element-price">от 40 000 ₽</p>
+        <div class="complex-content">
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Все услуги, входящие в Старт пакет</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Переобмер помещения после работ<br>по перепланировке</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Документы для ввода в эксплуатацию</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Технический план</p>
+          </div>
+        </div>
+        
+        <a href="" class="complex-btn btn">Подать заявку</a>
+      </div>
+      <div class="complex-element">
+        <h3>Премиум пакет</h3>
+        <p class="element-description">Потребуется только доверенность, всё остальное сделаем мы</p>
+        <p class="element-price">от 80 000 ₽</p>
+        <div class="complex-content">
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Сбор и подготовка всех документов</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Согласование перепланировки</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Ввод в эксплуатацию квартиры</p>
+          </div>
+          <div class="content-element">
+            <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+            <p>Получение новой выписки ЕГРН</p>
+          </div>
+        </div>
+        
+        <a href="" class="complex-btn btn">Подать заявку</a>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="content-container">
+    <h2>Калькулятор</h2>
+    <div class="calculator-img">
+      <h2>Калькулятор стоимости<br>перепланировки квартиры</h2>
+      <a href="" class="calc-btn btn">Подробнее</a>
+    </div>
+  </div>
+  
+  <div class="content-container">
+    <h2>План нашей работы</h2>
+    <div class="plan-preview">
+      <div class="plan-element">
+        <h3>01</h3>
+        <p>Ознакомление с заявкой.<br>Общение с клиентом.<br>Сбор  необходимых данных<br>(планы/дизайн-проекты/<br>пожелания по перепланировке).</p>
+      </div>
+      <div class="plan-element">
+        <h3>02</h3>
+        <p>Анализ исходных данных.
+          <br>Озвучивание стоимости.
+          <br>Подписание договора.
+          <br>Получение аванса (30%).
+          <br>Получение доверенности.</p>
+      </div>
+      <div class="plan-element">
+        <h3>03</h3>
+        <p>Выезд на замер. Предоставляем эскизный план перепланировки<br>для согласования.<br>Работа над проектом, включая разработку и согласование. </p>
+      </div>
+    </div>
+  </div>
+
+{% include 'includes/faq.html' %}
+{% include 'includes/bot-form.html' %} 
+{% include 'includes/footer.html' %} 
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/flickity.pkgd.min.js' %}"></script>
+<script src="{% static 'js/accordeon.js' %}"></script>
 {% endblock %}

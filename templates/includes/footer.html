@@ -1,0 +1,43 @@
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/includes/footer.css' %}">
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+  <div class="footer-contacts">
+    <h3>КОНТАКТЫ</h3>
+    <div class="contacts-content">
+      <a href="mailto:info-soglasovanive@mail.ru">info-soglasovanive@mail.ru</a>
+      <a href="tel:+78129997575">+7 (812) 999-75-75</a>
+      <p style="opacity: 0.6;">г. Санкт-Петербург</p>
+    </div>
+    <div class="contacts-smm">
+      <a href=""><img src="{% static 'img/main/telegram_icon.svg' %}" alt="telegram_icon"></a>
+      <a href=""><img src="{% static 'img/main/mail_icon.svg' %}" alt="email_icon"></a>
+      <a href=""><img src="{% static 'img/main/whatsapp_icon.svg' %}" alt="whatsapp_icon"></a>
+    </div>
+  </div>
+  <div class="footer-offers">
+    <h3>Услуги</h3>
+    <div class="footer-offers-elements">
+      <a href="">Перепланировка квартир</a>
+      <a href="">Перепланировка нежилых помещений</a>
+      <a href="">Перепланировка нежилых зданий</a>
+      <a href="">Кадастровые работы</a>
+    </div>
+  </div>
+  <div class="footer-calc">
+    <h3><a href="">Калькулятор<br>стоимости</a></h3>
+  </div>
+  <div class="footer-form">
+    <a href=""><img src="{% static 'img/main/footer_logo.svg' %}" alt="logo"></a>
+    <a class="footer-form-btn" href="">Подать заявку</a>
+  </div>
+
+  <div class="footer-copyright">© 2024 РПЦ | Политика конфиденциальности</div>
+  
+  
+</div>
+{% endblock %}
