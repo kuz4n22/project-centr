@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/user/form.css' %}">
+{% endblock %}
+
+{% block title %}Заявка{% endblock %}
+
+{% block content %}
+  <div class="request-container">
+    <div class="request-form">
+      <h1>Заполни форму</h1>
+      <form action="">
+        <input type="text" required>
+        <input type="tel" required>
+        <input type="email" required>
+        <input type="checkbox">
+        <input class="request-send" type="submit" value="Отправить заявку" disabled>
+      </form>
+    </div>
+
+  <!-- if ok -->
+    <div class="result-container">
+      <h1>Спасибо за вашу заявку!</h1>
+      <p></p>
+      <div class="ok"></div>
+      <a class="request-send" href="">Вернуться на главную</a>
+    </div>
+    
+
+  </div>
+
+  
+{% endblock %}

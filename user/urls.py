@@ -13,4 +13,5 @@ urlpatterns = [
     path('spaces/', views.spaces_page, name='spaces'),
     path('buildings/', views.buildings_page, name='buildings'),
     path('cadastr/', views.cadastr_page, name='cadastr'),
+    path('form/', views.form_page, name='form'),
 ]

@@ -34,6 +34,9 @@ def buildings_page(request):
 def cadastr_page(request):
     return render(request, 'pages/offers/cadastr.html')
 
+def form_page(request):
+    return render(request, 'user/form.html')
+
 
 ## вывод: на двух стульях не усидеть
 @login_required
