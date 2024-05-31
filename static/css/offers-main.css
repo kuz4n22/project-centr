@@ -1,0 +1,188 @@
+
+/* header */
+.header {
+  z-index: 1;
+  padding-left: 80px;
+  margin: 0 auto;
+  margin-top: -110px;
+  position: relative;
+  max-width: 1280px;
+  height: 838px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222220;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.header h2 {
+  position: absolute;
+  top: 536px;
+  max-width: 428px;
+  color: #FFF;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%; 
+}
+
+.header a {
+  position: absolute;
+  top: 658px;
+  background: #FFF;
+  color: #222220;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  width: 280px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.header a:visited {
+  color: #222220;
+}
+
+/* desctiption */
+
+.offer-description {
+  margin: 100px auto;
+  max-width: 1120px;
+
+}
+
+.offer-description h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.offer-description p {
+  margin-top: 30px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; 
+}
+
+/* our tasks */
+
+.our-tasks {
+  margin: 100px auto;
+  max-width: 1120px;
+}
+
+.our-tasks h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+/* .tasks-container {} diff between pages*/
+
+.tasks-element {
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 490px;
+  height: 60px;
+  background-color: #222220;
+  border-radius: 20px;
+}
+
+.tasks-element p {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; 
+}
+
+/* stages and timing */
+
+.stages {
+  margin: 100px auto;
+  max-width: 1120px;
+}
+
+.stages h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+/* .stages-container {} diff between pages*/
+
+.stages-element {
+  position: relative;
+  padding: 30px 20px;
+  width: 280px;
+  height: 160px;
+  border-radius: 20px;
+  background: #222220;
+}
+
+.stages-element h3 {
+  position: absolute;
+  top: 30px;
+  color: #FFF;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%;
+}
+
+.stages-element p {
+  position: absolute;
+  top: 86px;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145%;
+}
+
+.stages-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 10px;
+  top: 139px;
+  width: 280px;
+  height: 51px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.stages-time p {
+  position: static;
+  color: #222220;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.stages-time img {
+width: 30px;
+height: 30px;
+}

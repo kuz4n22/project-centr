@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/offers-main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pages/flats.css' %}">
+{% endblock %}
+
+{% block title %}Квартиры{% endblock %}
+
+{% block content %}
+
+<div class="header">
+    <h2>Согласование перепланировки квартиры</h2>
+    <a class="header-btn" href="">Подобрать решение</a>
+</div>
+
+<div class="offer-description">
+  <h2>О согласовании перепланировки квартиры</h2>
+  <p>Наша компания позволит избежать трудностей при согласовании проектной документации с контролирующими инстанциями, тем самым сэкономив ваши силы и нервы. </p>
+</div>
+
+<div class="our-tasks">
+  <h2>Задачи, которые мы решаем</h2>
+  <div class="tasks-container">
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/tools.svg' %}" alt="">
+      <p>Демонтаж и монтаж перегородок</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/extend_bath.svg' %}" alt="">
+      <p>Устройство дополнительного санузла</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/sizes.svg' %}" alt="">
+      <p>Изменение конфигурации и габаритов жилых комнат</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/correct_tech.svg' %}" alt="">
+      <p>Установка, замена или перенос санитарно-технического, электрического и другого оборудования </p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/unite_bath.svg' %}" alt="">
+      <p>Объединение ванной и туалета</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/correct_link.svg' %}" alt="">
+      <p>Установка, замена и перенос инженерных сетей</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/extend_bath.svg' %}" alt="">
+      <p>Увеличение санузла за счет коридора или других нежилых помещений</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/extend_flats.svg' %}" alt="">
+      <p>Объединение или разделение квартир</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/connect_balcony.svg' %}" alt="">
+      <p>Присоединение балкона или лоджии</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/extra_doorway.svg' %}" alt="">
+      <p>Устройство проемов в несущих стенах</p>
+    </div>
+  </div>
+</div>
+
+<div class="stages">
+  <h2>Этапы и сроки</h2>
+  <div class="stages-container">
+    <div class="stages-element">
+      <h3>1 этап</h3>
+      <p>Заказ исходной документации</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2-3 недели</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>2 этап</h3>
+      <p>Разработка проекта перепланировки </p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2 недели</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>3 этап</h3>
+      <p>Согласование пожарного надзора</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2 недели</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>4 этап</h3>
+      <p>Согласование документации в МВК</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>3 недели</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>5 этап</h3>
+      <p>Ввод квартиры в эксплуатацию</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>1 недели</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>6 этап</h3>
+      <p>Подготовка технического плана и регистрация в Росреестре</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>3 недели</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/complex.html' %}
+{% include 'includes/faq.html' %}
+{% include 'includes/bot-form.html' %} 
+{% include 'includes/footer.html' %} 
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/flickity.pkgd.min.js' %}"></script>
+<script src="{% static 'js/accordeon.js' %}"></script>
+{% endblock %}
