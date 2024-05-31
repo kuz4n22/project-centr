@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/offers-main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pages/cadastr.css' %}">
+{% endblock %}
+
+{% block title %}Кадастр{% endblock %}
+
+{% block content %}
+
+<div class="header">
+    <h2>Кадастровые работы</h2>
+    <a class="header-btn" href="">Подобрать решение</a>
+</div>
+
+<div class="offer-description">
+  <h2>О кадастровых работах</h2>
+  <p>Наша компания выполняет все виды кадастровых работ, в том числе изготовление технических планов, технических паспортов и обмерных планов в отношении любых объектов недвижимости.</p>
+</div>
+
+<div class="our-tasks">
+  <h2>Задачи, которые мы решаем</h2>
+  <div class="tasks-container">
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/cadastr/plan.svg' %}" alt="">
+      <p>Изготовление технического плана</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/cadastr/record.svg' %}" alt="">
+      <p>Постановка на кадастровый учёт</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/cadastr/pasport.svg' %}" alt="">
+      <p>Tехнический паспорт и поэтажные планы</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/cadastr/measuring.svg' %}" alt="">
+      <p>Обмер помещения после перепланировки</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/cadastr/errors.svg' %}" alt="">
+      <p>Исправление технических и реестровых ошибок</p>
+    </div>
+    <div class="tasks-element">
+      <img src="{% static 'img/tasks_icons/cadastr/boundary.svg' %}" alt="">
+      <p>Межевой план</p>
+    </div>
+  </div>
+</div>
+
+<div class="stages">
+  <h2>Этапы и сроки</h2>
+  <div class="stages-container">
+    <div class="stages-element">
+      <h3>1 этап</h3>
+      <p>Заказ исходной документации</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2 дня</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>2 этап</h3>
+      <p>Выезд на замер инженера</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2 дня</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>3 этап</h3>
+      <p>Формирование технического плана</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2 недели</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cadastr-offers">
+  <h2>Услуги</h2>
+  <div class="cadastr-offers-container">
+    <div class="cadastr-offers-element">
+      <h3>Изготовление<br>технического плана</h3>
+      <p>от 5 000 ₽ </p>
+      <a href="">Подать заявку</a>
+    </div>
+    <div class="cadastr-offers-element">
+      <h3>Постановка<br>на кадастровый учет </h3>
+      <p>от 10 000 ₽ </p>
+      <a href="">Подать заявку</a>
+    </div>
+    <div class="cadastr-offers-element">
+      <h3>Технический паспорт<br>и поэтажные планы</h3>
+      <p>от 7 000 ₽ </p>
+      <a href="">Подать заявку</a>
+    </div>
+    <div class="cadastr-offers-element">
+      <h3>Обмер помещения после перепланировки</h3>
+      <p>от 4 000 ₽ </p>
+      <a href="">Подать заявку</a>
+    </div>
+    <div class="cadastr-offers-element">
+      <h3>Межевой<br>план</h3>
+      <p>от 13 000 ₽ </p>
+      <a href="">Подать заявку</a>
+    </div>
+    <div class="cadastr-offers-element">
+      <h3>Исправление<br>ошибок</h3>
+      <p>от 10 000 ₽ </p>
+      <a href="">Подать заявку</a>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/faq.html' %}
+{% include 'includes/bot-form.html' %} 
+{% include 'includes/footer.html' %} 
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/flickity.pkgd.min.js' %}"></script>
+<script src="{% static 'js/accordeon.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,86 @@
+/* diff */
+
+.header {
+  background: url(../../img/offers/cadasr_img.png) 50% / cover no-repeat;
+}
+
+.tasks-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stages-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 80px;
+}
+
+.header h2 {
+  top: 582px;
+}
+
+/* cadastr offers */
+
+.cadastr-offers {
+  margin: 100px auto;
+  max-width: 1120px;
+}
+
+.cadastr-offers h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  margin-bottom: 50px;
+}
+
+.cadastr-offers-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px 80px;
+}
+
+.cadastr-offers-element {
+  position: relative;
+  padding: 30px 20px;
+  width: 280px;
+  height: 203px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+
+}
+
+.cadastr-offers-element h3 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.cadastr-offers-element p {
+  position: absolute;
+  top: 116px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.cadastr-offers-element a {
+  position: absolute;
+  top: 173px;
+  display: flex;
+  width: 232px;
+  height: 40px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #222220;
+}
