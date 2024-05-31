@@ -9,5 +9,8 @@ from . import views
 urlpatterns = [
     path('profile/', views.user_profile, name='user_profile'),
     path('', views.main_page, name='main'),
-
+    path('apartments/', views.apartments_page, name='apartments'),
+    path('spaces/', views.spaces_page, name='spaces'),
+    path('buildings/', views.buildings_page, name='buildings'),
+    path('cadastr/', views.cadastr_page, name='cadastr'),
 ]

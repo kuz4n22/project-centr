@@ -22,6 +22,19 @@ from django.contrib.auth.decorators import login_required
 def main_page(request):
     return render(request, 'pages/main.html')
 
+def apartments_page(request):
+    return render(request, 'pages/offers/apartments.html')
+
+def spaces_page(request):
+    return render(request, 'pages/offers/spaces.html')
+
+def buildings_page(request):
+    return render(request, 'pages/offers/buildings.html')
+
+def cadastr_page(request):
+    return render(request, 'pages/offers/cadastr.html')
+
+
 ## вывод: на двух стульях не усидеть
 @login_required
 def user_profile(request):
