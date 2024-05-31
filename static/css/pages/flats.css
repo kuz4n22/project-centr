@@ -1,0 +1,21 @@
+/* diff */
+
+.header {
+  background: url(../../img/offers/flats_img.png) 50% / cover no-repeat;
+}
+
+.tasks-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.stages-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px 80px;
+}
