@@ -1,0 +1,46 @@
+.request-container {
+  margin: 100px auto;
+  padding: 50px 0;
+  max-width: 1120px;
+  height: 536px;
+  border-radius: 20px;
+  background: #222220;
+  text-align: center;
+}
+
+/* .request-form {
+
+} */
+
+.request-container h1 {
+  color: #FFF;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 80px;
+}
+
+.request-send {
+  display: flex;
+  width: 466px;
+  height: 60px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.request-send:disabled {
+  opacity: 0.2;
+}
+
+.result-container {
+  display: none;
+}
+
+.result-container a:visited {
+  color: #222220;
+}

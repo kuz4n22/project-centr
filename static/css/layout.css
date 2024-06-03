@@ -31,6 +31,8 @@ nav a:visited {
 }
 
 nav {
+  position: relative;
+  z-index: 10;
   max-width: 1080px;
   height: 60px;
   display: flex;

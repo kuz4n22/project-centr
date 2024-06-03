@@ -1,0 +1,99 @@
+
+.btn {
+  display: flex;
+  width: 232px;
+  height: 40px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #222220; 
+}
+
+.content-container {
+  margin: 100px auto;
+  max-width: 1120px;
+}
+
+.content-container h2 {
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+
+
+
+/* complex offer */
+
+.complex-preview {
+  display: flex;
+  justify-self: start;
+  gap: 80px;
+}
+
+.complex-element {
+  position: relative;
+  width: 280px;
+  height: 534px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  padding: 30px 20px;
+}
+
+.complex-element h3 {
+  position: absolute;
+  top: 30px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.element-description {
+  position: absolute;
+  top: 73px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.element-price {
+  position: absolute;
+  top: 147px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.complex-content {
+  position: absolute;
+  top: 224px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content-element {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.content-element p{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.complex-btn {
+  position: absolute;
+  top: 504px;
+}
