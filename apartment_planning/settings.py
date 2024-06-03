@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework_simplejwt',
-    'djoser',
     'manager',
     'user',
     'custom_auth',
@@ -60,48 +58,9 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'адрес почты' 
 EMAIL_HOST_PASSWORD = 'пароль' 
 
-DJOSER = {
-    'USER_ID_FIELD': 'phone_number',
-    'USERNAME_FIELD': 'phone_number',
-    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': False,
-    'SERIALIZERS': {
-        'user_create': 'user.serializers.UserSerializer',
-        'user': 'user.serializers.UserSerializer',
-        'current_user': 'user.serializers.UserSerializer',
-    },
-}
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-}
-
-#обработчик авторизации
-AUTHENTICATION_BACKENDS = (
-    'auth.auth_backends.PhoneBackend',
-)
 
 LOGIN_URL = 'login'
 
-# настройка токена для авторизации
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY,
-    'VERIFYING_KEY': None,
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
