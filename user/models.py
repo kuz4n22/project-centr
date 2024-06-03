@@ -43,12 +43,21 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
 
 class Contract(models.Model):
+    class Status(models.IntegerChoices):
+       PHASE1 = 1
+       PHASE2 = 2
+       PHASE3 = 3
+       PHASE4 = 4
+       PHASE5 = 5
+       PHASE6 = 6
+       DONE = 0
+       
     user = models.ForeignKey(CustomUser, related_name='contracts', on_delete=models.CASCADE)
-    contract_number = models.CharField(max_length=100, unique=True)
+    contract_number = models.CharField(max_length=20, unique=True)
     service_type = models.CharField(max_length=50)
     contract_date = models.DateField()
     completion_date = models.DateField(null=True, blank=True)
-    status = models.CharField(max_length=50)
+    status = models.IntegerField(choices=Status)
 
     def __str__(self):
         return self.contract_number
