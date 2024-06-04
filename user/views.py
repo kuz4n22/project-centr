@@ -5,19 +5,6 @@ from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-# class UserViewSet(viewsets.ModelViewSet):
-#     queryset = CustomUser.objects.filter(is_staff=False)
-#     serializer_class = UserSerializer
-#     permission_classes = [IsAuthenticated]
-
-
-# class ContractViewSet(viewsets.ModelViewSet):
-#     queryset = Contract.objects.all()
-#     serializer_class = ContractSerializer
-#     permission_classes = [IsAuthenticated]
-
-#     def perform_create(self, serializer):
-#         serializer.save(user=self.request.user)
 
 def main_page(request):
     return render(request, 'pages/main.html')
@@ -36,6 +23,9 @@ def cadastr_page(request):
 
 def form_page(request):
     return render(request, 'user/form.html')
+
+def custom_404(request, exception):
+    return render(request, 'pages/404.html', status=404)
 
 
 ## вывод: на двух стульях не усидеть
