@@ -3,7 +3,13 @@ from .models import CustomUser, Contract
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
+
+class ContractInline(admin.TabularInline):
+    model = Contract
+    extra = 1
+    
 class CustomUserAdmin(BaseUserAdmin):
+    inlines = [ContractInline]
     fieldsets = (
         (None, {'fields': ('phone_number', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
@@ -21,4 +27,3 @@ class CustomUserAdmin(BaseUserAdmin):
     ordering = ('phone_number',)
 
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Contract)

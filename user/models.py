@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, phone_number, email, password=None, **extra_fields):
@@ -41,23 +43,46 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.phone_number
     
-
+    
 class Contract(models.Model):
-    class Status(models.IntegerChoices):
-       PHASE1 = 1
-       PHASE2 = 2
-       PHASE3 = 3
-       PHASE4 = 4
-       PHASE5 = 5
-       PHASE6 = 6
-       DONE = 0
-       
+    class ServiceTypeChoices(models.IntegerChoices):
+        APARTMENT_REPLANNING = 1, 'Перепланировка квартиры'
+        RESIDENTIAL_REPLANNING = 2, 'Перепланировка жилых помещений'
+        NON_RESIDENTIAL_REPLANNING = 3, 'Перепланировка нежилого здания'
+        CADASTRAL_WORK = 4, 'Кадастровые работы'
+    
+    class StatusTypeChoices(models.IntegerChoices):
+        PHASE1 = 1, '1 этап'
+        PHASE2 = 2, '2 этап'
+        PHASE3 = 3, '3 этап'
+        PHASE4 = 4, '4 этап'
+        PHASE5 = 5, '5 этап'
+        PHASE6 = 6, '6 этап'
+        Done = 0, 'Завершен'
+
     user = models.ForeignKey(CustomUser, related_name='contracts', on_delete=models.CASCADE)
     contract_number = models.CharField(max_length=20, unique=True)
-    service_type = models.CharField(max_length=50)
+    service_type = models.IntegerField(choices=ServiceTypeChoices.choices, unique=True)
+    status = models.IntegerField(choices=StatusTypeChoices.choices, default=StatusTypeChoices.PHASE1)
     contract_date = models.DateField()
     completion_date = models.DateField(null=True, blank=True)
-    status = models.IntegerField(choices=Status)
 
-    def __str__(self):
-        return self.contract_number
+
+    def next_phase(self):
+        if self.status < self.StatusTypeChoices.PHASE6:
+            self.status += 1
+            self.save()
+
+    def complete_project(self):
+        self.status = self.StatusTypeChoices.DONE
+        self.completion_date = timezone.now()
+        self.save()
+    
+    def is_last_phase(self):
+        if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
+            if self.status == self.StatusTypeChoices.PHASE3:
+                return True
+        else:
+            if self.status == self.StatusTypeChoices.PHASE6:
+                return True
+        return False
