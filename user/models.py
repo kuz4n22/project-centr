@@ -67,7 +67,12 @@ class Contract(models.Model):
     contract_date = models.DateField()
     completion_date = models.DateField(null=True, blank=True)
 
-
+    def max_phases(self):
+        if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
+            return self.StatusTypeChoices.PHASE3
+        else:
+            return self.StatusTypeChoices.PHASE6
+        
     def next_phase(self):
         if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
             if self.status < self.StatusTypeChoices.PHASE3:
@@ -78,17 +83,21 @@ class Contract(models.Model):
                 self.status += 1
                 self.save()
 
+    def is_last_phase(self):
+        if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
+            if self.status == self.StatusTypeChoices.PHASE3:
+                return 3
+        else:
+            if self.status == self.StatusTypeChoices.PHASE6:
+                return 6
+        return False
+    
     def complete_project(self):
         if self.is_last_phase():
             self.status = self.StatusTypeChoices.Done
             self.completion_date = timezone.now()
             self.save()
+    
+    def is_done(self):
+        return self.status == self.StatusTypeChoices.Done
         
-    def is_last_phase(self):
-        if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
-            if self.status == self.StatusTypeChoices.PHASE3:
-                return True
-        else:
-            if self.status == self.StatusTypeChoices.PHASE6:
-                return True
-        return False
