@@ -32,17 +32,24 @@ def add_client(request):
             return JsonResponse({'message': 'Пользователь успешно добавлен'})
         else:
             return JsonResponse({'error': form.errors}, status=400)
-    else:
-        form = UserCreationForm()
-        return render(request, 'manager/dashboard.html', {'form': form})
+    form = UserCreationForm()
+    return render(request, 'manager/dashboard.html', {'form': form})
 
 @login_required
 @manager_required
 def notify_next_phase(request, contract_id):
-    contract = get_object_or_404(Contract, id=contract_id)
-    contract.next_phase()
     # Добавить логику об отправке письма на почту 
-    return JsonResponse({'message': 'Уведомление о новом этапе успешно отправлено'}, status=200)
+    return JsonResponse({'message': 'Уведомление о новом этапе успешно отправлено(Нет)'}, status=200)
+
+@login_required
+@manager_required
+def next_phase(request, contract_id):
+    contract = get_object_or_404(Contract, id=contract_id)
+    if not contract.is_last_phase():
+        contract.next_phase()
+        return JsonResponse({'message': 'Новый этап успешно установлен'}, status=200)
+    else:  
+        return JsonResponse({'error': 'Невозможно установить новый этап, так как этап уже последний'})
 
 @login_required
 @manager_required
@@ -51,7 +58,7 @@ def complete_project(request, contract_id):
     if contract.is_last_phase():
         contract.complete_project()
         return JsonResponse({'message': 'Проект успешно завершен'}, status=200)
-    else:
+    else: 
         return JsonResponse({'error': 'Невозможно завершить проект, так как он не находится на последнем этапе'}, status=400)
 
 @login_required
