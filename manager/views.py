@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import JsonResponse
@@ -30,11 +29,12 @@ def add_client(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Пользователь успешно добавлен')
-            return redirect('manager_dashboard')
+            return JsonResponse({'message': 'Пользователь успешно добавлен'})
+        else:
+            return JsonResponse({'error': form.errors}, status=400)
     else:
         form = UserCreationForm()
-    return render(request, 'manager/add_client.html', {'form': form})
+        return render(request, 'manager/dashboard.html', {'form': form})
 
 @login_required
 @manager_required
