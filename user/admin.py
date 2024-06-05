@@ -1,29 +1,29 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser, Contract
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.utils.translation import gettext_lazy as _
+from .forms import UserCreationForm, CustomUserChangeForm
 
-
-class ContractInline(admin.TabularInline):
-    model = Contract
-    extra = 1
-    
-class CustomUserAdmin(BaseUserAdmin):
-    inlines = [ContractInline]
+@admin.register(CustomUser)
+class CustomUserAdmin(UserAdmin):
+    add_form = UserCreationForm
+    form = CustomUserChangeForm
+    model = CustomUser
+    list_display = ('phone_number', 'email', 'first_name', 'last_name', 'is_staff', 'is_active')
+    list_filter = ('is_staff', 'is_active')
     fieldsets = (
         (None, {'fields': ('phone_number', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
-        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
-        (_('Important dates'), {'fields': ('last_login',)}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
+        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important dates', {'fields': ('last_login',)}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('phone_number', 'email', 'password1', 'password2'),
+            'fields': ('full_name', 'phone_number',  'password', 'email', 'service_type', 'contract_number', 'contract_date', 'is_staff', 'is_active', 'is_superuser'),
         }),
     )
-    list_display = ('phone_number', 'email', 'first_name', 'last_name', 'is_staff')
-    search_fields = ('phone_number', 'first_name', 'last_name', 'email')
+    search_fields = ('phone_number', 'email', 'first_name', 'last_name')
     ordering = ('phone_number',)
-
-admin.site.register(CustomUser, CustomUserAdmin)
+    filter_horizontal = ('groups', 'user_permissions',)
+    
+admin.site.register(Contract)

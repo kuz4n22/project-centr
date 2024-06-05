@@ -62,22 +62,28 @@ class Contract(models.Model):
 
     user = models.ForeignKey(CustomUser, related_name='contracts', on_delete=models.CASCADE)
     contract_number = models.CharField(max_length=20, unique=True)
-    service_type = models.IntegerField(choices=ServiceTypeChoices.choices, unique=True)
+    service_type = models.IntegerField(choices=ServiceTypeChoices.choices,)
     status = models.IntegerField(choices=StatusTypeChoices.choices, default=StatusTypeChoices.PHASE1)
     contract_date = models.DateField()
     completion_date = models.DateField(null=True, blank=True)
 
 
     def next_phase(self):
-        if self.status < self.StatusTypeChoices.PHASE6:
-            self.status += 1
-            self.save()
+        if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
+            if self.status < self.StatusTypeChoices.PHASE3:
+                self.status += 1
+                self.save()
+        else:
+            if self.status < self.StatusTypeChoices.PHASE6:
+                self.status += 1
+                self.save()
 
     def complete_project(self):
-        self.status = self.StatusTypeChoices.DONE
-        self.completion_date = timezone.now()
-        self.save()
-    
+        if self.is_last_phase():
+            self.status = self.StatusTypeChoices.Done
+            self.completion_date = timezone.now()
+            self.save()
+        
     def is_last_phase(self):
         if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
             if self.status == self.StatusTypeChoices.PHASE3:

@@ -1,20 +1,25 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+
 from custom_auth.decorators import manager_required
+from user.forms import UserCreationForm
 from user.models import Contract, CustomUser
-from .forms import UserCreationForm
 
 
 @login_required
 @manager_required
 def manager_dashboard(request):
-    clients = CustomUser.objects.filter(
-        is_staff=False).order_by("-contract_date")
-    context = {
-        "clients": clients,
-    }
+    active_clients = CustomUser.objects.filter(is_staff=False, contracts__status__gt=0).order_by("-contracts__contract_date").distinct()
+    completed_clients = CustomUser.objects.filter(is_staff=False, contracts__status=0).order_by("-contracts__contract_date").distinct()
+
+    # # Отладочная информация
+    # print("Active clients:", active_clients)
+    # print("Completed clients:", completed_clients)
+
+    context = {"active_clients": active_clients, "completed_clients": completed_clients}
     return render(request, "manager/dashboard.html", context)
 
 
@@ -29,25 +34,25 @@ def add_client(request):
             return redirect('manager_dashboard')
     else:
         form = UserCreationForm()
-    return render(request, 'manager/dashboard.html', {'form': form})
+    return render(request, 'manager/add_client.html', {'form': form})
 
 @login_required
 @manager_required
 def notify_next_phase(request, contract_id):
     contract = get_object_or_404(Contract, id=contract_id)
     contract.next_phase()
-    return redirect("manager_dashboard")
-
+    # Добавить логику об отправке письма на почту 
+    return JsonResponse({'message': 'Уведомление о новом этапе успешно отправлено'}, status=200)
 
 @login_required
 @manager_required
 def complete_project(request, contract_id):
     contract = get_object_or_404(Contract, id=contract_id)
-    # проверка на последний этап
     if contract.is_last_phase():
         contract.complete_project()
-    return redirect("manager_dashboard")
-
+        return JsonResponse({'message': 'Проект успешно завершен'}, status=200)
+    else:
+        return JsonResponse({'error': 'Невозможно завершить проект, так как он не находится на последнем этапе'}, status=400)
 
 @login_required
 @manager_required
@@ -63,4 +68,5 @@ def send_new_password(request, user_id):
         [user.email],
         fail_silently=False,
     )
-    return redirect("manager_dashboard")
+    #тут наеб пока)
+    return JsonResponse({'message': 'Новый пароль успешно отправлен на вашу почту'}, status=200)
