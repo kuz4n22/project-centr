@@ -68,24 +68,16 @@ def add_client(request):
 @login_required
 @manager_required
 def notify_next_phase(request, contract_id):
-    # Добавить логику об отправке письма на почту
-    return JsonResponse(
-        {"message": "Уведомление о новом этапе успешно отправлено(Нет)"}, status=200
-    )
-
-
-@login_required
-@manager_required
-def next_phase(request, contract_id):
     contract = get_object_or_404(Contract, id=contract_id)
     if not contract.is_last_phase():
         contract.next_phase()
+        # Добавить логику об отправке письма на почту сюда
         return JsonResponse(
             {
-                "message": "Новый этап успешно установлен",
+                "message": "Новый этап успешно установлен.\nИ уведомление о новом этапе успешно отправлено",
                 "new_status": contract.status,
             },
-            status=200,
+            status=200, 
         )
     else:
         return JsonResponse(
