@@ -24,6 +24,9 @@ def cadastr_page(request):
 def form_page(request):
     return render(request, 'user/form.html')
 
+def calculator_page(request):
+    return render(request, 'user/calculator.html')
+
 def custom_404(request, exception):
     return render(request, 'pages/404.html', status=404)
 

@@ -14,4 +14,5 @@ urlpatterns = [
     path('buildings/', views.buildings_page, name='buildings'),
     path('cadastr/', views.cadastr_page, name='cadastr'),
     path('form/', views.form_page, name='form'),
+    path('calculator/', views.calculator_page, name='calculator'),
 ]
