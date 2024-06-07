@@ -27,6 +27,9 @@ def form_page(request):
 def calculator_page(request):
     return render(request, 'user/calculator.html')
 
+def politic_page(request):
+    return render(request, 'pages/politic.html')
+
 # delete before prod
 def error_page(request):
     return render(request, 'pages/404.html')
