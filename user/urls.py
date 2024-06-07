@@ -15,4 +15,8 @@ urlpatterns = [
     path('cadastr/', views.cadastr_page, name='cadastr'),
     path('form/', views.form_page, name='form'),
     path('calculator/', views.calculator_page, name='calculator'),
+
+    # delete before prod
+    path('error/', views.error_page, name='error'),
+    # 
 ]

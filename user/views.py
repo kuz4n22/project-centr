@@ -27,6 +27,10 @@ def form_page(request):
 def calculator_page(request):
     return render(request, 'user/calculator.html')
 
+# delete before prod
+def error_page(request):
+    return render(request, 'pages/404.html')
+
 def custom_404(request, exception):
     return render(request, 'pages/404.html', status=404)
 
