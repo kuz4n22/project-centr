@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/pages/about.css' %}">
+{% endblock %}
+
+{% block title %}О компании{% endblock %}
+
+{% block content %}
+<div class="content-container">
+  <div class="about-header">
+    <h1>О КОМПАНИИ</h1>
+    <p>Мы - команда профессионалов, которая поможет вам в согласовании перепланировок недвижимости.<br>
+    Наша цель - сделать ваш процесс запуска проекта максимально эффективным и беззаботным.<br>
+    Присоединяйтесь к нам и доверьте реализацию ваших идей надежным специалистам.</p>
+    <a class="about-to-form" href="">Подать заявку</a>
+  </div>
+
+  <div class="about-facts">
+    <div class="facts-element">11 лет<br>на рынке</div>
+    <div class="facts-element">20 000<br>перепланировок</div>
+    <div class="facts-element">20 000<br>счастливых клиентов</div>
+
+  </div>
+
+  <div class="about-advantages">
+    <h2>Преимущества</h2>
+    <div class="advantages-container">
+      <div class="advantages-element">
+        <h3>Персональная<br>консультация от экспертов</h3>
+        <p>Благодаря отсутствию промежуточных звеньев, вы получаете индивидуальную консультацию со специалистом.</p>
+        <a class="about-to-form" href="">Подать заявку</a>
+      </div>
+      <div class="advantages-element">
+        <h3>Выгодные цены<br>без ущерба качеству</h3>
+        <p>Благодаря оптимизации наших процессов мы гарантируем доступные цены при сохранении высокого уровня сервиса.</p>
+        <a class="about-to-form" href="">Подать заявку</a>
+      </div>
+      <div class="advantages-element">
+        <h3>Приоритетное<br>сотрудничество в центре</h3>
+        <p>Наша компания специализируется на объектах в Центральном районе,обеспечивая эффективное и оперативное согласование.</p>
+        <a class="about-to-form" href="">Подать заявку</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-clients">
+    <h2>Наши клиенты</h2>
+    <div class="clients-container">
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/komitet.png' %}" alt="">
+        <p>Комитет по вопросам законности и правопорядка</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/diksi.png' %}" alt="">
+        <p>Дикси</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/savers.png' %}" alt="">
+        <p>Поисково-Спасательный центр</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/perekrestok.png' %}" alt="">
+        <p>Перекрёсток</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/goszilfond.png' %}" alt="">
+        <p>СПБ ГБУ<br>«ГосЖилФонд»</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/kitchen.png' %}" alt="">
+        <p>КИО Кухня</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/kirovsk.png' %}" alt="">
+        <p>Жилищное агентство Кировского района</p>
+      </div>
+      <div class="clients-element">
+        <img src="{% static 'img/clients_icons/coffe.png' %}" alt="">
+        <p>Coffeshop Company</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-certificates">
+    <h2>Свидетельства и сертификаты</h2>
+    <div class="certificates-container">
+      <a class="certificates-element" href="{% static 'pdf/cpo_ip.pdf' %}">
+        <div class="pdf-icon">
+          PDF
+        </div>
+        <p>СРО ИП 11.03.2024</p>
+      </a>
+      <a class="certificates-element" href="{% static 'pdf/cpo_tz.pdf' %}">
+        <div class="pdf-icon">
+          PDF
+        </div>
+        <p>СРО ТЗ 11.03.2024</p>
+      </a>
+      <a class="certificates-element" href="{% static 'pdf/licence.pdf' %}">
+        <div class="pdf-icon">
+          PDF
+        </div>
+        <p>Лицензия</p>
+      </a>
+    </div>
+  </div>
+</div>
+  
+{% include 'includes/bot-form.html' %} 
+{% include 'includes/footer.html' %} 
+{% endblock %}

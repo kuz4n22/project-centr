@@ -33,6 +33,9 @@ def politic_page(request):
 def contacts_page(request):
     return render(request, 'pages/contacts.html')
 
+def about_page(request):
+    return render(request, 'pages/about.html')
+
 # delete before prod
 def error_page(request):
     return render(request, 'pages/404.html')
