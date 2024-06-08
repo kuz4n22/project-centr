@@ -5,7 +5,6 @@ from custom_auth.views import CustomPasswordResetView, CustomPasswordResetConfir
 
 urlpatterns = [
     path('login/', login_view, name='login'),
-    path('logout/', logout_view, name='logout'),
     path('password_reset/', CustomPasswordResetView.as_view(), name='password_reset'),
     path('reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 ]
