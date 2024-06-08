@@ -16,6 +16,7 @@ urlpatterns = [
     path('form/', views.form_page, name='form'),
     path('calculator/', views.calculator_page, name='calculator'),
     path('politic/', views.politic_page, name='politic'),
+    path('contacts/', views.contacts_page, name='contacts'),
 
     # delete before prod
     path('error/', views.error_page, name='error'),

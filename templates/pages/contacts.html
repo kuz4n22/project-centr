@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/pages/contacts.css' %}">
+{% endblock %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<div class="contacts-container">
+  <h1>Контакты</h1>
+  <div class="contacts-bloсk">
+    <img src="{% static 'img/map.png' %}" alt="map">
+    <div class="contacts">
+      <h3>Адрес</h3>
+      <a class="contacts-element" href="https://yandex.ru/maps/-/CDrQF2Iw">Московские ворота. 195112 г. Санкт-Петербург, Московский проспект, 107, к. 4, офис 23.</a>
+      <h3>Телефон</h3>
+      <a class="contacts-element" href="tel:+78129997575">+7 (812) 999-75-75</a>
+      <h3>Email</h3>
+      <a class="email-link" href="mailto:info-soglasovanive@mail.ru">info-soglasovanive@mail.ru</a>
+      <h3>Режим работы</h3>
+      <p class="contacts-element">Понедельник – Суббота: 9.00 – 17.00</p>
+    </div>
+  </div>
+</div>
+  
+{% include 'includes/bot-form.html' %} 
+{% include 'includes/footer.html' %} 
+{% endblock %}

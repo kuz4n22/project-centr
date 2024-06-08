@@ -30,6 +30,9 @@ def calculator_page(request):
 def politic_page(request):
     return render(request, 'pages/politic.html')
 
+def contacts_page(request):
+    return render(request, 'pages/contacts.html')
+
 # delete before prod
 def error_page(request):
     return render(request, 'pages/404.html')

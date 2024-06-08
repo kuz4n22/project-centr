@@ -1,0 +1,54 @@
+
+.contacts-container {
+  max-width: 1120px;
+  margin: 100px auto;
+}
+
+.contacts-container h1 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+
+.contacts-bloсk {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contacts-bloсk img {
+ width: 455px;
+ border-radius: 20px;
+}
+
+.contacts {
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts h3 {
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; 
+}
+
+.contacts-element, .email-link {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.contacts-element, .contacts-element:visited {
+  color: #222220;
+}
+
+.email-link, .email-link:visited {
+  color: #103873;
+}
