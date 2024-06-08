@@ -11,6 +11,10 @@ def login_view(request):
     if request.method == "POST":
         phone = request.POST.get("phone")
         password = request.POST.get("password")
+
+        if not phone or not password:
+            return JsonResponse({"error": "Необходимо указать телефон и пароль"}, status=400)
+
         user = authenticate(request, username=phone, password=password)
         if user is not None:
             login(request, user)
@@ -19,7 +23,7 @@ def login_view(request):
             else:
                 return redirect("user_profile")
         else:
-            return JsonResponse("auth/login.html", {"error": "Неверные данные"})
+            return JsonResponse({"error": "Неверные данные"}, status=400)
     return render(request, "auth/login.html")
 
 
