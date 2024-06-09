@@ -22,6 +22,7 @@
 /* header */
 
 .content-container-img {
+  margin-top: 160px;
   position: relative;
   max-width: 1120px;
   height: 561px;

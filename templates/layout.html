@@ -11,29 +11,45 @@
 </head>
 <body>
   <div class="container">
-    <nav>
-      <div class="nav__logo">
-        <img src="{% static 'img/nav_logo.svg' %}" alt="logo">
-      </div>
-      <div class="nav__controls">
-        <a href="">Главная</a>
-        <a href="">Услуги</a>
-        <a href="">Калькулятор</a>
-        <a href="">О компании</a>
-        <a href="">Контакты</a>
-      </div>
-      <div class="nav__btns">
-        <a class="nav__application" href="">Заявка</a>
-        <a class="nav__lk" href="">
-          <img src="{% static 'img/lk.svg' %}" alt="lk">
-        </a>
-      </div>
-    </nav>
+    <div class="nav-overflow-container">
+      <nav>
+        <div class="nav-container">
+          <div class="nav__logo">
+            <img src="{% static 'img/nav_logo.svg' %}" alt="logo">
+          </div>
+          <div class="nav__controls">
+            <a href="">Главная</a>
+            <a href="" id="services-button">Услуги</a>
+            <a href="">Калькулятор</a>
+            <a href="">О компании</a>
+            <a href="">Контакты</a>
+          </div>
+          <div class="nav__btns">
+            <a class="nav__application" href="">Заявка</a>
+            <a class="nav__lk" href="">
+              <img src="{% static 'img/lk.svg' %}" alt="lk">
+            </a>
+          </div>
+        </div>
+
+        <div id="services-dropdown" class="services-dropdown">
+          <div class="dropdown-links">
+            <a href="">Перепланировка квартир</a>
+            <a href="">Перепланировка нежилых помещений</a>
+            <a href="">Перепланировка нежилых зданий</a>
+            <a href="">Кадастровые работы</a>
+          </div>
+          <img src="{% static 'img/button_close.svg' %}" alt="close" id="close-services">
+        </div>
+
+      </nav>
+    </div>
+    <div id="overlay" class="overlay"></div>
     <main>
       {% block content %}{% endblock %}
     </main>
   </div>  
-
+  <script src="{% static 'js/nav.js' %}"></script>
   {% block scripts %}{% endblock %}
   
 </body>

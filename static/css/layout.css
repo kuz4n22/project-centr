@@ -1,9 +1,5 @@
-
 @import url('fonts.css');
 @import url('normalize.css');
-
-
-
 
 body {
   font-family: 'Manrope', sans-serif;
@@ -25,9 +21,17 @@ nav a:visited {
 }
 
 .container {
+  position: relative;
   max-width: 1280px;
   padding-top: 50px;
   margin: 0 auto;
+}
+
+.nav-overflow-container {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: 1120px;
 }
 
 nav {
@@ -42,6 +46,17 @@ nav {
   padding: 0 20px;
   background-color:#F3F3F3;
   border-radius: 10px;
+  transition: height 0.7s ease;
+}
+
+.nav-container {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 1080px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav__logo {
@@ -78,4 +93,45 @@ nav {
 
 .nav__lk {
   height: 32px;
+}
+
+/* dropdown menu */
+
+.services-dropdown {
+  display: none;
+}
+
+.dropdown-links {
+  position: absolute;
+  top: 35%;
+  left: 36%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#close-services {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* overlay when menu open */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222220;
+  opacity: 0.4;
+  z-index: 5;
+}
+
+.overlay.visible {
+  display: block;
 }
