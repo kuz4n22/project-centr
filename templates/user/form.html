@@ -8,28 +8,24 @@
 {% block title %}Заявка{% endblock %}
 
 {% block content %}
-  <div class="request-container">
-    <div class="request-form">
+    <div class="request-container">
       <h1>Заполни форму</h1>
       <form action="">
-        <input type="text" required>
-        <input type="tel" required>
-        <input type="email" required>
-        <input type="checkbox">
-        <input class="request-send" type="submit" value="Отправить заявку" disabled>
+        <input class="customer-name" placeholder="ФИО" type="text" required>
+        <div class="tel-email-container">
+          <input class="customer-tel" placeholder="Мобильный телефон" type="tel" required>
+          <input class="customer-email" placeholder="Email" type="email" required>
+        </div>
+        <label class="custom-checkbox">
+          <input type="checkbox" id="customCheckbox">
+          <span class="custom-checkbox-img"></span>
+          <span>Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
+      </label>
+        <input id="submitButton" class="request-send" type="submit" value="Отправить заявку" disabled>
       </form>
     </div>
+{% endblock %}
 
-  <!-- if ok -->
-    <div class="result-container">
-      <h1>Спасибо за вашу заявку!</h1>
-      <p></p>
-      <div class="ok"></div>
-      <a class="request-send" href="">Вернуться на главную</a>
-    </div>
-    
-
-  </div>
-
-  
+{% block scripts %}
+<script src="{% static 'js/checkbox.js' %}"></script>
 {% endblock %}

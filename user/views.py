@@ -24,6 +24,9 @@ def cadastr_page(request):
 def form_page(request):
     return render(request, 'user/form.html')
 
+def form_sent_page(request):
+    return render(request, 'user/form_sent.html')
+
 def calculator_page(request):
     return render(request, 'user/calculator.html')
 
