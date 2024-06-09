@@ -19,9 +19,9 @@ def login_view(request):
         if user is not None:
             login(request, user)
             if user.is_staff:
-                return redirect("manager_dashboard")
+                return JsonResponse({"redirect_url": "/manager/"}, status=200)
             else:
-                return redirect("user_profile")
+                return JsonResponse({"redirect_url": "/profile/"}, status=200)
         else:
             return JsonResponse({"error": "Неверные данные"}, status=400)
     return render(request, "auth/login.html")

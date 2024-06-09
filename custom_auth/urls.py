@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import login_view, logout_view
+from .views import login_view
 from custom_auth.views import CustomPasswordResetView, CustomPasswordResetConfirmView
 
 
