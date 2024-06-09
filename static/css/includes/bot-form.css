@@ -64,39 +64,85 @@ input[type="radio"]:checked + .radio-button {
 
 .input-container {
   margin-top: 30px;
-  display: grid;
-  grid-template-areas: 
-            "a b"
-            "c c"
-            "d d";
-  gap: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  max-width: 510px;
+}
+
+.name-tel-container {
+  display: flex;
+  gap: 50px;
 }
 
 .input-name input, .input-tel input, .input-message input {
   border: none;
   outline: 0;
-  border-bottom: 2px solid rgba(142, 142, 142, 0.2);;
+  border-bottom: 2px solid rgba(142, 142, 142, 0.2);
+  margin-bottom: 20px;
+}
+
+.input-name input, .input-tel input {
+  width: 230px;
 }
 
 .input-message input {
   padding: 0;
-  max-width: 510px;
+  width: 510px;
   height: 26px;
   resize: none; 
 }
 
+/* cheackbox */
 
-
-.input-checkbox {
+.custom-checkbox {
+  align-self: start;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  max-width: 466px;
+  text-align: start;
 }
 
-.input-checkbox label {
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox-img {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../img/checkbox/not_checked_black.svg');
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.custom-checkbox input:checked + .custom-checkbox-img {
+  background-image: url('../../img/checkbox/checked_black.svg');
+}
+
+.custom-checkbox span {
+  color: #222220;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+/* submit */
+
+.request-send {
+  display: flex;
+  width: 510px;
+  height: 60px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #222220;
+  color:#FFF;
+}
+
+.request-send:disabled {
+  opacity: 0.2;
 }

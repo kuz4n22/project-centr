@@ -15,7 +15,7 @@
 
       <div class="radio-container">
         <label>
-            <input type="radio" name="replanning" value="apartments">
+            <input type="radio" name="replanning" value="apartments" checked>
             <div class="radio-button">Перепланировка квартир</div>
         </label>
         <label>
@@ -33,23 +33,30 @@
       </div>
 
     <div class="input-container">
-      <div class="input-name">
-          <input type="text" placeholder="Имя">
-      </div>
-      <div class="input-tel">
-          <input type="tel" placeholder="Номер телефона">
-      </div>
+      <div class="name-tel-container">
+        <div class="input-name">
+          <input type="text" placeholder="Имя" required>
+        </div>
+        <div class="input-tel">
+          <input type="tel" placeholder="Номер телефона" required>
+        </div></div>
+      
       <div class="input-message">
           <input type="text" placeholder="Ваше сообщение">
       </div>
-      <div class="input-checkbox">
-          <input type="checkbox" id="consent">
-          <label for="consent">Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</label>
-      </div>
+      <label class="custom-checkbox">
+        <input type="checkbox" id="customCheckbox">
+        <span class="custom-checkbox-img"></span>
+        <span>Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
+      </label>
+      <input id="submitButton" class="request-send" type="submit" value="Подать заявку" disabled>
     </div>
-
+    
 
     </form>
   </div>
 </div>
 
+{% block scripts %}
+<script src="{% static 'js/checkbox.js' %}"></script>
+{% endblock %}
