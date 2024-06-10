@@ -40,15 +40,6 @@
   background: #222220;
 }
 
-.result-container {
-  display: none;
-  position: sticky;
-  width: 455px;
-  height: 411px;
-  border-radius: 20px;
-  background: #FFF;
-}
-
 /* container */
 
 .options-container {
@@ -58,41 +49,131 @@
 }
 
 /* districts */
-
 .districts-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 515px;
+    gap: 20px 50px;
 }
 
-.district-element {
+
+.districts-container label {
   display: flex;
   width: 182px;
   height: 20px;
   padding: 10px 24px;
   justify-content: center;
   align-items: center;
-  color: #222220;
+  background-color: #222220;
+  color: white;
+  border: 1px solid #FFF;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: -0.16px;
+  white-space: nowrap;
+}
+
+.districts-container input[type="radio"] {
+  display: none;
+}
+
+.districts-container input[type="radio"]:checked + label {
+  background-color: #fff;
+  color: black;
+  font-weight: 500;
+}
+
+ /* meters2 */
+ 
+ .area-container {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  max-width: 470px;
+  padding: 20px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.00);
-  background: #FFF;
+  line-height: 145%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 10px;
+  position: relative;
+  height: 91px;
+ }
+
+
+.area-container h4 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.area-container span {
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+}
+
+.area-description {
+  position: absolute;
+  width: 93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 160px;
+}
+
+input[type="range"] {
+  top: 130px;
+  left: 20px;
+  position: absolute;
+  -webkit-appearance: none;
+  width: 93%;
+  height: 4px;
+  background: linear-gradient(to right, #FFF 0%, rgba(255, 255, 255, 0.4) 15%);
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 40px;
+  background: url('../../img/runner.svg') no-repeat center center;
+  background-size: cover;
   cursor: pointer;
 }
 
-.district-element.selected {
-  color: #FFF;
-  font-weight: 400;
-  border: 1px solid #FFF;
-  background: rgba(255, 255, 255, 0.00);
+input[type="range"]::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background: url('runner.svg') no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
 }
 
-input[type="radio"] {
-  display: none;
+input[type="range"]::-moz-range-track {
+  background: none; /* Remove default track styling in Firefox */
+}
+
+input[type="range"]::-ms-track {
+  width: 300px;
+  height: 10px;
+  background: none;
+  border-color: transparent;
+  color: transparent;
+}
+
+.checkbox-article {
+  margin-top: 50px;
 }
 
 /* checkbox containers */
@@ -114,7 +195,7 @@ input[type="radio"] {
   gap: 30px;
   max-width: 470px;
   border-radius: 20px;
-  border: 1px solid #FFF;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 20px;
 }
 
@@ -142,22 +223,6 @@ input[type="radio"] {
 .checkbox-element label {
   margin-left: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* checkbox styling*/
 
@@ -224,4 +289,14 @@ input[type="radio"] {
 .checkbox-ios input[type="checkbox"]:not(:disabled) + .checkbox-ios-switch {
 	cursor: pointer;
 	border-color: rgba(0, 0, 0, .3);
+}
+
+/* result block */
+
+.result-container {
+  display: flex;
+  width: 455px;
+  height: 411px;
+  border-radius: 20px;
+  background: #FFF;
 }

@@ -20,69 +20,61 @@
 </div>
 
 <div class="calculator-container">
-
-
-  
-
   <div class="options-container">
     <div class="options-article">
       <h3>1. Выберите район</h3>
       <div class="districts-container">
-        <label class="district-element">
-            <input type="radio" name="district">
-            Адмиралтейский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Петроградский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Василеостровский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Петродворцовый район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Выборгский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Приморский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Красногвардейский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Пушкинский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Московский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Фрунзенский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district">
-            Невский район
-        </label>
-        <label class="district-element">
-            <input type="radio" name="district" selected>
-            Центральный район
-        </label>
-    </div>
+          <input type="radio" id="admiralteysky" name="district" value="Адмиралтейский район">
+          <label for="admiralteysky">Адмиралтейский район</label>
+
+          <input type="radio" id="petrogradsky" name="district" value="Петроградский район">
+          <label for="petrogradsky">Петроградский район</label>
+
+          <input type="radio" id="vasileostrovsky" name="district" value="Василеостровский район">
+          <label for="vasileostrovsky">Василеостровский район</label>
+
+          <input type="radio" id="petrodvortsovy" name="district" value="Петродворцовый район">
+          <label for="petrodvortsovy">Петродворцовый район</label>
+
+          <input type="radio" id="viborgsky" name="district" value="Выборгский район">
+          <label for="viborgsky">Выборгский район</label>
+
+          <input type="radio" id="primorsky" name="district" value="Приморский район">
+          <label for="primorsky">Приморский район</label>
+
+          <input type="radio" id="krasnogvardeysky" name="district" value="Красногвардейский район">
+          <label for="krasnogvardeysky">Красногвардейский район</label>
+
+          <input type="radio" id="pushkinsky" name="district" value="Пушкинский район">
+          <label for="pushkinsky">Пушкинский район</label>
+
+          <input type="radio" id="moskovsky" name="district" value="Московский район">
+          <label for="moskovsky">Московский район</label>
+
+          <input type="radio" id="frunzensky" name="district" value="Фрунзенский район">
+          <label for="frunzensky">Фрунзенский район</label>
+
+          <input type="radio" id="nevsky" name="district" value="Невский район">
+          <label for="nevsky">Невский район</label>
+
+          <input type="radio" id="centralny" name="district" value="Центральный район" checked>
+          <label for="centralny">Центральный район</label>
+      </div>
     </div>
     <div class="options-article">
       <h3>2. Площадь</h3>
-  
+      <div class="area-container">
+          <h4>Площадь</h4>
+          <span id="rangeValue">50 м²</span>
+          <input type="range" id="rangeSlider" min="40" max="200" value="50" step="1">
+          <div class="area-description">
+            <p>40 м²</p>
+            <p>120 м²</p>
+            <p>200 м²</p>
+          </div>
+      </div>
     </div>
-    <div class="options-article">
+    <div class="options-article checkbox-article">
       <h3>3. Исходно-разрешительная документация</h3>
       <div class="checkboxes-container">
         
@@ -250,13 +242,6 @@
       </div>
     </div>
   </div>
-
-
-   
-
-  <!-- <h2>2. Площадь</h2>
-            <input type="range" id="area" name="area" min="40" max="200" value="50">
-            <span style="color: white;" id="area-value">50 м²</span> -->
 
   <div class="result-container">
     <h3>Район: Центральный район</h3>
