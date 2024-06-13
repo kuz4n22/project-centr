@@ -38,6 +38,11 @@
   max-width: 1060px;
   border-radius: 20px;
   background: #222220;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 
 /* container */
@@ -295,8 +300,63 @@ input[type="range"]::-ms-track {
 
 .result-container {
   display: flex;
-  width: 455px;
-  height: 411px;
+  width: 415px;
+  height: 351px;
+  padding: 30px 20px;
   border-radius: 20px;
   background: #FFF;
+  flex-direction: column;
+}
+
+.result-district,
+.result-area,
+.result-cost {
+  color: rgba(34, 34, 32, 0.60);
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145%;
+}
+
+.result-district,
+.result-area {
+  margin-bottom: 30px;
+}
+
+.result-cost {
+  margin-bottom: 10px;
+}
+
+#resultContentDistrict,
+#resultContentArea,
+#resultContentCost {
+  color: #222220;
+}
+
+#resultContentCost {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.apply-btn {
+  display: flex;
+  width: 367px;
+  height: 60px;
+  padding: 10px 24px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: #222220;
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.apply-btn:visited {
+color: #FFF;
 }

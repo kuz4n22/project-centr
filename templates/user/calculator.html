@@ -23,7 +23,7 @@
   <div class="options-container">
     <div class="options-article">
       <h3>1. Выберите район</h3>
-      <div class="districts-container">
+      <div class="districts-container" id="districtsRadio">
           <input type="radio" id="admiralteysky" name="district" value="Адмиралтейский район">
           <label for="admiralteysky">Адмиралтейский район</label>
 
@@ -65,7 +65,7 @@
       <h3>2. Площадь</h3>
       <div class="area-container">
           <h4>Площадь</h4>
-          <span id="rangeValue">50 м²</span>
+          <span id="areaValue">50 м²</span>
           <input type="range" id="rangeSlider" min="40" max="200" value="50" step="1">
           <div class="area-description">
             <p>40 м²</p>
@@ -85,7 +85,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox" checked>
+            <input type="checkbox" id="techPassport" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -96,7 +96,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="floorPlan" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -107,7 +107,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="ventChanels" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -124,7 +124,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox" checked>
+            <input type="checkbox" id="mvk" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -135,7 +135,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="connectBalcony">
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -146,7 +146,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="kgiop">
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -157,7 +157,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="piterGaz">
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -168,7 +168,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="holeInWall">
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -185,7 +185,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox" checked>
+            <input type="checkbox" id="measureAfter" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -196,7 +196,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="entryComplect" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -207,7 +207,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="entryAct" checked>
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -224,7 +224,7 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox" checked>
+            <input type="checkbox" id="techPlan">
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
@@ -235,19 +235,28 @@
             <text x="10" y="12" fill="#FFF" text-anchor="middle" font-family="Manrope" font-size="16" font-weight="500" alignment-baseline="middle">i</text>
           </svg>
           <label class="checkbox-ios">
-            <input type="checkbox">
+            <input type="checkbox" id="egrn">
             <span class="checkbox-ios-switch"></span>
           </label>
         </div>
       </div>
     </div>
+
+    <div style="display: none;" class="div">
+      <input type="checkbox" id="projectDocs" checked>
+      <input type="checkbox" id="ond" checked>
+    </div>
   </div>
 
   <div class="result-container">
-    <h3>Район: Центральный район</h3>
-    <h3>Площадь: <span id="summary-area">50 м²</span></h3>
-    <h3>Стоимость: <span id="cost">от 80000 рублей</span></h3>
-    <a href="#" class="apply-btn">Подать заявку</a>
+    <h3 class="result-district">Район: <span id="resultContentDistrict">Центральный район</span></h3>
+    <h3 class="result-area">Площадь: <span id="resultContentArea">50 м²</span></h3>
+    <h3 class="result-cost">Стоимость:</h3>
+    <p id="resultContentCost">от 80 000 рублей</p>
+    <a href="#" class="apply-btn">
+      <p>Подать заявку</p>
+      <img src="{% static 'img/arrow.svg' %}" alt="">
+    </a>
   </div>
 </div>
 
