@@ -50,8 +50,4 @@ def custom_404(request, exception):
 ## вывод: на двух стульях не усидеть
 @login_required
 def user_profile(request):
-    # user = request.user
-    # context = {
-    #     "user": user
-    # }
     return render(request, "user/profile.html")
