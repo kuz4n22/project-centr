@@ -27,6 +27,7 @@ def manager_dashboard(request):
                 "password": client.password,
                 "contract_id": contract.id,
                 "service_type": contract.service_type,
+                "address": contract.address,
                 "contract_number": contract.contract_number,
                 "contract_date": contract.contract_date,
                 "status": contract.status,
