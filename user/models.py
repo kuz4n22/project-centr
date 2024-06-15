@@ -66,6 +66,7 @@ class Contract(models.Model):
     status = models.IntegerField(choices=StatusTypeChoices.choices, default=StatusTypeChoices.PHASE1)
     contract_date = models.DateField()
     completion_date = models.DateField(null=True, blank=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
 
     def max_phases(self):
         if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
@@ -100,4 +101,4 @@ class Contract(models.Model):
     
     def is_done(self):
         return self.status == self.StatusTypeChoices.Done
-        
+    

@@ -14,6 +14,7 @@ class UserCreationForm(forms.ModelForm):
     password = forms.CharField(label="Пароль", widget=forms.PasswordInput)
     email = forms.EmailField(label="Email")
     contract_number = forms.CharField(label="Номер договора", max_length=20)
+    address = forms.CharField(label="Адрес объекта", max_length=255, required=False)
     contract_date = forms.DateField(
         label="Дата заключения договора",
         widget=forms.SelectDateWidget(
@@ -31,6 +32,7 @@ class UserCreationForm(forms.ModelForm):
             "service_type",
             "contract_number",
             "contract_date",
+            "address",
         ]
 
     def clean_full_name(self):
@@ -60,6 +62,7 @@ class UserCreationForm(forms.ModelForm):
                 contract_number=self.cleaned_data["contract_number"],
                 service_type=self.cleaned_data["service_type"],
                 contract_date=self.cleaned_data["contract_date"],
+                address=self.cleaned_data["address"],
             )
         return user
 
