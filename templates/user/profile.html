@@ -23,17 +23,17 @@
     </div>
     <div class="order-data">
       <h3>Услуга</h3>
-      <p>Перепланировка квартиры</p>
+      <p>{{ user_contract.service_type }}</p>
       <h3>Адрес объекта</h3>
-      <p>г. Санкт-Петербург, Московский пр., 107, к. 4</p>
+      <p>{{ user_contract.address }}</p>
       <div class="data-and-id">
         <div class="data-container">
           <h3>Дата заключения договора</h3>
-          <p>17.03.2024</p>
+          <p>{{ user_contract.contract_date }}</p>
         </div>
         <div class="id-container">
           <h3>Номер договора</h3>
-          <p>333333</p>
+          <p>{{ user_contract.contract_number }}</p>
         </div>
       </div>
     </div>
