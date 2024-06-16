@@ -11,23 +11,23 @@
   </div>
 
   <div class="form-container-form">
-    <form action="#">
-
+    <form id="form-send" method="post" action="/send_form/">
+    {% csrf_token %}
       <div class="radio-container">
         <label>
-            <input type="radio" name="replanning" value="apartments" checked>
+            <input type="radio" name="serviceType" value="Перепланировка квартир" checked>
             <div class="radio-button">Перепланировка квартир</div>
         </label>
         <label>
-            <input type="radio" name="replanning" value="non-residential">
+            <input type="radio" name="serviceType" value="Перепланировка нежилых помещений">
             <div class="radio-button">Перепланировка<br>нежилых помещений</div>
         </label>
         <label>
-            <input type="radio" name="replanning" value="residential">
-            <div class="radio-button">Перепланировка жилых зданий</div>
+            <input type="radio" name="serviceType" value="Перепланировка нежилых зданий">
+            <div class="radio-button">Перепланировка нежилых зданий</div>
         </label>
         <label>
-            <input type="radio" name="replanning" value="cadastral">
+            <input type="radio" name="serviceType" value="Кадастровые работы">
             <div class="radio-button">Кадастровые работы</div>
         </label>
       </div>
@@ -35,14 +35,14 @@
     <div class="input-container">
       <div class="name-tel-container">
         <div class="input-name">
-          <input type="text" placeholder="Имя" required>
+          <input type="text" placeholder="Имя" name="name" required>
         </div>
         <div class="input-tel">
-          <input type="tel" placeholder="Номер телефона" required>
+          <input type="tel" placeholder="Номер телефона" name="phone" required>
         </div></div>
       
       <div class="input-message">
-          <input type="text" placeholder="Ваше сообщение">
+          <input type="text" name="message" placeholder="Ваше сообщение">
       </div>
       <label class="custom-checkbox">
         <input type="checkbox" id="customCheckbox">
@@ -51,7 +51,6 @@
       </label>
       <input id="submitButton" class="request-send" type="submit" value="Подать заявку" disabled>
     </div>
-    
 
     </form>
   </div>
