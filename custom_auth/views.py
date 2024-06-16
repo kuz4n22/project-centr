@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 @csrf_exempt
-def send_reset_password_email(request):
+def send_password_reset_form(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         try:
@@ -33,9 +33,9 @@ def send_reset_password_email(request):
             return JsonResponse({'message': 'Письмо для сброса пароля отправлено на ваш email'}, status=200)
         except User.DoesNotExist:
             return JsonResponse({'error': 'Пользователь с таким email не найден'}, status=400)
-    return JsonResponse({'error': 'Неверный метод запроса'}, status=400)
+    return render(request, 'auth/password_reset_form.html')
 
-def reset_password(request, uidb64, token):
+def password_reset(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
@@ -49,9 +49,9 @@ def reset_password(request, uidb64, token):
             user.save()
             return redirect('login')
 
-        return render(request, 'auth/reset_password.html', {'uidb64': uidb64, 'token': token})
+        return render(request, 'auth/password_reset.html', {'uidb64': uidb64, 'token': token})
     else:
-        return render(request, 'auth/reset_password.html', {'error': 'Недействительная ссылка для сброса пароля'})
+        return render(request, 'auth/password_reset.html', {'error': 'Недействительная ссылка для сброса пароля'})
 
 # Вход/выход
 def login_view(request):
