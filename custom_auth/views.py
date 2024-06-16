@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
+from user.models import CustomUser
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
@@ -15,8 +15,8 @@ def send_password_reset_form(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         try:
-            user = User.objects.get(email=email)
-        except User.DoesNotExist:
+            user = CustomUser.objects.get(email=email)
+        except CustomUser.DoesNotExist:
             return JsonResponse({'error': 'Пользователь с таким email не найден'}, status=400)
        
         msg = EmailMessage(subject='Сброc пароля')
@@ -41,8 +41,8 @@ def send_password_reset_form(request):
 def password_reset(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = CustomUser.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         user = None
 
     if user is not None and default_token_generator.check_token(user, token):
