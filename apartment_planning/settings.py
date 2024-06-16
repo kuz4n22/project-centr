@@ -62,7 +62,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
 
 # List of managers 
-MANAGERS = [("Misha", "chips0ed@yandex.ru"),]
+MANAGERS = [("Misha", "mishvkin@gmail.com"),]
 
 LOGIN_URL = 'login'
 
