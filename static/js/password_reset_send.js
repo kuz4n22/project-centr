@@ -1,5 +1,5 @@
-document.getElementById('request-pass-btn').addEventListener('click', function() {
-  const form = document.getElementById('request-pass-form');
+document.getElementById('new-pass-btn').addEventListener('click', function() {
+  const form = document.getElementById('new-pass-form');
   const formData = new FormData(form);
 
   fetch(form.action, {
@@ -20,7 +20,7 @@ document.getElementById('request-pass-btn').addEventListener('click', function()
       }
   })
   .then(data => {
-      alert("Успешно");
+      alert("Пароль изменен");
   })
   .catch(error => {
       alert('Ошибка: ' + error.message);
