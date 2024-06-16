@@ -84,7 +84,7 @@ class Contract(models.Model):
                 self.status += 1
                 self.save()
 
-    def is_last_phase(self):
+    def last_phase(self):
         if self.service_type == self.ServiceTypeChoices.CADASTRAL_WORK:
             if self.status == self.StatusTypeChoices.PHASE3:
                 return 3

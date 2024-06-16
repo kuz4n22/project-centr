@@ -32,7 +32,7 @@ def manager_dashboard(request):
                 "contract_date": contract.contract_date,
                 "status": contract.status,
                 "is_done": contract.is_done,
-                "is_last_phase": contract.is_last_phase,
+                "last_phase": contract.last_phase,
                 "max_phases": list(range(1, contract.max_phases()+1)),
             }
 
