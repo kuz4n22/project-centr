@@ -23,7 +23,7 @@ def send_password_reset_form(request):
         
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.pk))
-        reset_url = request.build_absolute_uri(f'/reset_password/{uid}/{token}/')
+        reset_url = request.build_absolute_uri(f'/password_reset/{uid}/{token}/')
         email_message = f'Для сброса пароля перейдите по ссылке: {reset_url}'
         email_message += f'\n\nЕсли вы не запрашивали создание нового пароля, просто проигнорируйте это письмо.'
         email_message += ' Ваш пароль не будет изменен.'
