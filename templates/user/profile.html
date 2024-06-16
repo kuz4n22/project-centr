@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/user/profile.css' %}">
+{% endblock %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+<div class="lk-container">
+  <div class="person-container">
+    <div class="contact-data">
+      <h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+      <div>
+        <h2>Телефон</h2>
+        <p>{{ request.user.phone_number }}</p>
+      </div>
+      <div>
+        <h2>Email</h2>
+        <p>{{ request.user.email }}</p>
+      </div>
+    </div>
+    <div class="order-data">
+      <h3>Услуга</h3>
+      <p>Перепланировка квартиры</p>
+      <h3>Адрес объекта</h3>
+      <p>г. Санкт-Петербург, Московский пр., 107, к. 4</p>
+      <div class="data-and-id">
+        <div class="data-container">
+          <h3>Дата заключения договора</h3>
+          <p>17.03.2024</p>
+        </div>
+        <div class="id-container">
+          <h3>Номер договора</h3>
+          <p>333333</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="status-container">
+  <h2>Статус</h2>
+  <div class="status-elements">
+    <div class="status-element">
+      <h2>1 этап</h2>
+      <p></p>
+    </div>
+    <div class="status-element">
+      <h2>1 этап</h2>
+      <p>Заказ исходной документации</p>
+    </div>
+    <div class="status-element">
+      <h2>1 этап</h2>
+      <p>Заказ исходной документации</p>
+    </div>
+    <div class="status-element">
+      <h2>1 этап</h2>
+      <p>Заказ исходной документации</p>
+    </div>
+    <div class="status-element" selected>
+      <h2>1 этап</h2>
+      <p>Заказ исходной документации</p>
+    </div>
+    <div class="status-element">
+      <h2>1 этап</h2>
+      <p>Заказ исходной документации</p>
+    </div>
+  </div>
+</div>
+</div>
+
+{% include 'includes/footer.html' %} 
+{% endblock %}
+

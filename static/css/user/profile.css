@@ -1,0 +1,134 @@
+.lk-container {
+  margin: 166px auto 100px;
+  max-width: 1120px;
+}
+
+.person-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-data {
+  padding: 20px 20px;
+  width: 225px;
+  height: 233px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #222220 0%, #383838 100%);
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.contact-data h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.contact-data p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.order-data {
+  padding: 20px 20px;
+  width: 795px;
+  height: 233px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+}
+
+.order-data h3 {
+  opacity: 0.6;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.order-data p {
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+
+.data-and-id {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.data-and-id p, .data-and-id h3  {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.data-container, .id-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.status-container h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%;
+  margin: 100px 0 80px;
+}
+
+.status-elements {
+  display: flex;
+  gap: 20px
+}
+
+.status-element {
+  padding: 20px;
+  width: 130px;
+  height: 128px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  background: #222220;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  color: #FFF;
+  opacity: 0.4;
+}
+
+.status-element:selected {
+
+  border-radius: 20px;
+  border: 1px solid #222220;
+  background: #222220;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  color: #FFF;
+}
+
+.status-element h2 {
+  margin: 0;
+}
+
+.status-element p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
