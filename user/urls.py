@@ -20,7 +20,7 @@ urlpatterns = [
     path('contacts/', views.contacts_page, name='contacts'),
     path('about/', views.about_page, name='about'),
 
-    path('send_form/', views.send_contact_form, name='send_contact_form'),
+    path('send_form/', views.send_form, name='send_contact_form'),
 
     # delete before prod
     path('error/', views.error_page, name='error'),

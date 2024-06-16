@@ -2,46 +2,41 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
+from django.utils.html import escape
+from django.conf import settings
 
 @csrf_exempt
 def send_form(request):
     if request.method == 'POST':
-        # request.POST.get(item_name='name in html)')
+        subject="Новая заявка"
+        msg = EmailMessage(subject=subject)
+        
         phone = request.POST.get('phone')
         name = request.POST.get('name')
-        
-        email_message = f"""
-        Номер телефона: {phone}
-        Имя: {name}
-        """
-        try:
-            email = request.POST.get('email')
-            email_message = f"Email: {email}\n" + email_message
-        except KeyError:
-            pass
-        
-        try:
-            service_type = request.POST.get('serviceType')
-            email_message = f"Тип услуги: {service_type}\n" + email_message
-        except KeyError:
-            pass
-        
-        try:
-            message = request.POST.get('message')
-            email_message = email_message + f"\nСообщение: {email}"
-        except KeyError:
-            pass
-    
-        send_mail(
-            'Заявка',
-            email_message,
-            'manager@site.ru',
-            ['manager@site.ru'],
-            fail_silently=False,
-        )
+        email_message = f"Номер телефона: {phone}\nИмя: {name}\n"
 
-        return JsonResponse({'message': 'Сообщение успешно отправлено'}, status=200)
+        email = request.POST.get('email')
+        if email:
+            email_message += f"Email: {email}\n"
+
+        service_type = request.POST.get('serviceType')
+        if service_type:
+            email_message += f"Тип услуги: {service_type}\n"
+
+        message = request.POST.get('message')
+        if message:
+            email_message += f"Сообщение: {message}\n"
+
+        try:
+            msg.body = escape(email_message)
+            msg.headers={'Message-ID': 'foo'}
+            msg.to = [manager[-1] for manager in settings.MANAGERS]
+            msg.send(fail_silently=False)
+            return JsonResponse({'message': 'Сообщение успешно отправлено'}, status=200)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+
     return JsonResponse({'error': 'Неверный метод запроса'}, status=400)
 
 def main_page(request):

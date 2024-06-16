@@ -55,9 +55,14 @@ EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'адрес почты' 
-EMAIL_HOST_PASSWORD = 'пароль' 
+EMAIL_HOST_USER = 'chips0ed@yandex.ru' 
+EMAIL_HOST_PASSWORD = 'fzyrbkosdtujyrdy' 
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = EMAIL_HOST_USER
 
+# List of managers 
+MANAGERS = [("Misha", "chips0ed@yandex.ru"),]
 
 LOGIN_URL = 'login'
 
