@@ -4,7 +4,6 @@ from .models import CustomUser, Contract
 from .forms import UserCreationForm, CustomUserChangeForm
 import re
 
-@admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     add_form = UserCreationForm
     form = CustomUserChangeForm
@@ -13,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ('is_staff', 'is_active')
     fieldsets = (
         (None, {'fields': ('phone_number', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'email', 'contracts')}),
         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login',)}),
     )
@@ -47,4 +46,5 @@ class CustomUserAdmin(UserAdmin):
         else:
             super().save_model(request, obj, form, change)
     
+admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Contract)

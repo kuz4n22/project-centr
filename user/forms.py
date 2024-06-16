@@ -110,10 +110,15 @@ class CustomUserCreationForm(UserCreationForm):
         return user
 
 class CustomUserChangeForm(forms.ModelForm):
-    contracts = forms.ModelMultipleChoiceField(queryset=Contract.objects.all(), required=False)
+    contracts = forms.ModelMultipleChoiceField(queryset=Contract.objects.none(), required=False, widget=forms.SelectMultiple)
 
     class Meta:
         model = CustomUser
         fields = ['first_name', 'last_name', 'phone_number', 'email', 'is_active', 'contracts']
-        
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        instance = kwargs.get('instance')
+        if instance:
+            self.fields['contracts'].queryset = Contract.objects.filter(user=instance)
 

@@ -102,3 +102,5 @@ class Contract(models.Model):
     def is_done(self):
         return self.status == self.StatusTypeChoices.Done
     
+    def __str__(self):
+        return self.contract_number
