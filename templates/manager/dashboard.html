@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+  <div class="dashboard-container">
+    <h1>Manager Dashboard</h1>
+
+    <h2>Active Clients</h2>
+    {% if active_clients %}
+        <ul>
+            {% for client in active_clients %}
+                <li>
+                    <strong>ID:</strong> {{ client.id }}<br>
+                    <strong>First Name:</strong> {{ client.first_name }}<br>
+                    <strong>Last Name:</strong> {{ client.last_name }}<br>
+                    <strong>Phone Number:</strong> {{ client.phone_number }}<br>
+                    <strong>Email:</strong> {{ client.email }}<br>
+                    <strong>Contract ID:</strong> {{ client.contract_id }}<br>
+                    <strong>Service Type:</strong> {{ client.service_type }}<br>
+                    <strong>Address:</strong> {{ client.address }}<br>
+                    <strong>Contract Number:</strong> {{ client.contract_number }}<br>
+                    <strong>Contract Date:</strong> {{ client.contract_date }}<br>
+                    <strong>Status:</strong> {{ client.status }}<br>
+                    <strong>Last Phase:</strong> {{ client.last_phase }}<br>
+                    <strong>Max Phases:</strong> {{ client.max_phases|join:", " }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No active clients.</p>
+    {% endif %}
+
+    <h2>Completed Clients</h2>
+    {% if completed_clients %}
+        <ul>
+            {% for client in completed_clients %}
+                <li>
+                    <strong>ID:</strong> {{ client.id }}<br>
+                    <strong>First Name:</strong> {{ client.first_name }}<br>
+                    <strong>Last Name:</strong> {{ client.last_name }}<br>
+                    <strong>Phone Number:</strong> {{ client.phone_number }}<br>
+                    <strong>Email:</strong> {{ client.email }}<br>
+                    <strong>Contract ID:</strong> {{ client.contract_id }}<br>
+                    <strong>Service Type:</strong> {{ client.service_type }}<br>
+                    <strong>Address:</strong> {{ client.address }}<br>
+                    <strong>Contract Number:</strong> {{ client.contract_number }}<br>
+                    <strong>Contract Date:</strong> {{ client.contract_date }}<br>
+                    <strong>Status:</strong> {{ client.status }}<br>
+                    <strong>Last Phase:</strong> {{ client.last_phase }}<br>
+                    <strong>Max Phases:</strong> {{ client.max_phases|join:", " }}<br>
+                    <strong>Completion Date:</strong> {{ client.completion_date }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No completed clients.</p>
+    {% endif %}
+  </div>
+
+{% include 'includes/footer.html' %} 
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/manager.js' %}"></script>
+{% endblock %}
