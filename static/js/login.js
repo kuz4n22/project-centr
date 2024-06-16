@@ -1,6 +1,7 @@
+// login 
 document.getElementById('login-btn').addEventListener('click', function() {
-  var form = document.getElementById('login-form');
-  var formData = new FormData(form);
+  const form = document.getElementById('login-form');
+  const formData = new FormData(form);
 
   fetch(form.action, {
       method: 'POST',

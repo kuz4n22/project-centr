@@ -10,7 +10,7 @@
 {% block content %}
     <div class="login-container">
       <h1>Вход</h1>
-      <form id="login-form" method="post" action="/login/">
+      <form id="login-form" method="post" action="{% url 'login' %}">
           {% csrf_token %}
           <input class="login-input" type="tel" placeholder="Номер телефона" name="phone" required>
           <input class="login-input" type="password" placeholder="Пароль" name="password" required>
