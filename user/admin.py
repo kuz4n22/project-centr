@@ -1,8 +1,11 @@
+import re
+
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser, Contract
-from .forms import UserCreationForm, CustomUserChangeForm
-import re
+
+from .forms import CustomUserChangeForm, UserCreationForm
+from .models import Contract, CustomUser
+
 
 class CustomUserAdmin(UserAdmin):
     add_form = UserCreationForm

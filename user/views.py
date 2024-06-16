@@ -1,36 +1,37 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import EmailMessage
-from django.utils.html import escape
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage
+from django.http import JsonResponse
+from django.shortcuts import render
+from django.utils.html import escape
+from django.views.decorators.csrf import csrf_exempt
+
 
 @csrf_exempt
 def send_form(request):
     if request.method == 'POST':
-        subject="Новая заявка"
+        subject='Новая заявка'
         msg = EmailMessage(subject=subject)
         
         phone = request.POST.get('phone')
         name = request.POST.get('name')
-        email_message = f"Номер телефона: {phone}\nИмя: {name}\n"
+        email_message = f'Получена новая заявка.'
+        email_message += f'\nИмя: {name}\nНомер телефона: {phone}'
 
         email = request.POST.get('email')
         if email:
-            email_message += f"Email: {email}\n"
+            email_message += f"\nEmail: {email}"
 
         service_type = request.POST.get('serviceType')
         if service_type:
-            email_message += f"Тип услуги: {service_type}\n"
+            email_message += f"\nТип услуги: {service_type}"
 
         message = request.POST.get('message')
         if message:
-            email_message += f"Сообщение: {message}\n"
+            email_message += f"\nСообщение: {message}"
 
         try:
             msg.body = escape(email_message)
-            msg.headers={'Message-ID': 'foo'}
             msg.to = [manager[-1] for manager in settings.MANAGERS]
             msg.send(fail_silently=False)
             return JsonResponse({'message': 'Сообщение успешно отправлено'}, status=200)

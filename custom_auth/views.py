@@ -1,13 +1,12 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import EmailMessage
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
-from django.template.loader import render_to_string
-from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
+from django.utils.html import escape
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -17,22 +16,26 @@ def send_password_reset_form(request):
         email = request.POST.get('email')
         try:
             user = User.objects.get(email=email)
-            token = default_token_generator.make_token(user)
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
-
-            reset_url = request.build_absolute_uri(f'/reset_password/{uid}/{token}/')
-
-            send_mail(
-                'Сброс пароля',
-                f'Для сброса пароля перейдите по ссылке: {reset_url}',
-                'password_reset@site.ru',
-                [email],
-                fail_silently=False,
-            )
-
-            return JsonResponse({'message': 'Письмо для сброса пароля отправлено на ваш email'}, status=200)
         except User.DoesNotExist:
             return JsonResponse({'error': 'Пользователь с таким email не найден'}, status=400)
+       
+        msg = EmailMessage(subject='Сброc пароля')
+        
+        token = default_token_generator.make_token(user)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        reset_url = request.build_absolute_uri(f'/reset_password/{uid}/{token}/')
+        email_message = f'Для сброса пароля перейдите по ссылке: {reset_url}'
+        email_message += f'\n\nЕсли вы не запрашивали создание нового пароля, просто проигнорируйте это письмо.'
+        email_message += ' Ваш пароль не будет изменен.'
+            
+        try:
+            msg.body = escape(email_message)
+            msg.to = [email]
+            msg.send(fail_silently=False)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+        
+        return JsonResponse({'message': 'Письмо для сброса пароля отправлено на ваш email'}, status=200)
     return render(request, 'auth/password_reset_form.html')
 
 def password_reset(request, uidb64, token):
