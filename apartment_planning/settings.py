@@ -64,6 +64,7 @@ MANAGERS = [("Misha", "mishvkin@gmail.com"),]
 
 LOGIN_URL = 'login'
 
+PASSWORD_RESET_TIMEOUT = 600
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
