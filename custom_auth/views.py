@@ -50,6 +50,7 @@ def password_reset(request, uidb64, token):
             new_password = request.POST.get('password')
             user.set_password(new_password)
             user.save()
+            login(request, user)
             if user.is_staff:
                 return JsonResponse({"redirect_url": "/manager/"}, status=200)
             else:
