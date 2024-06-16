@@ -1,10 +1,48 @@
-from rest_framework import viewsets
-from .models import CustomUser, Contract
-from .serializers import UserSerializer, ContractSerializer
-from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
 
+@csrf_exempt
+def send_form(request):
+    if request.method == 'POST':
+        # request.POST.get(item_name='name in html)')
+        phone = request.POST.get('phone')
+        name = request.POST.get('name')
+        
+        email_message = f"""
+        Номер телефона: {phone}
+        Имя: {name}
+        """
+        try:
+            email = request.POST.get('email')
+            email_message = f"Email: {email}\n" + email_message
+        except KeyError:
+            pass
+        
+        try:
+            service_type = request.POST.get('serviceType')
+            email_message = f"Тип услуги: {service_type}\n" + email_message
+        except KeyError:
+            pass
+        
+        try:
+            message = request.POST.get('message')
+            email_message = email_message + f"\nСообщение: {email}"
+        except KeyError:
+            pass
+    
+        send_mail(
+            'Заявка',
+            email_message,
+            'manager@site.ru',
+            ['manager@site.ru'],
+            fail_silently=False,
+        )
+
+        return JsonResponse({'message': 'Сообщение успешно отправлено'}, status=200)
+    return JsonResponse({'error': 'Неверный метод запроса'}, status=400)
 
 def main_page(request):
     return render(request, 'pages/main.html')
