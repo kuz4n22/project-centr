@@ -2,3 +2,237 @@
   max-width: 1120px;
   margin: 166px auto 100px;
 }
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 100px;
+}
+
+.contact-data {
+  padding: 20px 20px;
+  width: 225px;
+  height: 233px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #222220 0%, #383838 100%);
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.contact-data h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.contact-data p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.control-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex: 1;
+}
+
+
+.add-client , .change-view {
+  max-width: 835px;
+  height: 80px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  background: rgba(34, 34, 32, 0.00);
+  color: #222220;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.active-clients {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #222220;
+  color: #FFF;
+  flex: 1;
+}
+
+.finished-clients {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #FFF;
+  color: #222220;
+  flex: 1;
+}
+
+
+ /* views */
+
+.active-container {
+  display: block;
+}
+
+.finished-container {
+  display: none;
+}
+
+.add-container {
+  display: none;
+}
+
+.active-container h1,
+.finished-container h1,
+.add-container h1 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%; 
+  margin-bottom: 80px;
+}
+
+.client-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  max-width: 1080px;
+  margin-bottom: 80px; 
+  padding: 30px 20px 50px 20px; 
+}
+
+.client-container h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%;
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.client-info p {
+  color: rgba(34, 34, 32, 0.6);
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.client-info span {
+  color: #222220;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.contract {
+  display: flex;
+  gap: 50px;
+}
+
+
+/* stages */
+
+.client-stages-container h2,
+.client-btns-container h2 {
+  margin-bottom: 30px;
+}
+
+.client-stages-container {
+  margin-bottom: 50px;
+}
+
+.stage-elements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stage-element {
+  padding: 20px;
+  width: 130px;
+  height: 128px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  background: #222220;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+
+.stage-element h3 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%;
+}
+
+.stage-element p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.client-btns {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ gap: 40px;
+}
+
+.client-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 362px;
+  height: 80px;
+  border-radius: 10px;
+  background: #222220;
+  color: #FFF;
+  flex: 1;
+}
+
+.client-btn-disabled {
+  opacity: 0.4;
+}
+
+.add-container form {
+  color: #FFF;
+  padding: 50px;
+  width: 1015px;
+  height: 1230px;
+  border-radius: 20px;
+  border: 1px solid #222220;
+  background: #222220;
+}
+

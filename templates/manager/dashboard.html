@@ -5,67 +5,173 @@
   <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 {% endblock %}
 
-{% block title %}Личный кабинет{% endblock %}
+{% block title %}Кабинет менеджера{% endblock %}
 
 {% block content %}
   <div class="dashboard-container">
-    <h1>Manager Dashboard</h1>
 
-    <h2>Active Clients</h2>
-    {% if active_clients %}
-        <ul>
+    <div class="top-container">
+      <div class="contact-data">
+        <h2>Менеджер</h2>
+        <div>
+          <h2>Телефон</h2>
+          <p>{{ request.user.phone_number }}</p>
+        </div>
+        <div>
+          <h2>Email</h2>
+          <p>{{ request.user.email }}</p>
+        </div>
+      </div>
+      <div class="control-btns">
+        <div id="add-client" class="add-client">
+          <p>Добавить пользователя</p>
+        </div>
+        <div class="change-view">
+          <div id="active-clients" class="active-clients">
+            <p>Активные проекты</p>
+          </div>
+          <div id="finished-clients" class="finished-clients">
+            <p>Завершённые проекты</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="active-container" class="active-container">
+      <h1>Список активных проектов</h1>
+      {% if active_clients %}
             {% for client in active_clients %}
-                <li>
-                    <strong>ID:</strong> {{ client.id }}<br>
-                    <strong>First Name:</strong> {{ client.first_name }}<br>
-                    <strong>Last Name:</strong> {{ client.last_name }}<br>
-                    <strong>Phone Number:</strong> {{ client.phone_number }}<br>
-                    <strong>Email:</strong> {{ client.email }}<br>
-                    <strong>Contract ID:</strong> {{ client.contract_id }}<br>
-                    <strong>Service Type:</strong> {{ client.service_type }}<br>
-                    <strong>Address:</strong> {{ client.address }}<br>
-                    <strong>Contract Number:</strong> {{ client.contract_number }}<br>
-                    <strong>Contract Date:</strong> {{ client.contract_date }}<br>
-                    <strong>Status:</strong> {{ client.status }}<br>
-                    <strong>Last Phase:</strong> {{ client.last_phase }}<br>
-                    <strong>Max Phases:</strong> {{ client.max_phases|join:", " }}<br>
-                </li>
+              <div class="client-container">
+                <div class="client-info">
+                  <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
+                  <p>Услуга: <span>{{ client.service_type }}</span></p>
+                  <p>Login: <span>{{ client.phone_number }}</span></p>
+                  <p>Email: <span>{{ client.email }}</span></p>
+                  <div class="contract">
+                    <p>Дата заключения договора: <span>{{ client.contract_date }}</span></p>
+                    <p>Номер договора: <span>{{ client.contract_id }}</span></p>
+                  </div>
+                </div>
+
+                <div class="client-stages-container">
+                  <h2>Cтатус</h2>
+                  <div class="stage-elements">
+                    <div class="stage-element">
+                      <h3>1 этап</h3>
+                      <p>Заказ исходной документации</p>
+                    </div>
+                    <div class="stage-element">
+                      <h3>2 этап</h3>
+                      <p>содержимое этапа разработки</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="client-btns-container">
+                  <h2>Действия</h2>
+                  <div class="client-btns">
+                    <div id="finish-btn" class="client-btn">Завершить проект</div>
+                    <div id="notifi-btn" class="client-btn">Уведомить о новом этапе</div>
+                    <div id="new-pass-btn" class="client-btn">Выслать новый пароль</div>
+                  </div>
+                </div>
+<!--                
+                <strong>Status:</strong> {{ client.status }}<br>
+                <strong>Last Phase:</strong> {{ client.last_phase }}<br>
+                <strong>Max Phases:</strong> {{ client.max_phases|join:", " }}<br> -->
+
+              </div>
             {% endfor %}
-        </ul>
     {% else %}
         <p>No active clients.</p>
     {% endif %}
 
-    <h2>Completed Clients</h2>
-    {% if completed_clients %}
-        <ul>
-            {% for client in completed_clients %}
-                <li>
-                    <strong>ID:</strong> {{ client.id }}<br>
-                    <strong>First Name:</strong> {{ client.first_name }}<br>
-                    <strong>Last Name:</strong> {{ client.last_name }}<br>
-                    <strong>Phone Number:</strong> {{ client.phone_number }}<br>
-                    <strong>Email:</strong> {{ client.email }}<br>
-                    <strong>Contract ID:</strong> {{ client.contract_id }}<br>
-                    <strong>Service Type:</strong> {{ client.service_type }}<br>
-                    <strong>Address:</strong> {{ client.address }}<br>
-                    <strong>Contract Number:</strong> {{ client.contract_number }}<br>
-                    <strong>Contract Date:</strong> {{ client.contract_date }}<br>
-                    <strong>Status:</strong> {{ client.status }}<br>
-                    <strong>Last Phase:</strong> {{ client.last_phase }}<br>
-                    <strong>Max Phases:</strong> {{ client.max_phases|join:", " }}<br>
-                    <strong>Completion Date:</strong> {{ client.completion_date }}<br>
-                </li>
+    </div>
+
+    <div id="finished-container" class="finished-container">
+      <h1>Список завершённых проектов</h1>
+      {% if completed_clients %}
+        {% for client in completed_clients %}
+          <div class="client-container">
+            <div class="client-info">
+              <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
+              <p>Услуга: <span>{{ client.service_type }}</span></p>
+              <p>Login: <span>{{ client.phone_number }}</span></p>
+              <p>Email: <span>{{ client.email }}</span></p>
+              <div class="contract">
+                <p>Дата заключения договора: <span>{{ client.contract_date }}</span></p>
+                <p>Дата завершения: <span>{{ client.completion_date }}</span></p>
+                <p>Номер договора: <span>{{ client.contract_id }}</span></p>
+              </div>
+            </div>
+    
+            <div class="client-stages-container">
+              <h2>Cтатус</h2>
+              <div class="stage-elements">
+                <div class="stage-element">
+                  <h3>1 этап</h3>
+                  <p>Заказ исходной документации</p>
+                </div>
+                <div class="stage-element">
+                  <h3>2 этап</h3>
+                  <p>содержимое этапа разработки</p>
+                </div>
+              </div>
+            </div>
+    
+            <div class="client-btns-container">
+              <h2>Действия</h2>
+              <div class="client-btns">
+                <div class="client-btn client-btn-disabled" disabled>Проект завершен</div>
+              </div>
+            </div>
+           </div>
             {% endfor %}
-        </ul>
+
     {% else %}
         <p>No completed clients.</p>
     {% endif %}
+    </div>
+
+    <div id="add-container" class="add-container">
+      <h1>Добавление пользователя</h1>
+      <form action="">
+
+
+        <div class="name-container">
+          <h2>1. Введите имя и фамилию</h2>
+          <input type="text" name="name" placeholder="Имя Фамилия">
+        </div>
+        <div class="radio-container">
+          <h2>2. Выберите услугу</h2>
+          <div class="radio-container-elements">
+            <label>
+                <input type="radio" name="serviceType" value="Перепланировка квартир" checked>
+                <div class="radio-button">Перепланировка квартир</div>
+            </label>
+            <label>
+                <input type="radio" name="serviceType" value="Перепланировка нежилых помещений">
+                <div class="radio-button">Перепланировка<br>нежилых помещений</div>
+            </label>
+            <label>
+                <input type="radio" name="serviceType" value="Перепланировка нежилых зданий">
+                <div class="radio-button">Перепланировка нежилых зданий</div>
+            </label>
+            <label>
+                <input type="radio" name="serviceType" value="Кадастровые работы">
+                <div class="radio-button">Кадастровые работы</div>
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
   </div>
 
 {% include 'includes/footer.html' %} 
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/manager.js' %}"></script>
+<script src="{% static 'js/dashboard.js' %}"></script>
 {% endblock %}
