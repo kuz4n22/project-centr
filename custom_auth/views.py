@@ -1,5 +1,4 @@
 from django.contrib.auth import authenticate, login
-from user.models import CustomUser
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
@@ -8,6 +7,8 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.html import escape
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.views.decorators.csrf import csrf_exempt
+
+from user.models import CustomUser
 
 
 @csrf_exempt
@@ -44,7 +45,7 @@ def password_reset(request, uidb64, token):
         user = CustomUser.objects.get(pk=uid)
     except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
         user = None
-
+        
     if user is not None and default_token_generator.check_token(user, token):
         if request.method == 'POST':
             new_password = request.POST.get('password')

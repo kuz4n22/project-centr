@@ -1,7 +1,10 @@
+import smtplib
+
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
+from django.core.mail import BadHeaderError, EmailMessage
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
+from django.utils.html import escape
 
 from custom_auth.decorators import manager_required
 from user.forms import UserCreationForm
@@ -69,21 +72,60 @@ def add_client(request):
 @login_required
 @manager_required
 def notify_next_phase(request, contract_id):
-    contract = get_object_or_404(Contract, id=contract_id)
-    if not contract.is_last_phase():
+    try:
+        contract = get_object_or_404(Contract, id=contract_id)
+        user = contract.user  # Предполагается, что в контракте есть связь с пользователем
+
+        if contract.last_phase():
+            return JsonResponse(
+                {
+                    "message": "Невозможно установить новый этап, так как этап уже последний",
+                    "error": "Невозможно установить новый этап, так как этап уже последний"
+                },
+                status=400,
+            )
+
+        
+        msg = EmailMessage(subject='Новый этап')
+        email_message = f'Здравствуйте, {user.first_name} { user.last_name }!'
+        email_message += f'\nВаш контракт №{contract.contract_number} перешел на новый этап: {contract.status}.'
+        email_message += f'\nДата заключения договора: { contract.contract_date }'
+        msg.body = escape(email_message)
+        msg.to = [user.email]  
+        
         contract.next_phase()
-        # Добавить логику об отправке письма на почту сюда
+        
+        try:       
+            msg.send(fail_silently=False)
+        except BadHeaderError:
+            return JsonResponse(
+                {"message": "Недопустимый заголовок в письме", "error": "Недопустимый заголовок в письме"},
+                status=400,
+            )
+        except smtplib.SMTPException as e:
+            return JsonResponse(
+                {"message": "Ошибка при отправке письма", "error": str(e)},
+                status=500,
+            )
+        
         return JsonResponse(
             {
-                "message": "Новый этап успешно установлен.\nИ уведомление о новом этапе успешно отправлено",
+                "message": "Новый этап успешно установлен. Уведомление о новом этапе успешно отправлено.",
                 "new_status": contract.status,
             },
-            status=200, 
+            status=200,
         )
-    else:
+        
+    except Contract.DoesNotExist:
         return JsonResponse(
-            {"message": "Невозможно установить новый этап, так как этап уже последний",
-            "error": "Невозможно установить новый этап, так как этап уже последний"}
+            {"message": "Контракт не найден", "error": "Контракт не найден"},
+            status=404,
+        )
+
+    except Exception as e:
+        return JsonResponse(
+            {"message": "Произошла ошибка при установке нового этапа или отправке уведомления", "error": str(e)},
+            status=500,
         )
 
 
@@ -115,16 +157,19 @@ def complete_project(request, contract_id):
 def send_new_password(request, user_id):
     user = get_object_or_404(CustomUser, id=user_id)
     new_password = CustomUser.objects.make_random_password()
-    # тут наеб пока)
-    send_mail(
-        "Ваш новый пароль",
-        f"Ваш новый пароль: {new_password}",
-        "mail@mail.com",
-        [user.email],
-        fail_silently=False,
-    )
-    user.set_password(new_password)
-    user.save()
+    
+    msg = EmailMessage(subject='Новый пароль')
+    email_message = f'Здравствуйте, {user.first_name} { user.last_name }!'
+    email_message += f'Ваш новый пароль: {new_password}.'
+    msg.body = escape(email_message)
+    msg.to = [user.email]
+    
+    try:
+        msg.send(fail_silently=False)
+        user.set_password(new_password)
+        user.save()
+    except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
     return JsonResponse(
         {"message": "Новый пароль успешно отправлен на вашу почту"}, status=200
     )
