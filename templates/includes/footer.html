@@ -29,14 +29,14 @@
     </div>
   </div>
   <div class="footer-calc">
-    <h3><a href="">Калькулятор<br>стоимости</a></h3>
+    <h3><a href="{% url 'calculator' %}">Калькулятор<br>стоимости</a></h3>
   </div>
   <div class="footer-form">
-    <a href=""><img src="{% static 'img/main/footer_logo.svg' %}" alt="logo"></a>
+    <a href="{% url 'main' %}"><img src="{% static 'img/main/footer_logo.svg' %}" alt="logo"></a>
     <a class="footer-form-btn" href="{% url 'form' %}">Подать заявку</a>
   </div>
 
-  <div class="footer-copyright">© 2024 РПЦ | Политика конфиденциальности</div>
+  <div class="footer-copyright">© 2024 РПЦ | <a href="{% url 'politic' %}">Политика конфиденциальности</a></div>
   
   
 </div>

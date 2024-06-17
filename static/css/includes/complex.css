@@ -44,6 +44,10 @@
   padding: 30px 20px;
 }
 
+.complex-element a, .complex-element a:visited {
+  color: #FFF;
+}
+
 .complex-element h3 {
   position: absolute;
   top: 30px;

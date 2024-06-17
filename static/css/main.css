@@ -5,6 +5,12 @@
   max-width: 1120px;
 }
 
+.content-container a,
+.content-container a:visited,
+.content-container-img a,
+.content-container-img a:visited {
+  color: #FFF;
+}
 
 
 .btn {

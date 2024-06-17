@@ -79,6 +79,11 @@
   flex-basis: 16%;
 }
 
+.footer-calc a, .footer-calc a:visited {
+  color: #FFF;
+}
+
+
 /* form + logo */
 
 .footer-form {
@@ -128,6 +133,10 @@ height: 40px;
   line-height: normal;
 }
 
+
+.footer-copyright a, .footer-copyright a:visited {
+  color: #FFF;
+}
 
 
 

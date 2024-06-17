@@ -49,6 +49,10 @@ nav {
   transition: height 0.7s ease;
 }
 
+nav a, nav a:visited {
+  color: #222220;
+}
+
 .nav-container {
   position: absolute;
   top: 10px;
