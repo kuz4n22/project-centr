@@ -226,6 +226,12 @@
   opacity: 0.4;
 }
 
+
+
+
+
+
+/* form */
 .add-container form {
   color: #FFF;
   padding: 50px;
@@ -236,3 +242,94 @@
   background: #222220;
 }
 
+/* radio */
+
+.radio-container-elements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px 25px;
+}
+
+.radio-button {
+  width: 495px;
+  height: 80px;
+  border-radius: 10px;
+  border: 1px solid #FFF;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #FFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .radio-button {
+  background: #FFF;
+  color: #222220;
+}
+
+/* input */
+.form-element-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.radio-container {
+  margin: 50px 0 50px;
+}
+
+.form-element-container p,
+.radio-container p {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%;
+}
+
+.radio-container p {
+margin-bottom: 30px;
+}
+
+.form-element-container input {
+  padding: 0 20px;
+  width: 380px;
+  height: 80px;
+  border-radius: 10px;
+  background: #FFF;
+}
+
+.another-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+
+.submit-button {
+  margin-top: 80px;
+  width: 426px;
+  height: 80px;
+  background: #FFF;
+  border-radius: 20px;
+  color: #222220;
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

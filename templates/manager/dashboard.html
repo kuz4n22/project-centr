@@ -136,14 +136,12 @@
     <div id="add-container" class="add-container">
       <h1>Добавление пользователя</h1>
       <form action="">
-
-
-        <div class="name-container">
-          <h2>1. Введите имя и фамилию</h2>
+        <div class="form-element-container">
+          <p>1. Введите имя и фамилию</p>
           <input type="text" name="name" placeholder="Имя Фамилия">
         </div>
         <div class="radio-container">
-          <h2>2. Выберите услугу</h2>
+          <p>2. Выберите услугу</p>
           <div class="radio-container-elements">
             <label>
                 <input type="radio" name="serviceType" value="Перепланировка квартир" checked>
@@ -151,7 +149,7 @@
             </label>
             <label>
                 <input type="radio" name="serviceType" value="Перепланировка нежилых помещений">
-                <div class="radio-button">Перепланировка<br>нежилых помещений</div>
+                <div class="radio-button">Перепланировка нежилых помещений</div>
             </label>
             <label>
                 <input type="radio" name="serviceType" value="Перепланировка нежилых зданий">
@@ -162,11 +160,33 @@
                 <div class="radio-button">Кадастровые работы</div>
             </label>
           </div>
+          
         </div>
+        <div class="another-inputs">
+          <div class="form-element-container">
+            <p>3. Создание логина<br>(ввод телефона заказчика)</p>
+            <input type="tel" name="name" placeholder="+7 (999) 999-99-99">
+          </div>
+          <div class="form-element-container">
+            <p>4. Создание пароля</p>
+            <input type="password" name="name" placeholder="Password">
+          </div>
+          <div class="form-element-container">
+            <p>5. Ввод Email заказчика</p>
+            <input type="email" name="name" placeholder="Email">
+          </div>
+          <div class="form-element-container">
+            <p>6. Ввод номера договора</p>
+            <input type="text" name="name" placeholder="№">
+          </div>
+          <div class="form-element-container">
+            <p>7. Дата заключения договора</p>
+            <input type="date" name="name">
+          </div>
+        </div>
+        <input id="submitButton" class="submit-button" type="submit" value="Добавить пользователя">
       </form>
     </div>
-
-
   </div>
 
 {% include 'includes/footer.html' %} 
