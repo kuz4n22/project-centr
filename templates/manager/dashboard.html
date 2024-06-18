@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block link %}
   <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
@@ -44,11 +45,10 @@
               <div class="client-container">
                 <div class="client-info">
                   <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
-                  <p>Услуга: <span>{{ client.service_type }}</span></p>
-                  <p>Login: <span>{{ client.phone_number }}</span></p>
+                  <p>Login: <span>{{ client.phone_number|format_phone }}</span></p>
                   <p>Email: <span>{{ client.email }}</span></p>
                   <div class="contract">
-                    <p>Дата заключения договора: <span>{{ client.contract_date }}</span></p>
+                    <p>Дата заключения договора: <span>{{ client.contract_date|date:"d.m.Y" }}</span></p>
                     <p>Номер договора: <span>{{ client.contract_id }}</span></p>
                   </div>
                 </div>
@@ -95,12 +95,11 @@
           <div class="client-container">
             <div class="client-info">
               <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
-              <p>Услуга: <span>{{ client.service_type }}</span></p>
-              <p>Login: <span>{{ client.phone_number }}</span></p>
+              <p>Login: <span>{{ client.phone_number|format_phone }}</span></p>
               <p>Email: <span>{{ client.email }}</span></p>
               <div class="contract">
-                <p>Дата заключения договора: <span>{{ client.contract_date }}</span></p>
-                <p>Дата завершения: <span>{{ client.completion_date }}</span></p>
+                <p>Дата заключения договора: <span>{{ client.contract_date|date:"d.m.Y" }}</span></p>
+                <p>Дата завершения: <span>{{ client.completion_date|date:"d.m.Y" }}</span></p>
                 <p>Номер договора: <span>{{ client.contract_id }}</span></p>
               </div>
             </div>

@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block link %}
   <link rel="stylesheet" href="{% static 'css/user/profile.css' %}">
@@ -14,7 +15,7 @@
       <h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
       <div>
         <h2>Телефон</h2>
-        <p>{{ request.user.phone_number }}</p>
+        <p>{{ request.user.phone_number|format_phone }}</p>
       </div>
       <div>
         <h2>Email</h2>
@@ -29,7 +30,7 @@
       <div class="data-and-id">
         <div class="data-container">
           <h3>Дата заключения договора</h3>
-          <p>{{ user_contract.contract_date }}</p>
+          <p>{{ user_contract.contract_date|date:"d.m.Y" }}</p>
         </div>
         <div class="id-container">
           <h3>Номер договора</h3>
