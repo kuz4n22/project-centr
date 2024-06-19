@@ -40,36 +40,100 @@
     </div>
   </div>
 
-<div class="status-container">
-  <h2>Статус</h2>
-  <div class="status-elements">
-    <div class="status-element">
-      <h2>1 этап</h2>
-      <p></p>
-    </div>
-    <div class="status-element">
-      <h2>1 этап</h2>
-      <p>Заказ исходной документации</p>
-    </div>
-    <div class="status-element">
-      <h2>1 этап</h2>
-      <p>Заказ исходной документации</p>
-    </div>
-    <div class="status-element">
-      <h2>1 этап</h2>
-      <p>Заказ исходной документации</p>
-    </div>
-    <div class="status-element" selected>
-      <h2>1 этап</h2>
-      <p>Заказ исходной документации</p>
-    </div>
-    <div class="status-element">
-      <h2>1 этап</h2>
-      <p>Заказ исходной документации</p>
+  <div class="client-stages-container">
+    <h2>Cтатус</h2>
+    <div class="stage-elements" id="stage-elements" data-service-type="{{ user_contract.service_type }}" data-status="{{ user_contract.status }}">
+      {% if user_contract.service_type == 1 %}
+        <div class="stage-element {% if user_contract.status == 1 %}stage-element-current{% endif %}">
+          <h3>1 этап</h3>
+          <p>Заказ исходной документации</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 2 %}stage-element-current{% endif %}">
+          <h3>2 этап</h3>
+          <p>Разработка проекта перепланировки</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 3 %}stage-element-current{% endif %}">
+          <h3>3 этап</h3>
+          <p>Согласование пожарного надзора</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 4 %}stage-element-current{% endif %}">
+          <h3>4 этап</h3>
+          <p>Согласование документации в МВК</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 5 %}stage-element-current{% endif %}">
+          <h3>5 этап</h3>
+          <p>Ввод квартиры в эксплуатацию</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 6 %}stage-element-current{% endif %}">
+          <h3>6 этап</h3>
+          <p>Подготовка технического плана и регистрация в Росреестре</p>
+        </div>
+      {% elif user_contract.service_type == 2 %}
+        <div class="stage-element {% if user_contract.status == 1 %}stage-element-current{% endif %}">
+          <h3>1 этап</h3>
+          <p>Заказ исходной документации</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 2 %}stage-element-current{% endif %}">
+          <h3>2 этап</h3>
+          <p>Разработка проекта перепланировки</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 3 %}stage-element-current{% endif %}">
+          <h3>3 этап</h3>
+          <p>Согласование пожарного надзора и Роспотребнадзора</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 4 %}stage-element-current{% endif %}">
+          <h3>4 этап</h3>
+          <p>Согласование документации в МВК</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 5 %}stage-element-current{% endif %}">
+          <h3>5 этап</h3>
+          <p>Ввод в эксплуатацию</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 6 %}stage-element-current{% endif %}">
+          <h3>6 этап</h3>
+          <p>Подготовка технического плана и регистрация в Росреестре</p>
+        </div>
+      {% elif user_contract.service_type == 3 %}
+        <div class="stage-element {% if user_contract.status == 1 %}stage-element-current{% endif %}">
+          <h3>1 этап</h3>
+          <p>Заказ исходной документации</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 2 %}stage-element-current{% endif %}">
+          <h3>2 этап</h3>
+          <p>Разработка проекта перепланировки</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 3 %}stage-element-current{% endif %}">
+          <h3>3 этап</h3>
+          <p>Подготовка документов</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 4 %}stage-element-current{% endif %}">
+          <h3>4 этап</h3>
+          <p>Получение акта рабочей комиссии</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 5 %}stage-element-current{% endif %}">
+          <h3>5 этап</h3>
+          <p>Изготовление технического плана</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 6 %}stage-element-current{% endif %}">
+          <h3>6 этап</h3>
+          <p>Регистрация в Росреестре</p>
+        </div>
+      {% elif user_contract.service_type == 4 %}
+        <div class="stage-element {% if user_contract.status == 1 %}stage-element-current{% endif %}">
+          <h3>1 этап</h3>
+          <p>Заказ исходной документации</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 2 %}stage-element-current{% endif %}">
+          <h3>2 этап</h3>
+          <p>Выезд на замер инженера</p>
+        </div>
+        <div class="stage-element {% if user_contract.status == 3 %}stage-element-current{% endif %}">
+          <h3>3 этап</h3>
+          <p>Формирование технического плана</p>
+        </div>
+      {% endif %}
     </div>
   </div>
-</div>
-</div>
 
 {% include 'includes/footer.html' %} 
 {% endblock %}
