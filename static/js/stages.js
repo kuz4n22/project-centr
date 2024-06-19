@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => {
                 console.error('Error during fetch operation:', error);
-                alert('Произошла ошибка при завершении проекта');
+                alert('Произошла ошибка при изменении этапа');
             });
 
 
@@ -62,7 +62,26 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener('click', function () {
 
             const clientId = btn.dataset.clientId;
+            const url = `/manager/send_new_password/${clientId}/`;
 
+            fetch(url, {
+                method: 'GET', 
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest', 
+                    'X-CSRFToken': '{{ csrf_token }}' 
+                },
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);  
+                alert(data.message);  
+            })
+            .catch(error => {
+                console.error('Error during fetch operation:', error);
+                alert('Произошла ошибка при смене пароля');
+            });
 
 
         });
