@@ -172,21 +172,30 @@
 .stage-elements {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .stage-element {
   padding: 20px;
   width: 130px;
-  height: 128px;
+  /* height: 128px;  cant fit text */
   border-radius: 20px;
   border: 1px solid #222220;
-  background: #222220;
-  color: #FFF;
+  color: #222220;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 10px;
+  opacity: 0.6;
+  word-wrap: break-word;
+
+}
+
+.stage-element-current {
+  background: #222220;
+  color: #FFF;
+  opacity: 1;
 }
 
 .stage-element h3 {
@@ -210,7 +219,10 @@
  gap: 40px;
 }
 
-.client-btn {
+.client-btn,
+.client-finish-btn,
+.client-notifi-btn,
+.client-new-pass-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,10 +232,12 @@
   background: #222220;
   color: #FFF;
   flex: 1;
+  cursor: pointer;
 }
 
 .client-btn-disabled {
   opacity: 0.4;
+  cursor: default;
 }
 
 
