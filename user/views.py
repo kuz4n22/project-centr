@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.utils.html import escape
 from django.views.decorators.csrf import csrf_exempt
 
@@ -39,6 +39,13 @@ def send_form(request):
             return JsonResponse({'error': str(e)}, status=500)
 
     return JsonResponse({'error': 'Неверный метод запроса'}, status=400)
+
+def distribution(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    if request.user.is_staff:
+        return redirect('manager_dashboard')
+    return redirect('user_profile')
 
 def main_page(request):
     return render(request, 'pages/main.html')

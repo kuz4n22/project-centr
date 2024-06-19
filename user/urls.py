@@ -3,9 +3,9 @@ from rest_framework.routers import DefaultRouter
 
 from . import views
 
-
 urlpatterns = [
     path('profile/', views.user_profile, name='user_profile'),
+    path('distribution/', views.distribution, name='distribution'),
     path('', views.main_page, name='main'),
     path('apartments/', views.apartments_page, name='apartments'),
     path('spaces/', views.spaces_page, name='spaces'),
