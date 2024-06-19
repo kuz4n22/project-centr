@@ -178,7 +178,8 @@
 
 .stage-elements {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 9px;
   flex-wrap: wrap;
 }
 
