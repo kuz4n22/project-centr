@@ -61,16 +61,16 @@ class UserCreationForm(forms.ModelForm):
         
         msg = EmailMessage(subject='Регистрация')
         email_message = f'Здравствуйте, {user.first_name} { user.last_name }!'
-        email_message += f'Ваши данные для входа на proectcetr.ru'
-        email_message += f'Логин: {user.phone_number}'
-        email_message += f'Пароль: {new_password}'
+        email_message += f'\nВаши данные для входа на proectcetr.ru'
+        email_message += f'\nЛогин: {user.phone_number}'
+        email_message += f'\nПароль: {new_password}'
         msg.body = escape(email_message)
         msg.to = [user.email]
         ### Добавить обработчик ошибок на отправку почты
-        msg.send(fail_silently=True)
         
         if commit:
             user.save()
+            msg.send(fail_silently=True)
             Contract.objects.create(
                 user=user,
                 contract_number=self.cleaned_data["contract_number"],

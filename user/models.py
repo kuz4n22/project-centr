@@ -47,7 +47,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 class Contract(models.Model):
     class ServiceTypeChoices(models.IntegerChoices):
         APARTMENT_REPLANNING = 1, 'Перепланировка квартиры'
-        RESIDENTIAL_REPLANNING = 2, 'Перепланировка жилых помещений'
+        RESIDENTIAL_REPLANNING = 2, 'Перепланировка нежилых помещений'
         NON_RESIDENTIAL_REPLANNING = 3, 'Перепланировка нежилого здания'
         CADASTRAL_WORK = 4, 'Кадастровые работы'
     
