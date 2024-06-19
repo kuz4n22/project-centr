@@ -1,8 +1,12 @@
 import re
-from django.utils import timezone
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import CustomUser, Contract
+from django.core.mail import EmailMessage
+from django.utils import timezone
+from django.utils.html import escape
+
+from .models import Contract, CustomUser
 
 
 class UserCreationForm(forms.ModelForm):
@@ -11,7 +15,6 @@ class UserCreationForm(forms.ModelForm):
         label="Тип услуги", choices=Contract.ServiceTypeChoices.choices
     )
     phone_number = forms.CharField(label="Номер телефона", max_length=15)
-    password = forms.CharField(label="Пароль", widget=forms.PasswordInput)
     email = forms.EmailField(label="Email")
     contract_number = forms.CharField(label="Номер договора", max_length=20)
     address = forms.CharField(label="Адрес объекта", max_length=255, required=False)
@@ -27,7 +30,6 @@ class UserCreationForm(forms.ModelForm):
         fields = [
             "full_name",
             "phone_number",
-            "password",
             "email",
             "service_type",
             "contract_number",
@@ -53,8 +55,20 @@ class UserCreationForm(forms.ModelForm):
 
         user.first_name = first_name
         user.last_name = last_name
-        user.set_password(self.cleaned_data["password"])
-
+        
+        new_password = CustomUser.objects.make_random_password()
+        user.set_password(new_password)
+        
+        msg = EmailMessage(subject='Регистрация')
+        email_message = f'Здравствуйте, {user.first_name} { user.last_name }!'
+        email_message += f'Ваши данные для входа на proectcetr.ru'
+        email_message += f'Логин: {user.phone_number}'
+        email_message += f'Пароль: {new_password}'
+        msg.body = escape(email_message)
+        msg.to = [user.email]
+        ### Добавить обработчик ошибок на отправку почты
+        msg.send(fail_silently=True)
+        
         if commit:
             user.save()
             Contract.objects.create(
