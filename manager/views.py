@@ -159,7 +159,8 @@ def send_new_password(request, user_id):
     new_password = CustomUser.objects.make_random_password()
     
     msg = EmailMessage(subject='Новый пароль')
-    email_message = f'Здравствуйте, {user.first_name} { user.last_name }!'
+    email_message = f'Здравствуйте, {user.first_name} { user.last_name }! '
+    email_message += f'Ваш логин: {user.phone_number}. '
     email_message += f'Ваш новый пароль: {new_password}.'
     msg.body = escape(email_message)
     msg.to = [user.email]
