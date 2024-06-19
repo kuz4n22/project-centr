@@ -35,7 +35,7 @@ def manager_dashboard(request):
                 "contract_date": contract.contract_date,
                 "status": contract.status,
                 "is_done": contract.is_done,
-                "last_phase": contract.last_phase,
+                "is_last_phase": contract.is_last_phase,
                 "max_phases": list(range(1, contract.max_phases()+1)),
             }
 
@@ -76,7 +76,7 @@ def notify_next_phase(request, contract_id):
         contract = get_object_or_404(Contract, id=contract_id)
         user = contract.user  # Предполагается, что в контракте есть связь с пользователем
 
-        if contract.last_phase():
+        if contract.is_last_phase():
             return JsonResponse(
                 {
                     "message": "Невозможно установить новый этап, так как этап уже последний",
