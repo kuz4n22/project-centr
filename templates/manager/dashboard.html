@@ -303,28 +303,28 @@
 
     <div id="add-container" class="add-container">
       <h1>Добавление пользователя</h1>
-      <form action="">
+      <form id="form-send" method="post" action="/add_client/">
         <div class="form-element-container">
           <p>1. Введите имя и фамилию</p>
-          <input type="text" name="name" placeholder="Имя Фамилия">
+          <input type="text" name="full_name" placeholder="Имя Фамилия">
         </div>
         <div class="radio-container">
           <p>2. Выберите услугу</p>
           <div class="radio-container-elements">
             <label>
-                <input type="radio" name="serviceType" value="Перепланировка квартир" checked>
+                <input type="radio" name="service_type" value="Перепланировка квартир" checked>
                 <div class="radio-button">Перепланировка квартир</div>
             </label>
             <label>
-                <input type="radio" name="serviceType" value="Перепланировка нежилых помещений">
+                <input type="radio" name="service_type" value="Перепланировка нежилых помещений">
                 <div class="radio-button">Перепланировка нежилых помещений</div>
             </label>
             <label>
-                <input type="radio" name="serviceType" value="Перепланировка нежилых зданий">
+                <input type="radio" name="service_type" value="Перепланировка нежилых зданий">
                 <div class="radio-button">Перепланировка нежилых зданий</div>
             </label>
             <label>
-                <input type="radio" name="serviceType" value="Кадастровые работы">
+                <input type="radio" name="service_type" value="Кадастровые работы">
                 <div class="radio-button">Кадастровые работы</div>
             </label>
           </div>
@@ -333,23 +333,23 @@
         <div class="another-inputs">
           <div class="form-element-container">
             <p>3. Создание логина<br>(ввод телефона заказчика)</p>
-            <input type="tel" name="name" placeholder="+7 (999) 999-99-99">
+            <input type="tel" name="phone_number" placeholder="+7 (999) 999-99-99">
           </div>
           <div class="form-element-container">
-            <p>4. Создание пароля</p>
-            <input type="password" name="name" placeholder="Password">
+            <p>4. Адрес объекта</p>
+            <input type="text" name="address" placeholder="Адрес">
           </div>
           <div class="form-element-container">
             <p>5. Ввод Email заказчика</p>
-            <input type="email" name="name" placeholder="Email">
+            <input type="email" name="email" placeholder="Email">
           </div>
           <div class="form-element-container">
             <p>6. Ввод номера договора</p>
-            <input type="text" name="name" placeholder="№">
+            <input type="text" name="contract_number" placeholder="№">
           </div>
           <div class="form-element-container">
             <p>7. Дата заключения договора</p>
-            <input type="date" name="name">
+            <input type="date" name="contract_date">
           </div>
         </div>
         <input id="submitButton" class="submit-button" type="submit" value="Добавить пользователя">
@@ -363,4 +363,5 @@
 {% block scripts %}
 <script src="{% static 'js/dashboard.js' %}"></script>
 <script src="{% static 'js/stages.js' %}"></script>
+<script src="{% static 'js/addClient.js' %}"></script>
 {% endblock %}
