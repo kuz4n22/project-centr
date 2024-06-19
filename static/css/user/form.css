@@ -31,7 +31,9 @@
 
 /* inputs */
 
-.customer-name, .customer-tel, .customer-email {
+.customer-name,
+.customer-tel,
+.customer-email {
   border: none;
   height: 22px;
   border-radius: 10px;
@@ -161,3 +163,45 @@
   font-weight: 700;
 }
 
+/* validation */
+
+.customer-name-container,
+.customer-tel-container,
+.customer-email-container {
+  position: relative;
+}
+
+.customer-name-container span,
+.customer-tel-container span,
+.customer-email-container span {
+  position: absolute;
+  top: 50px;
+  left: -100px;
+}
+
+.textMessage,
+.emailMessage,
+.telMessage {
+  display: none;
+}
+
+input {
+  border: 2px solid grey;
+  padding: 8px;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.valid {
+  border-color: green;
+}
+
+.invalid {
+  border-color: red;
+}
+
+span {
+  font-size: 14px;
+  margin-left: 10px;
+}

@@ -11,21 +11,32 @@
     <div class="request-container">
       <h1>Заполни форму</h1>
       <form action="">
-        <input class="customer-name" placeholder="ФИО" type="text" required>
+        <div class="customer-name-container">
+          <input id="customer-name" class="customer-name" placeholder="ФИО" type="text" required>
+          <span id="textMessage"></span>
+       </div>
         <div class="tel-email-container">
-          <input class="customer-tel" placeholder="Мобильный телефон" type="tel" required>
-          <input class="customer-email" placeholder="Email" type="email" required>
+          <div class="customer-tel-container">
+            <input id="customer-tel" class="customer-tel" placeholder="Мобильный телефон" type="tel" required>
+            <span id="telMessage"></span>
+          </div>
+          <div class="customer-email-container">
+            <input id="customer-email" class="customer-email" placeholder="Email" type="email" required>
+            <span id="emailMessage"></span>
+          </div>  
         </div>
         <label class="custom-checkbox">
           <input type="checkbox" id="customCheckbox">
           <span class="custom-checkbox-img"></span>
           <span>Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
-      </label>
+        </label>
         <input id="submitButton" class="request-send" type="submit" value="Отправить заявку" disabled>
       </form>
     </div>
 {% endblock %}
 
 {% block scripts %}
+<script src="https://unpkg.com/imask"></script>
 <script src="{% static 'js/checkbox.js' %}"></script>
+<script src="{% static 'js/form.js' %}"></script>
 {% endblock %}
