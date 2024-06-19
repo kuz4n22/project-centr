@@ -63,6 +63,13 @@
   justify-content: space-around;
 }
 
+.add-client,
+.active-clients,
+.finished-clients,
+.submit-button {
+  cursor: pointer;
+}
+
 .active-clients {
   display: flex;
   height: 100%;
