@@ -60,11 +60,10 @@ def add_client(request):
         if form.is_valid():
             form.save()
             return JsonResponse({"message": "Пользователь успешно добавлен"})
-        else:
-            return JsonResponse(
-                {"message": "Ошибка при добавлении пользователя", "error": form.errors},
-                status=400,
-            )
+        return JsonResponse(
+            {"message": "Ошибка при добавлении пользователя", "error": form.errors},
+            status=400,
+        )
     form = UserCreationForm()
     return render(request, "manager/dashboard.html", {"form": form})
 
