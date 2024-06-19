@@ -37,6 +37,10 @@
   line-height: 24px;
 }
 
+.about-to-form , .about-to-form:visited {
+  color: #FFF;
+}
+
 /* header */
 
 .about-header h1 {
