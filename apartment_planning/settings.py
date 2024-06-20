@@ -84,9 +84,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'apartment_planning.wsgi.application'
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+SECURE_SSL_REDIRECT = True  
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 3600  
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 DATABASES = {
     'default': {
