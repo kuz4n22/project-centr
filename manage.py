@@ -1,8 +1,8 @@
+#!/usr/bin/env python
+"""Django's command-line utility for administrative tasks."""
 import os
 import sys
-##sys.path.insert(0, '/home/g/genrikh/venv/project-##centr/lib/python3.11/site-packages/django')
-##sys.path.insert(0, '/home/g/genrikh/public_html/apartment_planning/')
-print('hello manage')
+
 
 def main():
     """Run administrative tasks."""

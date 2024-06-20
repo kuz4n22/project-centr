@@ -1,13 +1,16 @@
-import os, sys
+"""
+WSGI config for apartment_planning project.
 
+It exposes the WSGI callable as a module-level variable named ``application``.
 
-os.environ["DJANGO_SETTINGS_MODULE"] = "apartment_planning.settings"
-print('hello_wsgi')
+For more information on this file, see
+https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
+"""
 
-sys.path.append('/home/g/genrikh/project-centr/public_html')
-sys.path.append('/home/g/genrikh/venv/project-centr/lib/python3.11/site-packages/')
-#sys.path.remove('/usr/lib/python3.11/site-packages')
-os.environ["DJANGO_SETTINGS_MODULE"] = "apartment_planning.settings"
+import os
 
 from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'apartment_planning.settings')
+
 application = get_wsgi_application()
