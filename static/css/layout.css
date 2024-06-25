@@ -22,29 +22,25 @@ nav a:visited {
 
 .container {
   position: relative;
-  max-width: 1280px;
+  max-width: 1120px;
   padding-top: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
   margin: 0 auto;
-}
-
-.nav-overflow-container {
-  position: absolute;
-  top: 50px;
-  left: 80px;
-  width: 1120px;
+  background-color: lightblue;
 }
 
 nav {
-  position: relative;
+  position: absolute;
   z-index: 10;
-  max-width: 1080px;
-  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  width: calc(100% - 200px);
+  height: 60px;
+  margin: 0;
   padding: 0 20px;
-  background-color:#F3F3F3;
+  background-color: #F3F3F3;
   border-radius: 10px;
   transition: height 0.7s ease;
 }
@@ -57,33 +53,41 @@ nav a, nav a:visited {
   position: absolute;
   top: 10px;
   left: 20px;
-  width: 1080px;
+  width: calc(100% - 40px);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav__logo {
+.nav-logo {
   height: 34px;
 }
 
-.nav__controls {
+.nav-logo-mobile {
+  display: none;
+}
+
+.nav-controls {
   display: flex;
   justify-content: space-between;
   gap: 22px;
 }
 
-.nav__controls a {
+.nav-controls a {
   font-weight: 400;
 }
 
-.nav__btns {
+.nav-btns {
   display: flex;
   gap: 19px;
   align-items: center;
 }
 
-.nav__application {
+.nav-btns-mobile {
+  display: none;
+}
+
+.nav-application {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +99,7 @@ nav a, nav a:visited {
   font-size: 12px;
 }
 
-.nav__lk {
+.nav-lk {
   height: 32px;
 }
 
@@ -138,4 +142,49 @@ nav a, nav a:visited {
 
 .overlay.visible {
   display: block;
+}
+
+/* nav mobile */
+@media (max-width: 1280px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 935px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  nav {
+    width: calc(100% - 90px);
+  }
+
+  .nav-container {
+    position: static;
+    width: 100%;
+  }
+
+  .nav-logo-desktop {
+    display: none;
+  }
+
+  .nav-logo-mobile {
+    display: block;
+  }
+
+  .nav-controls {
+    display: none;
+  }
+
+  .nav-btns {
+    display: none;
+  }
+
+  .nav-btns-mobile {
+    display: flex;
+    gap: 16px;
+  }
 }

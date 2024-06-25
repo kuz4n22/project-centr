@@ -15,7 +15,7 @@
 
 .btn {
   display: flex;
-  width: 232px;
+  width: 184px;
   height: 40px;
   padding: 10px 24px;
   justify-content: center;
@@ -26,6 +26,14 @@
 
 
 /* header */
+
+.mobile-header {
+  display: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
 
 .content-container-img {
   margin-top: 160px;
@@ -54,8 +62,10 @@
   left: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 819px;
+  align-items: center; 
+  /* gap: 50px; */
+  max-width: 819px;
+  width: 100%;
   height: 64px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.4);
@@ -66,6 +76,7 @@
 .header-content h2 {
   line-height: 32px;
   letter-spacing: 0.48px; 
+  max-width: 500px;
 }
 
 /* offers */ 
@@ -132,10 +143,10 @@
 /* calculator */
 
 .calculator-img {
-  width: 1068px;
+  max-width: 1068px;
   height: 288px;
   border-radius: 10px;
-  background: url(../img/main/calc_img.png) 100% / cover no-repeat;
+  background: url(../img/main/calc_img.png) center / cover no-repeat;
   padding-top: 127px;
   padding-left: 52px;
   gap: 20px;
@@ -185,5 +196,41 @@
   font-weight: 400;
   line-height: 24px; 
   letter-spacing: 0.32px;
+}
+
+/* mobile */
+
+@media (max-width: 935px) {
+  .content-container-img {
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 272 / 220;
+  }
+
+  .content-container-img::before {
+    opacity: 0;
+  }
+
+  .mobile-header {
+    display: block;
+    margin-top: 100px;
+  }
+
+  .header-content {
+    background: none;
+    position: static;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+  
+  .header-content h2 {
+    display: none;
+  }
 }
 
