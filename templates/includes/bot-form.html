@@ -14,19 +14,19 @@
     <form id="form-send" method="post" action="/send_form/">
     {% csrf_token %}
       <div class="radio-container">
-        <label>
+        <label class="item1">
             <input type="radio" name="serviceType" value="Перепланировка квартир" checked>
             <div class="radio-button">Перепланировка квартир</div>
         </label>
-        <label>
+        <label class="item2">
             <input type="radio" name="serviceType" value="Перепланировка нежилых помещений">
-            <div class="radio-button">Перепланировка<br>нежилых помещений</div>
+            <div class="radio-button">Перепланировка нежилых помещений</div>
         </label>
-        <label>
+        <label class="item3">
             <input type="radio" name="serviceType" value="Перепланировка нежилых зданий">
             <div class="radio-button">Перепланировка нежилых зданий</div>
         </label>
-        <label>
+        <label class="item4">
             <input type="radio" name="serviceType" value="Кадастровые работы">
             <div class="radio-button">Кадастровые работы</div>
         </label>
@@ -47,7 +47,7 @@
       <label class="custom-checkbox">
         <input type="checkbox" id="customCheckbox">
         <span class="custom-checkbox-img"></span>
-        <span>Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
+        <span class="custom-checkbox-text">Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
       </label>
       <input id="submitButton" class="request-send" type="submit" value="Подать заявку" disabled>
     </div>
