@@ -3,14 +3,12 @@
   max-width: 1120px;
   display: flex;
   justify-content: space-between;
-  gap: 83px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .faq-header h2 {
   max-width: 297px;
-}
-.faq-header h2 {
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -18,7 +16,6 @@
 }
 
 .faq-accordeon {
-  flex: 1 1 auto;
 }
 
 .accordeon-item {
@@ -38,6 +35,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;  
+  gap: 20px;
 }
 
 .question img {
@@ -60,4 +58,26 @@ transition: transform 0.3s ease;
   font-weight: 400;
   line-height: 24px; 
   max-width: 670px;
+}
+
+/* mobile */
+
+@media (max-width: 935px) {
+
+  .faq-container {
+    margin: 50px auto;
+  }
+
+  .faq-header h2 {
+    font-size: 20px;
+  }
+
+  .question h3 {
+    font-size: 16px;
+  }
+  
+  .answer {
+    font-size: 12px;
+  }
+
 }
