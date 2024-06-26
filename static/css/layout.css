@@ -27,6 +27,7 @@ nav a:visited {
   padding-left: 80px;
   padding-right: 80px;
   margin: 0 auto;
+  overflow: hidden;
   background-color: lightblue;
 }
 
@@ -145,6 +146,9 @@ nav a, nav a:visited {
 }
 
 /* nav mobile */
+
+
+
 @media (max-width: 1280px) {
   .container {
     padding-left: 80px;
