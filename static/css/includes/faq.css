@@ -15,9 +15,6 @@
   line-height: normal;
 }
 
-.faq-accordeon {
-}
-
 .accordeon-item {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   padding: 20px 0 20px;
@@ -26,7 +23,6 @@
 
 .accordeon-item-last {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-
 }
 
 .question {
@@ -39,7 +35,7 @@
 }
 
 .question img {
-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .question h3 {
