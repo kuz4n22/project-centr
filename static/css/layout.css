@@ -145,6 +145,87 @@ nav a, nav a:visited {
   display: block;
 }
 
+/* burger */
+
+ .burger-nav-list a,
+ .burger-nav-list a:visited,
+ .burger-services-list a,
+ .burger-services-list a:visited {
+  color: #222220;
+ }
+
+ .burger-container {
+  z-index: 11;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF;
+ }
+
+ .burger-menu {
+  width: 272px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+ }
+ 
+ .burger-close-btn {
+  align-self: end;
+  margin-bottom: 20px;
+ }
+
+
+ .burger-nav-list,
+ .burger-services-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+ }
+
+ #burger-services-button {
+  cursor: pointer;
+ }
+
+ .burger-services-list {
+  display: none;
+  text-align: center;
+ }
+
+ .burger-form,
+ .burger-form:visited {
+  display: flex;
+  width: 224px;
+  height: 40px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #222220;
+  color: #FFF;
+  margin-bottom: 30px;
+}
+
+.burger-divider {
+  margin-bottom: 30px;
+  width: 100vw;
+  height: 1px;
+  opacity: 0.1;
+  background: #222220;
+}
+
+.burger-contacts-smm {
+  display: flex;
+  gap: 16px;
+}
+
 /* nav mobile */
 
 
@@ -192,3 +273,4 @@ nav a, nav a:visited {
     gap: 16px;
   }
 }
+
