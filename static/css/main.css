@@ -64,7 +64,7 @@
   justify-content: space-between;
   align-items: center; 
   max-width: 819px;
-  width: 100%;
+  width: calc(100vw - 260px);
   height: 64px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.4);

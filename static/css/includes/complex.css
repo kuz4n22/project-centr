@@ -116,7 +116,7 @@
     justify-self: start;
   }
 
-  .content-container, .content-container-img {
+  .content-container {
     margin: 50px auto;
     max-width: 1120px;
   }
