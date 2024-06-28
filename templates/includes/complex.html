@@ -7,6 +7,85 @@
 <div class="content-container">
   <h2>Пакетные предложения</h2>
   <div class="complex-preview">
+    <div class="complex-element">
+      <h3>Старт пакет</h3>
+      <p class="element-description">Начните свой проект с нами<br>(проект + документы)</p>
+      <p class="element-price">от 20 000 ₽</p>
+      <div class="complex-content">
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Технический паспорт</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Согласование перепланировки</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Проект перепланировки</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Проект переустройства здания</p>
+        </div>
+      </div>
+      <a href="{% url 'form' %}" class="complex-btn">Подать заявку</a>
+    </div>
+    <div class="complex-element">
+      <h3>Стандарт пакет</h3>
+      <p class="element-description">Улучшенный путь к вашему идеальному проекту</p>
+      <p class="element-price">от 40 000 ₽</p>
+      <div class="complex-content">
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Все услуги, входящие в Старт пакет</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Переобмер помещения после работ по перепланировке</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Документы для ввода в эксплуатацию</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Технический план</p>
+        </div>
+      </div>
+      <a href="{% url 'form' %}" class="complex-btn">Подать заявку</a>
+    </div>
+    <div class="complex-element">
+      <h3>Премиум пакет</h3>
+      <p class="element-description">Потребуется только доверенность, всё остальное сделаем мы</p>
+      <p class="element-price">от 80 000 ₽</p>
+      <div class="complex-content">
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Сбор и подготовка всех документов</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Согласование перепланировки</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Ввод в эксплуатацию квартиры</p>
+        </div>
+        <div class="content-element">
+          <img src="{% static 'img/main/check_icon.svg' %}" alt="">
+          <p>Получение новой выписки ЕГРН</p>
+        </div>
+      </div>
+      <a href="{% url 'form' %}" class="complex-btn">Подать заявку</a>
+    </div>
+  </div>
+  <div class="complex-preview-mobile" class="offers-slider-mobile" data-flickity='{
+    "freeScroll": false,
+    "contain": true,
+    "prevNextButtons": false,
+    "pageDots": true
+  }'>
 
     <div class="complex-element">
       <h3>Старт пакет</h3>
@@ -30,7 +109,7 @@
           <p>Проект переустройства здания</p>
         </div>
       </div>
-      <a href="{% url 'form' %}" class="complex-btn btn">Подать заявку</a>
+      <a href="{% url 'form' %}" class="complex-btn">Подать заявку</a>
     </div>
 
     <div class="complex-element">
@@ -44,7 +123,7 @@
         </div>
         <div class="content-element">
           <img src="{% static 'img/main/check_icon.svg' %}" alt="">
-          <p>Переобмер помещения после работ<br>по перепланировке</p>
+          <p>Переобмер помещения после работ по перепланировке</p>
         </div>
         <div class="content-element">
           <img src="{% static 'img/main/check_icon.svg' %}" alt="">
@@ -55,7 +134,7 @@
           <p>Технический план</p>
         </div>
       </div>
-      <a href="{% url 'form' %}" class="complex-btn btn">Подать заявку</a>
+      <a href="{% url 'form' %}" class="complex-btn">Подать заявку</a>
     </div>
 
     <div class="complex-element">
@@ -80,7 +159,7 @@
           <p>Получение новой выписки ЕГРН</p>
         </div>
       </div>
-      <a href="{% url 'form' %}" class="complex-btn btn">Подать заявку</a>
+      <a href="{% url 'form' %}" class="complex-btn">Подать заявку</a>
     </div>
     
   </div>

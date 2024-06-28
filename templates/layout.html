@@ -5,49 +5,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{% endblock %}</title>
-  {% block link %}{% endblock %}
   <link rel="stylesheet" href="{% static 'css/layout.css' %}">
   <link rel="stylesheet" href="{% static 'css/flickity.css' %}" media="screen">
+  {% block link %}{% endblock %}
   <link type="image/x-icon" href="{% static 'img/favicon.png' %}" rel="shortcut icon">
   <link type="Image/x-icon" href="{% static 'img/favicon.png' %}" rel="icon">
 </head>
 <body>
   <div class="container">
-    <div class="nav-overflow-container">
-      <nav>
-        <div class="nav-container">
-          <div class="nav__logo">
-            <a href="{% url 'main' %}">
-            <img src="{% static 'img/nav_logo.svg' %}" alt="logo">
-            </a>
-          </div>
-          <div class="nav__controls">
-            <a href="{% url 'main' %}">Главная</a>
-            <a href="" id="services-button">Услуги</a>
-            <a href="{% url 'calculator' %}">Калькулятор</a>
-            <a href="{% url 'about' %}">О компании</a>
-            <a href="{% url 'contacts' %}">Контакты</a>
-          </div>
-          <div class="nav__btns">
-            <a class="nav__application" href="{% url 'form' %}">Заявка</a>
-            <a class="nav__lk" href="{% url 'login' %}">
-              <img src="{% static 'img/lk.svg' %}" alt="lk">
-            </a>
-          </div>
+    <div id="burger-container" class="burger-container">
+      <div class="burger-menu">
+        <div id="burger-close-btn" class="burger-close-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="14.5" stroke="#D9D9D9"/>
+            <rect x="20.6562" y="9.34375" width="1" height="16" transform="rotate(45 20.6562 9.34375)" fill="#222220"/>
+            <rect x="9.34375" y="9.34375" width="16" height="1" transform="rotate(45 9.34375 9.34375)" fill="#222220"/>
+          </svg>
         </div>
-
-        <div id="services-dropdown" class="services-dropdown">
-          <div class="dropdown-links">
-            <a href="{% url 'apartments' %}">Перепланировка квартир</a>
-            <a href="{% url 'spaces' %}">Перепланировка нежилых помещений</a>
-            <a href="{% url 'buildings' %}">Перепланировка нежилых зданий</a>
-            <a href="{% url 'cadastr' %}">Кадастровые работы</a>
-          </div>
-          <img src="{% static 'img/button_close.svg' %}" alt="close" id="close-services">
+        <div id="burger-nav-list" class="burger-nav-list">
+          <a href="{% url 'main' %}">Главная</a>
+          <div id="burger-services-button">Услуги</div>
+          <a href="{% url 'calculator' %}">Калькулятор</a>
+          <a href="{% url 'about' %}">О компании</a>
+          <a href="{% url 'contacts' %}">Контакты</a>
         </div>
-
-      </nav>
+        <div id="burger-services-list" class="burger-services-list">
+          <a href="{% url 'apartments' %}">Перепланировка квартир</a>
+          <a href="{% url 'spaces' %}">Перепланировка нежилых помещений</a>
+          <a href="{% url 'buildings' %}">Перепланировка нежилых зданий</a>
+          <a href="{% url 'cadastr' %}">Кадастровые работы</a>
+        </div>
+        <a href="{% url 'form' %}" class="burger-form">Подать заявку</a>
+        <div class="burger-divider"></div>
+        <div class="burger-contacts-smm">
+          <a href=""><img src="{% static 'img/main/telegram_icon.svg' %}" alt="telegram_icon"></a>
+          <a href=""><img src="{% static 'img/main/mail_icon.svg' %}" alt="email_icon"></a>
+          <a href=""><img src="{% static 'img/main/whatsapp_icon.svg' %}" alt="whatsapp_icon"></a>
+        </div>
+      </div>
     </div>
+
+    <nav>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="{% url 'main' %}">
+          <img class="nav-logo-desktop" src="{% static 'img/nav_logo.svg' %}" alt="logo">
+          <img class="nav-logo-mobile" src="{% static 'img/nav_logo_mobile.svg' %}" alt="logo">
+          </a>
+        </div>
+        <div class="nav-controls">
+          <a href="{% url 'main' %}">Главная</a>
+          <a href="" id="services-button">Услуги</a>
+          <a href="{% url 'calculator' %}">Калькулятор</a>
+          <a href="{% url 'about' %}">О компании</a>
+          <a href="{% url 'contacts' %}">Контакты</a>
+        </div>
+        <div class="nav-btns">
+          <a class="nav-application" href="{% url 'form' %}">Заявка</a>
+          <a class="nav-lk" href="{% url 'login' %}">
+            <img src="{% static 'img/lk.svg' %}" alt="lk">
+          </a>
+        </div>
+        <div class="nav-btns-mobile">
+          <a class="nav-lk" href="{% url 'login' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <circle cx="15" cy="15" r="14.5" stroke="#222220"/>
+              <path d="M8 23V22.0697C8 18.9873 10.3505 16.4884 13.25 16.4884H16.75C19.6495 16.4884 22 18.9873 22 22.0697V23" stroke="#222220" stroke-linecap="round"/>
+              <path d="M15.5 14.4418C13.567 14.4418 12 12.7759 12 10.7209C12 8.6659 13.567 7 15.5 7C17.433 7 19 8.6659 19 10.7209C19 12.7759 17.433 14.4418 15.5 14.4418Z" stroke="#222220" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <div class="nav-lk" id="burger-open-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <circle cx="15" cy="15" r="15" fill="#222220"/>
+              <rect x="8" y="12" width="14" height="1" fill="white"/>
+              <rect x="8" y="18" width="14" height="1" fill="white"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div id="services-dropdown" class="services-dropdown">
+        <div class="dropdown-links">
+          <a href="{% url 'apartments' %}">Перепланировка квартир</a>
+          <a href="{% url 'spaces' %}">Перепланировка нежилых помещений</a>
+          <a href="{% url 'buildings' %}">Перепланировка нежилых зданий</a>
+          <a href="{% url 'cadastr' %}">Кадастровые работы</a>
+        </div>
+        <img src="{% static 'img/button_close.svg' %}" alt="close" id="close-services">
+      </div>
+
+    </nav>
     <div id="overlay" class="overlay"></div>
     <main>
       {% block content %}{% endblock %}

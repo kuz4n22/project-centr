@@ -15,17 +15,26 @@
 
 .btn {
   display: flex;
-  width: 232px;
+  width: 184px;
   height: 40px;
   padding: 10px 24px;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background: #222220; 
+  background: #222220;
+  flex-shrink: 0;
 }
 
 
 /* header */
+
+.mobile-header {
+  display: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
 
 .content-container-img {
   margin-top: 160px;
@@ -54,8 +63,9 @@
   left: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 819px;
+  align-items: center; 
+  max-width: 819px;
+  width: calc(100vw - 260px);
   height: 64px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.4);
@@ -66,6 +76,7 @@
 .header-content h2 {
   line-height: 32px;
   letter-spacing: 0.48px; 
+  max-width: 500px;
 }
 
 /* offers */ 
@@ -79,21 +90,26 @@
   letter-spacing: 0.64px;
 }
 
-
+.offers-slider-mobile,
+.plan-preview-mobile {
+  display: none;
+}
 
 .offers-slider { 
   position: relative;
-  width: 1120px;
+  width: 100%;
   overflow: visible;
 }
 
 .flickity-viewport {
-  width: 1200px;
+  width: calc(100% + 80px);
 }
 
 .slider-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 30px 20px;
-  position: relative;
   width: 280px;
   height: 308px;
   border-radius: 20px;
@@ -109,17 +125,15 @@
 }
 
 .slider-element p {
-  font-weight: 400;
-  line-height: 24px;
   position: absolute;
   top: 104px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .slider-element a {
-  position: absolute;
-  top: 278px;
-  left: 20px;
   display: flex;
+
   justify-content: center;
   align-items:center;
   width: 280px;
@@ -132,16 +146,17 @@
 /* calculator */
 
 .calculator-img {
-  width: 1068px;
+  position: relative;
+  max-width: 1068px;
   height: 288px;
   border-radius: 10px;
-  background: url(../img/main/calc_img.png) 100% / cover no-repeat;
+  background: url(../img/main/calc_img.png) center / cover no-repeat;
   padding-top: 127px;
   padding-left: 52px;
   gap: 20px;
 }
 
-.calculator-img h2 {
+.calculator-img h3 {
   margin-bottom: 20px;
   color: #FFF;
   font-family: Manrope;
@@ -149,6 +164,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
 }
 
 /* plan */
@@ -160,6 +176,9 @@
 }
 
 .plan-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 30px 20px;
   position: relative;
   width: 280px;
@@ -178,12 +197,149 @@
 }
 
 .plan-element p {
-  position: absolute;
-  top: 116px;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; 
   letter-spacing: 0.32px;
+}
+
+.flickity-page-dots {
+  bottom: -22px;
+}
+
+.flickity-page-dots.dot {
+  height: 4px;
+  width: 40px;
+  margin: 0;
+  border-radius: 0;
+  color: red;
+}
+
+/* mobile */
+
+@media (max-width: 1200px) {
+  .plan-element  {
+    height: auto;
+  }
+}
+
+@media (max-width: 935px) {
+
+  .content-container, .content-container-img {
+    margin: 50px auto;
+    max-width: 1120px;
+  }
+
+  .content-container-img {
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 272 / 220;
+  }
+
+  .content-container-img::before {
+    opacity: 0;
+  }
+
+  .content-container h2 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 28px; 
+  }
+
+  .mobile-header {
+    display: block;
+    margin-top: 100px;
+  }
+
+  .header-content {
+    background: none;
+    position: static;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+  
+  .header-content h2 {
+    display: none;
+  }
+
+  .offers-slider,
+  .plan-preview {
+    display: none;
+  }
+
+  .offers-slider-mobile,
+  .plan-preview-mobile {
+    display: block;
+  }
+
+  .slider-element {
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: 217px;
+    height: 248px;
+    margin-right: 16px;
+  }
+
+  .slider-element h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .slider-element p {
+    width: 217px;
+    position: absolute;
+    top: 78px;
+    font-size: 12px;
+    word-wrap: break-word;
+    line-height: 20px;
+  }
+
+  .slider-element a {
+    width: 100%;
+    height: 60px;
+  }
+
+  .plan-element {
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: 217px;
+    height: 168px;
+    margin-right: 16px;
+  }
+  
+  .plan-element h3 {
+    font-size: 20px;
+  }
+  
+  .plan-element p {
+    font-size: 12px;
+    line-height: 20px; 
+  }
+
+  .flickity-viewport {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .calculator-img {
+    width: calc(100% - 40px);
+    height: 118px;
+    padding: 218px 20px 20px;
+  }
+  
+  .calculator-img h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  
 }
 

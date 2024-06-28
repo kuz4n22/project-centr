@@ -2,3 +2,6 @@ __pycache__/
 .DS_Store
 db.sqlite3
 user/migrations/0004_contract_address_alter_contract_contract_number_and_more.py
+manage.py
+apartment_planning/settings.py
+apartment_planning/wsgi.py

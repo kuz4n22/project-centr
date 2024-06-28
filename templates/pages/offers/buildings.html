@@ -48,6 +48,41 @@
       <p>Устройство дополнительного входа</p>
     </div>
   </div>
+  <div class="tasks-container-mobile" data-flickity='{
+    "freeScroll": false,
+    "contain": true,
+    "prevNextButtons": false,
+    "pageDots": true
+  }'>
+    <div class="tasks-column">
+      <div class="tasks-element">
+        <img src="{% static 'img/tasks_icons/tools.svg' %}" alt="">
+        <p>Демонтаж и монтаж перегородок</p>
+      </div>
+      <div class="tasks-element">
+        <img src="{% static 'img/tasks_icons/sizes.svg' %}" alt="">
+        <p>Изменение конфигурации и габаритов помещений</p>
+      </div>
+      <div class="tasks-element">
+        <img src="{% static 'img/tasks_icons/extend_flats.svg' %}" alt="">
+        <p>Объединение или разделение  помещений в здании</p>
+      </div>
+    </div>  
+    <div class="tasks-column">
+      <div class="tasks-element">
+        <img src="{% static 'img/tasks_icons/buildings.svg' %}" alt="">
+        <p>Постановка и снятие с учёта помещений в здании</p>
+      </div>
+      <div class="tasks-element">
+        <img src="{% static 'img/tasks_icons/correct_link.svg' %}" alt="">
+        <p>Изменение функционального назначения здания</p>
+      </div>
+      <div class="tasks-element">
+        <img src="{% static 'img/tasks_icons/extra_doorway.svg' %}" alt="">
+        <p>Устройство дополнительного входа</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="stages">
@@ -102,8 +137,62 @@
       </div>
     </div>
   </div>
+  <div class="stages-container-mobile" data-flickity='{
+    "freeScroll": false,
+    "contain": true,
+    "prevNextButtons": false,
+    "pageDots": true
+  }'>
+    <div class="stages-element">
+      <h3>1 этап</h3>
+      <p>Заказ исходной документации</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>1 неделя</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>2 этап</h3>
+      <p>Разработка проекта перепланировки </p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>2 недели</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>3 этап</h3>
+      <p>Подготовка документов</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>3 дня</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>4 этап</h3>
+      <p>Получение акта рабочей комиссии</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>4 дня</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>5 этап</h3>
+      <p>Изготовление технического плана</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>3 дня</p>
+      </div>
+    </div>
+    <div class="stages-element">
+      <h3>6 этап</h3>
+      <p>Регистрация в Росреестре</p>
+      <div class="stages-time">
+        <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
+        <p>4 дня</p>
+      </div>
+    </div>
+  </div>
 </div>
-<!--  TODO: change complex offers for this page -->
 {% include 'includes/complex.html' %}  
 {% include 'includes/faq.html' %}
 {% include 'includes/bot-form.html' %} 

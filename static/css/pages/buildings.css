@@ -19,3 +19,37 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 50px 80px;
 }
+
+.stages-container-mobile {
+  display: none;
+}
+
+@media (max-width: 935px) {
+  
+  .header h2 {
+    top: 312px;
+    max-width: 272px;
+  }
+
+  .tasks-container {
+    margin-top: 30px;
+  }
+
+  .stages-container {
+    display: none;
+  }
+
+  .stages-container-mobile {
+    display: flex;
+    margin-top: 30px;
+  }
+
+}
+
+@media (max-width: 640px) {
+  
+  .tasks-container {
+    display: none;
+  }
+
+}
