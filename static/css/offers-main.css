@@ -1,12 +1,14 @@
 
 /* header */
+
 .header {
+  position: absolute;
+  top: 0px;
+  left: -40px;
   z-index: 1;
   padding-left: 80px;
   margin: 0 auto;
-  margin-top: -110px;
-  position: relative;
-  max-width: 1280px;
+  width: 100%;
   height: 838px;
 }
 
@@ -56,7 +58,7 @@
 /* desctiption */
 
 .offer-description {
-  margin: 100px auto;
+  margin: 888px auto 100px;
   max-width: 1120px;
 
 }
@@ -184,4 +186,150 @@
 .stages-time img {
 width: 30px;
 height: 30px;
+}
+
+.flickity-viewport {
+  width: calc(100% + 80px);
+}
+
+.tasks-container-mobile {
+  display: none;
+}
+
+@media (max-width: 935px) {
+
+  .header {
+    height: 568px;
+    padding-left: 64px;
+  }
+  
+  .header h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    top: 344px;
+  }
+
+  .header a {
+    top: 428px;
+  }
+  
+  .offer-description {
+    margin: 568px auto 50px;
+  }
+
+  .offer-description h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .offer-description p {
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+  .our-tasks {
+    margin: 50px auto;
+  }
+  
+  .our-tasks h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .tasks-element {
+    width: 232px;
+    height: 40px;
+    padding: 20px;
+  }
+
+  .tasks-element img {
+   width: 40px;
+   height: auto;
+  }
+
+  .tasks-element p {
+    font-size: 12px;
+    line-height: 14px;
+   }
+
+
+  .stages {
+    margin: 50px auto;
+  }
+  
+  .stages h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .stages-element {
+    width: 232px;
+    height: 174px;
+    padding: 20px;
+    flex-shrink: 0;
+    margin-right: 16px;
+  }
+  
+  .stages-element h3 {
+    position: absolute;
+    top: 20px;
+    font-size: 24px;
+  }
+  
+  .stages-element p {
+    position: absolute;
+    top: 65px;
+    width: 232px;
+    line-height: 24px
+  }
+  
+  .stages-time {
+    position: absolute;
+    top: 143px;
+    width: 232px;
+    height: 51px;
+  }
+  
+  .stages-time p {
+    position: static;
+    width: auto;
+  }
+  
+  .stages-time img {
+    width: 24px;
+    height: auto;
+  }
+
+  
+/*  */
+
+  .flickity-viewport {
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 640px) {
+  .tasks-container {
+    display: none;
+  }
+
+  .tasks-container-mobile {
+    display: flex;
+    margin-top: 30px;
+    gap: 16px
+  }
+
+  .tasks-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    margin-right: 16px;
+  }
+
 }
