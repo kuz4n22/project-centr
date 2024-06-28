@@ -22,7 +22,8 @@
   margin-bottom: 50px;
 }
 
-.about-to-form {
+.about-to-form,
+.about-to-form-header {
   display: flex;
   width: 232px;
   height: 40px;
@@ -37,7 +38,10 @@
   line-height: 24px;
 }
 
-.about-to-form , .about-to-form:visited {
+.about-to-form,
+.about-to-form:visited,
+.about-to-form-header,
+.about-to-form-header:visited {
   color: #FFF;
 }
 
@@ -90,7 +94,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 80px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.advantages-container-mobile {
+  display: none;
 }
 
 .advantages-element {
@@ -128,6 +137,14 @@
     flex-wrap: wrap;
 }
 
+.clients-container-mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
 .clients-element {
   padding-top: 20px;
   padding-bottom: 5px;
@@ -157,7 +174,14 @@
   align-items: center;
 }
 
-.certificates-container a {
+.certificates-container-mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificates-container a,
+.certificates-container-mobile a {
   color: #FFF;
 }
 
@@ -194,4 +218,150 @@
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
+}
+
+@media (max-width: 935px) {
+
+  .content-container {
+    margin: 100px auto 50px;
+  }
+
+  .about-header,
+  .about-facts,
+  .about-advantages,
+  .about-clients,
+  .about-certificates {
+    margin: 50px auto;
+  }
+
+  .about-header h1 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .about-header p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  
+  .about-advantages h2,
+  .about-clients h2,
+  .about-certificates h2 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
+  .about-to-form-header {
+    width: 224px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .about-facts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .facts-element {
+    flex-shrink: 0;
+    width: 272px;
+    height: 80px;
+    font-size: 12px;
+    line-height: 20px; 
+  }
+
+  .advantages-container {
+    display: none;
+  }
+
+  .advantages-container-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+  
+  .advantages-element {
+    margin-right: 16px;
+    width: 232px;
+    height: 208px;
+    padding: 20px;
+    flex-shrink: 0;
+  }
+  
+  .advantages-element h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .advantages-element p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .about-to-form {
+    width: 184px;
+    height: 40px;
+    padding: 10px 24px;
+  }
+
+  .flickity-viewport {
+    width: 100%;
+    overflow: visible;
+  }
+  
+  .clients-container {
+    display: none;
+  }
+
+  .clients-container-mobile {
+    display: flex;
+  }
+
+  .clients-element {
+    width: 163px;
+    height: 110px;
+    padding: 20px;
+    flex-shrink: 0;
+    font-size: 12px;
+    margin-right: 16px;
+  }
+  
+  .certificates-element {
+    width: 88px;
+    height: 130px;
+    padding: 20px;
+    gap: 10px;
+    margin-right: 16px;
+  }
+  
+  .pdf-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  
+  .certificates-element p {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+  }
+  
+}
+
+@media (max-width: 425px) {
+  .certificates-container {
+    display: none;
+  }
+
+  .certificates-container-mobile {
+    display: flex;
+  }
 }
