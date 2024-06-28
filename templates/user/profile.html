@@ -24,7 +24,13 @@
     </div>
     <div class="order-data">
       <h3>Услуга</h3>
-      <p>{{ user_contract.service_type }}</p>
+      <p>
+        {% if user_contract.service_type == 1 %}Перепланировка квартир
+        {% elif user_contract.service_type == 2 %}Перепланировка нежилых помещений
+        {% elif user_contract.service_type == 3 %}Перепланировка нежилых зданий
+        {% elif user_contract.service_type == 4 %}Кадастровые работы
+        {% endif %}
+      </p>
       <h3>Адрес объекта</h3>
       <p>{{ user_contract.address }}</p>
       <div class="data-and-id">
