@@ -10,18 +10,18 @@
 {% block content %}
     <div class="request-container">
       <h1>Заполни форму</h1>
-      <form action="">
+      <form id="form-send" method="post" action="/send_form/">
         <div class="customer-name-container">
-          <input id="customer-name" class="customer-name" placeholder="ФИО" type="text" required>
+          <input id="customer-name" class="customer-name" placeholder="ФИО" name="name" type="text" required>
           <span id="textMessage"></span>
        </div>
         <div class="tel-email-container">
           <div class="customer-tel-container">
-            <input id="customer-tel" class="customer-tel" placeholder="Мобильный телефон" type="tel" required>
+            <input id="customer-tel" class="customer-tel" placeholder="Мобильный телефон" name="phone" type="tel" required>
             <span id="telMessage"></span>
           </div>
           <div class="customer-email-container">
-            <input id="customer-email" class="customer-email" placeholder="Email" type="email" required>
+            <input id="customer-email" class="customer-email" placeholder="Email" name="email" type="email" required>
             <span id="emailMessage"></span>
           </div>  
         </div>
@@ -38,6 +38,7 @@
 {% block scripts %}
 <script src="https://unpkg.com/imask"></script>
 <script src="{% static 'js/numberMask.js' %}"></script>
+<script src="{% static 'js/sendForm.js' %}"></script>
 <script src="{% static 'js/checkbox.js' %}"></script>
 <script src="{% static 'js/form.js' %}"></script>
 {% endblock %}
