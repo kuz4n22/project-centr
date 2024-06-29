@@ -13,26 +13,36 @@
   <div class="person-container">
     <div class="contact-data">
       <h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
-      <div>
+      <div class="contact-data-mobile">
         <h2>Телефон</h2>
         <p>{{ request.user.phone_number|format_phone }}</p>
       </div>
-      <div>
+      <div class="contact-data-mobile">
         <h2>Email</h2>
         <p>{{ request.user.email }}</p>
       </div>
     </div>
     <div class="order-data">
-      <h3>Услуга</h3>
-      <p>
-        {% if user_contract.service_type == 1 %}Перепланировка квартир
-        {% elif user_contract.service_type == 2 %}Перепланировка нежилых помещений
-        {% elif user_contract.service_type == 3 %}Перепланировка нежилых зданий
-        {% elif user_contract.service_type == 4 %}Кадастровые работы
-        {% endif %}
-      </p>
-      <h3>Адрес объекта</h3>
-      <p>{{ user_contract.address }}</p>
+      <div>
+        <h3>Услуга</h3>
+        <p>
+          {% if user_contract.service_type == 1 %}Перепланировка квартир
+          {% elif user_contract.service_type == 2 %}Перепланировка нежилых помещений
+          {% elif user_contract.service_type == 3 %}Перепланировка нежилых зданий
+          {% elif user_contract.service_type == 4 %}Кадастровые работы
+          {% endif %}
+        </p>
+      </div>
+      <div>
+        <h3>Адрес объекта</h3>
+        <p>{{ user_contract.address }}</p>
+      </div>
+      <div class="data-and-id-mobile">
+        <h3>Дата заключения договора</h3>
+        <p>{{ user_contract.contract_date|date:"d.m.Y" }}</p>
+        <h3 class="data-and-id-mobile-divide">Номер договора</h3>
+        <p>{{ user_contract.contract_number }}</p>
+      </div>
       <div class="data-and-id">
         <div class="data-container">
           <h3>Дата заключения договора</h3>
@@ -45,7 +55,6 @@
       </div>
     </div>
   </div>
-
   <div class="client-stages-container">
     <h2>Cтатус</h2>
     <div class="stage-elements" id="stage-elements" data-service-type="{{ user_contract.service_type }}" data-status="{{ user_contract.status }}">
@@ -140,7 +149,7 @@
       {% endif %}
     </div>
   </div>
-
+</div>
 {% include 'includes/footer.html' %} 
 {% endblock %}
 
