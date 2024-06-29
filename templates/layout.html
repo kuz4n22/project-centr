@@ -23,11 +23,11 @@
           </svg>
         </div>
         <div id="burger-nav-list" class="burger-nav-list">
-          <a href="{% url 'main' %}">Главная</a>
-          <div id="burger-services-button">Услуги</div>
-          <a href="{% url 'calculator' %}">Калькулятор</a>
-          <a href="{% url 'about' %}">О компании</a>
-          <a href="{% url 'contacts' %}">Контакты</a>
+          <a class="{% if current_url == '/' %}bold{% endif %}" href="{% url 'main' %}">Главная</a>
+          <div class="{% if current_url == '/apartments/' or current_url == '/spaces/' or current_url == '/buildings/' or current_url == '/cadastr/' %}bold{% endif %}" id="burger-services-button">Услуги</div>
+          <a class="{% if current_url == '/calculator/' %}bold{% endif %}" href="{% url 'calculator' %}">Калькулятор</a>
+          <a class="{% if current_url == '/about/' %}bold{% endif %}" href="{% url 'about' %}">О компании</a>
+          <a class="{% if current_url == '/contacts/' %}bold{% endif %}" href="{% url 'contacts' %}">Контакты</a>
         </div>
         <div id="burger-services-list" class="burger-services-list">
           <a href="{% url 'apartments' %}">Перепланировка квартир</a>
@@ -54,11 +54,11 @@
           </a>
         </div>
         <div class="nav-controls">
-          <a href="{% url 'main' %}">Главная</a>
-          <a href="" id="services-button">Услуги</a>
-          <a href="{% url 'calculator' %}">Калькулятор</a>
-          <a href="{% url 'about' %}">О компании</a>
-          <a href="{% url 'contacts' %}">Контакты</a>
+          <a class="{% if current_url == '/' %}bold{% endif %}" href="{% url 'main' %}">Главная</a>
+          <a class="{% if current_url == '/apartments/' or current_url == '/spaces/' or current_url == '/buildings/' or current_url == '/cadastr/' %}bold{% endif %}" href="" id="services-button">Услуги</a>
+          <a class="{% if current_url == '/calculator/' %}bold{% endif %}" href="{% url 'calculator' %}">Калькулятор</a>
+          <a class="{% if current_url == '/about/' %}bold{% endif %}" href="{% url 'about' %}">О компании</a>
+          <a class="{% if current_url == '/contacts/' %}bold{% endif %}" href="{% url 'contacts' %}">Контакты</a>
         </div>
         <div class="nav-btns">
           <a class="nav-application" href="{% url 'form' %}">Заявка</a>
