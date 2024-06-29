@@ -15,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  width: calc(100% - 40px);
 }
 
 .login-input, .login-btn {
@@ -55,3 +56,38 @@
   line-height: normal;
 }
 
+@media (max-width: 520px) {
+  .login-container {
+    margin: 110px auto 50px;
+  }
+  
+  .login-container h1 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 145%;
+  }
+
+  .login-input {
+    width: 100%;
+    height: 40px;
+    padding: 20px;
+  }
+
+  .login-btn {
+    width: calc(100% + 40px);
+    height: 60px;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .login-container a, 
+  .login-container a:visited  {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
