@@ -93,10 +93,17 @@ nav a, nav a:visited {
   border-radius: 10px;
   font-weight: 500;
   font-size: 12px;
+  transition: 0.3s;
+}
+
+.nav-application:hover {
+  color: #FFF;
+  background-color: #222220;
 }
 
 .nav-lk {
   height: 32px;
+  cursor: pointer;
 }
 
 /* dropdown menu */
@@ -206,6 +213,12 @@ nav a, nav a:visited {
   background: #222220;
   color: #FFF;
   margin-bottom: 30px;
+  border: 1px solid #222220;
+}
+
+.burger-form:hover {
+  color: #222220;
+  background: #FFF;
 }
 
 .burger-divider {

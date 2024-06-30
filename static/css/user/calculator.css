@@ -388,6 +388,10 @@ input[type="range"]::-ms-track {
   line-height: 28px;
 }
 
+.apply-btn:hover {
+
+}
+
 .apply-btn:visited {
   color: #FFF;
 }
@@ -562,11 +566,11 @@ height: 18px;
   }
 
   .result-container {
+    box-shadow: 0px -3px 10px 0px rgba(34, 34, 32, 0.10), 0px 3px 10px 0px rgba(34, 34, 32, 0.10);
     position: absolute;
     width: calc(100% - 40px);
     height: auto;
     left: 0;
-    /* top: 1678px; */
     top: calc(100% + 30px);
   }
   
@@ -619,4 +623,31 @@ height: 18px;
     display: block;
   }
 
+}
+
+
+
+/* hover */
+
+.checkbox-element {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  background: #FFF;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 250px; /* или любой другой подходящий размер */
+}
+
+.checkbox-element svg:hover .tooltip {
+  display: block;
 }

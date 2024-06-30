@@ -246,6 +246,15 @@
   color: #FFF;
   flex: 1;
   cursor: pointer;
+  border: 1px solid #222220;
+}
+
+.client-finish-btn:hover,
+.client-notifi-btn:hover,
+.client-new-pass-btn:hover {
+  color: #222220;
+  background: #FFF;
+
 }
 
 .client-btn-disabled {
@@ -355,6 +364,12 @@ margin-bottom: 30px;
   font-weight: 700;
   line-height: normal;
 }
+
+.submit-button:hover {
+  color: #FFF;
+  background: #222220;
+}
+
 
 @media (max-width: 1000px) {
   .dashboard-container {
@@ -644,5 +659,11 @@ margin-bottom: 30px;
     color: #FFF;
     height: 60px;
     border-radius: 10px;
+  }
+
+  .submit-button:hover {
+    color: #222220;
+    background: #FFF;
+    border: 1px solid #222220;
   }
 }

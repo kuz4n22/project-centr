@@ -55,6 +55,11 @@
   color: #222220;
 }
 
+.header a:hover {
+  color: #FFF;
+  background: #222220;
+}
+
 /* desctiption */
 
 .offer-description {

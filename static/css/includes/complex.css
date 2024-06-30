@@ -105,6 +105,14 @@
   flex-shrink: 0;
 }
 
+.complex-element a:hover {
+  color: #222220;
+  background: #FFF;
+  border: 1px solid #222220;
+}
+
+
+
 
 @media (max-width: 1145px) {
   .complex-preview {
