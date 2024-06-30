@@ -79,6 +79,13 @@
   max-width: 500px;
 }
 
+
+.header-content a:hover {
+  color: #222220;
+  background: #FFF;
+  border: 1px solid #222220;
+}
+
 /* offers */ 
 
 .content-container h2 {
@@ -133,7 +140,6 @@
 
 .slider-element a {
   display: flex;
-
   justify-content: center;
   align-items:center;
   width: 280px;
@@ -141,6 +147,12 @@
   background-color:#222220;
   border-radius: 20px;
   color: #FFF;
+}
+
+.slider-element a:hover {
+  color: #222220;
+  background: #FFF;
+  border: 1px solid #222220;
 }
 
 /* calculator */
@@ -164,7 +176,12 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
 
+.calculator-img a:hover {
+  color:#222220;
+  background: #FFF;
+  border: 1px solid #222220;
 }
 
 /* plan */

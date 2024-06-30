@@ -36,6 +36,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+  border: 1px solid #222220;
 }
 
 .about-to-form,
@@ -43,6 +44,12 @@
 .about-to-form-header,
 .about-to-form-header:visited {
   color: #FFF;
+}
+
+.about-to-form:hover,
+.about-to-form-header:hover {
+  color: #222220;
+  background: #FFF;
 }
 
 /* header */

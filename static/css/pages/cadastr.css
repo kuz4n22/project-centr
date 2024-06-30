@@ -91,6 +91,12 @@
   background: #222220;
 }
 
+.cadastr-offers-element a:hover {
+  background: #FFF;
+  color: #222220;
+  border: 1px solid #222220;
+}
+
 .stages-container-mobile {
   display: none;
 }
