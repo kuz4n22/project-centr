@@ -13,7 +13,7 @@
 
     <div class="top-container">
       <div class="contact-data">
-        <h2>Менеджер</h2>
+        <h1>Менеджер</h1>
         <div>
           <h2>Телефон</h2>
           <p>{{ request.user.phone_number }}</p>
@@ -57,6 +57,25 @@
                     <p>Дата заключения договора: <span>{{ client.contract_date|date:"d.m.Y" }}</span></p>
                     <p>Номер договора: <span>{{ client.contract_id }}</span></p>
                   </div>
+                </div>
+                <div class="client-info-mobile">
+                  <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
+                  <p>Услуга:</p>
+                  <div><span>
+                    {% if client.service_type == 1 %}Перепланировка квартир
+                    {% elif client.service_type == 2 %}Перепланировка нежилых помещений
+                    {% elif client.service_type == 3 %}Перепланировка нежилых зданий
+                    {% elif client.service_type == 4 %}Кадастровые работы
+                    {% endif %}
+                  </span></div>
+                  <p>Login:</p> 
+                  <div><span>{{ client.phone_number|format_phone }}</span></div>
+                  <p>Email:</p>
+                  <div><span>{{ client.email }}</span></div>
+                  <p>Дата заключения договора:</p>
+                  <div><span>{{ client.contract_date|date:"d.m.Y" }}</span></div>
+                  <p>Номер договора:</p>
+                  <div><span>{{ client.contract_id }}</span></div>
                 </div>
 
                 <div class="client-stages-container">
@@ -190,6 +209,25 @@
                 <p>Дата завершения: <span>{{ client.completion_date|date:"d.m.Y" }}</span></p>
                 <p>Номер договора: <span>{{ client.contract_id }}</span></p>
               </div>
+            </div>
+            <div class="client-info-mobile">
+              <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
+              <p>Услуга:</p>
+              <div><span>
+                {% if client.service_type == 1 %}Перепланировка квартир
+                {% elif client.service_type == 2 %}Перепланировка нежилых помещений
+                {% elif client.service_type == 3 %}Перепланировка нежилых зданий
+                {% elif client.service_type == 4 %}Кадастровые работы
+                {% endif %}
+              </span></div>
+              <p>Login:</p> 
+              <div><span>{{ client.phone_number|format_phone }}</span></div>
+              <p>Email:</p>
+              <div><span>{{ client.email }}</span></div>
+              <p>Дата заключения договора:</p>
+              <div><span>{{ client.contract_date|date:"d.m.Y" }}</span></div>
+              <p>Номер договора:</p>
+              <div><span>{{ client.contract_id }}</span></div>
             </div>
     
             <div class="client-stages-container">
