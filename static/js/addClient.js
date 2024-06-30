@@ -30,6 +30,6 @@ document.getElementById('submitButton').addEventListener('click', function(event
         window.location.href = '/manager/'; 
     })
     .catch(error => {
-        alert('Ошибка: ' + error.message);
+        alert("Необходимо заполнить форму");
     });
 });
