@@ -6,13 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailMessage = document.getElementById('emailMessage');
   const telMessage = document.getElementById('telMessage');
 
-  // mask
-  const maskOptions = {
-    mask: '+{7} (000) 000-00-00'
-  };
-  const mask = IMask(telInput, maskOptions);
-
-
   textInput.addEventListener('input', () => validateInput(textInput, textMessage));
   emailInput.addEventListener('input', () => validateInput(emailInput, emailMessage));
   telInput.addEventListener('input', () => validateInput(telInput, telMessage));

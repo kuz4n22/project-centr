@@ -2,6 +2,12 @@ document.getElementById('submitButton').addEventListener('click', function() {
   const form = document.getElementById('form-send');
   const formData = new FormData(form);
 
+  let phoneNumber = formData.get('phone_number'); 
+  console.log(phoneNumber);
+  phoneNumber = phoneNumber.replace(/[\s()-]/g, '');
+  console.log(phoneNumber);
+  formData.set('phone_number', phoneNumber);
+
   fetch(form.action, {
       method: 'POST',
       headers: {

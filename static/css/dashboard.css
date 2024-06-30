@@ -24,6 +24,7 @@
   gap: 30px;
 }
 
+.contact-data h1,
 .contact-data h2 {
   font-size: 24px;
   font-style: normal;
@@ -141,6 +142,10 @@
   margin-bottom: 50px;
 }
 
+.client-info-mobile {
+  display: none;
+}
+
 .client-info p {
   color: rgba(34, 34, 32, 0.6);
   font-family: Manrope;
@@ -248,11 +253,6 @@
   cursor: default;
 }
 
-
-
-
-
-
 /* form */
 .add-container form {
   color: #FFF;
@@ -354,4 +354,295 @@ margin-bottom: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+@media (max-width: 1000px) {
+  .dashboard-container {
+    margin: 110px auto 100px;
+  }
+  
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-data {
+    gap: 20px;
+    max-width: 232px;
+    height: 173px;
+    width: calc(100% - 40px);
+    flex-shrink: 0;
+  }
+
+  .contact-data h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-data h2 {
+    font-size: 16px;
+  }
+  
+  .contact-data p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .control-btns {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .add-client {
+    order: 1;
+    font-size: 16px;
+    height: 80px;
+  }
+
+  .change-view {
+    max-width: 835px;
+    border-radius: 20px;
+    border: 1px solid #222220;
+    background: rgba(34, 34, 32, 0.00);
+    color: #222220;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 20px 0;
+    flex-direction: column;
+    width: 272px;
+    height: 100px;
+    gap: 10px;
+    font-size: 12px;
+    background: #222220;
+  }
+
+  .active-clients,
+  .finished-clients {
+    width: 160px;
+    height: 50px;
+    flex: 0 1 auto;
+  }
+  
+  .active-clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #222220;
+    color: #FFF;
+  }
+  
+  .finished-clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #FFF;
+    color: #222220;
+  }
+
+  .active-container h1,
+  .finished-container h1,
+  .add-container h1 {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+
+  .client-container {
+    margin-bottom: 50px; 
+    padding: 20px 20px 30px; 
+  }
+
+  .client-container h2 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0px;
+  }
+
+  .client-info {
+    display: none;
+  }
+  
+  .client-info-mobile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  
+  .client-info-mobile p {
+    color: rgba(34, 34, 32, 0.6);
+    font-family: Manrope;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .client-info-mobile span {
+    color: #222220;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  /* stages */
+  
+  .client-stages-container h2,
+  .client-btns-container h2 {
+    margin-bottom: 30px;
+  }
+  
+  .client-stages-container {
+    margin-bottom: 50px;
+  }
+  
+  .stage-elements {
+    display: flex;
+    justify-content: flex-start;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  
+  .stage-element {
+    width: 100%;
+  }
+  
+  .stage-element-current {
+    background: #222220;
+    color: #FFF;
+    opacity: 1;
+  }
+  
+  .stage-element h3 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .stage-element p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .client-btns {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+   }
+   
+   .client-btn,
+   .client-finish-btn,
+   .client-notifi-btn,
+   .client-new-pass-btn {
+     height: 60px;
+     flex: 0 1 auto;
+   }
+
+  /* add user */
+
+  .add-container form {
+    color: #FFF;
+    padding: 20px;
+    width: calc(100% - 40px);
+    background: #FFF;
+    height: auto;
+  }
+
+  .radio-container-elements {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .radio-container-elements label {
+    width: 100%;
+  }
+
+  .radio-button {
+    color: #222220;
+    border: 1px solid #222220;
+    width: 100%;
+    height: 60px;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.3;
+
+  }
+
+  input[type="radio"]:checked + .radio-button {
+    background: #222220;
+    color: #FFF;
+    opacity: 1;
+  }
+
+  .form-element-container {
+    gap: 20px;
+    width: 100%;
+  }
+
+  .radio-container {
+    margin: 30px 0 30px;
+  }
+
+  .form-element-container p,
+  .radio-container p {
+    color: #222220;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .radio-container p {
+  margin-bottom: 20px;
+  }
+
+  .form-element-container input {
+    height: 60px;
+    width: calc(100% - 40px);
+    border: 1px solid rgba(34, 34, 32, 0.3);
+    font-size: 12px;
+  }
+
+  input[type="date"] {
+    width: calc(100% - 40px);
+  }
+
+  .another-inputs {
+    gap: 30px;
+  }
+
+  .submit-button {
+    margin-top: 50px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    background: #222220;
+    color: #FFF;
+    height: 60px;
+    border-radius: 10px;
+  }
 }

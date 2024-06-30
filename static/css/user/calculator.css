@@ -1,3 +1,30 @@
+/* base */
+
+svg {
+  flex-shrink: 0;
+}
+
+select {
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #222220;
+  color: white;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  padding-right: 40px;
+  font-size: 16px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M13.8687 0.878901L7.34572 7.84716C7.25399 7.94503 7.12964 8 7 8C6.87036 8 6.74601 7.94503 6.65428 7.84716L0.131302 0.878901C0.0448856 0.77983 -0.00216 0.648794 7.62193e-05 0.5134C0.00231244 0.378006 0.053656 0.248825 0.14329 0.153072C0.232924 0.0573193 0.353851 0.00247029 0.480593 8.14212e-05C0.607335 -0.00230745 0.729998 0.0479503 0.822738 0.140266L7 6.73833L13.1773 0.140266C13.27 0.0479503 13.3927 -0.00230745 13.5194 8.14212e-05C13.6461 0.00247029 13.7671 0.0573193 13.8567 0.153072C13.9463 0.248825 13.9977 0.378006 13.9999 0.5134C14.0022 0.648794 13.9551 0.77983 13.8687 0.878901Z" fill="white"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 /* header */
 
 .calc-description-container {
@@ -38,11 +65,10 @@
   max-width: 1060px;
   border-radius: 20px;
   background: #222220;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  flex-wrap: wrap;
 }
 
 /* container */
@@ -50,7 +76,8 @@
 .options-container {
   display: flex;
   flex-direction: column;
-  gap: 50px
+  gap: 50px;
+  flex-shrink: 0;
 }
 
 /* districts */
@@ -59,6 +86,10 @@
     flex-wrap: wrap;
     max-width: 515px;
     gap: 20px 50px;
+}
+
+.districts-container-mobile {
+  display: none;
 }
 
 
@@ -140,7 +171,7 @@ input[type="range"] {
   left: 20px;
   position: absolute;
   -webkit-appearance: none;
-  width: 93%;
+  width: calc(100% - 40px);
   height: 4px;
   background: linear-gradient(to right, #FFF 0%, rgba(255, 255, 255, 0.4) 15%);
   border-radius: 5px;
@@ -250,7 +281,7 @@ input[type="range"]::-ms-track {
 	height: 26px;
 	border: 1px solid rgba(0, 0, 0, .1);
 	border-radius: 25%/50%;	
-	vertical-align: top;
+	vertical-align: middle;
 	background: white;
 	transition: .2s;
 }
@@ -358,5 +389,234 @@ input[type="range"]::-ms-track {
 }
 
 .apply-btn:visited {
-color: #FFF;
+  color: #FFF;
+}
+
+.arrow {
+  display: block;
+}
+
+.arrow-mobile {
+  display: none;
+  width: 30px;
+height: 18px;
+}
+
+
+@media (max-width: 1200px) {
+
+  .calculator-container {
+    position: relative;
+    padding: 30px 20px;
+    margin: 50px auto 359px;
+    width: calc(100% - 40px);
+    max-width: 1060px;
+    border-radius: 20px;
+    background: #222220;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .calc-description-container {
+    margin: 100px auto 50px;
+    max-width: 1120px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+    align-items:flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .calc-description {
+    max-width: 459px;
+  }
+  
+  .calc-description h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .calc-description p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .calc-img img {
+    display: none;
+  }
+
+  .calc-img {
+    width: 100%;
+    max-width: 459px;
+    aspect-ratio: 272/170;
+    border-radius: 20px;
+    background: url('../../img/calc_mobile.png') lightgray 50% / cover no-repeat;
+  }
+
+  .options-container {
+    width: 100%;
+    max-width: 470px;
+  }
+
+  .options-article h3 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+
+  .districts-container {
+    display: none;
+  }
+
+  .districts-container-mobile {
+    display: block;
+    width: 100%;
+  }
+
+
+  .area-container h4 {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+  }
+
+  .area-container span {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+
+    width: 24px;
+    height: 24px;
+    background: url('../../img/runner-mobile.svg') no-repeat center center;
+  }
+
+  .area-description {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+  }
+
+  /* checkbox */
+
+  .checkboxes-container {
+    padding: 20px 10px;
+  }
+
+  .checkbox-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .checkbox-element p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 0;
+  }
+  
+  .checkbox-element svg {
+    margin-left: 10px;
+    width: 12px;
+    height: auto;
+  }
+
+  .checkbox-element label {
+    margin-left: 10px;
+  }
+/*  */
+  
+
+  .checkbox-ios-switch {
+    width: 40px;
+    height: 22px;
+  }
+  
+  .checkbox-ios-switch:before {
+    top: 0px;
+    left: 0px;	
+    width: 20px;	
+    height: 20px;
+  }
+
+  .checkbox-ios input[type=checkbox]:checked + .checkbox-ios-switch:before {
+    transform:translateX(18px);
+  }
+
+  .result-container {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: auto;
+    left: 0;
+    /* top: 1678px; */
+    top: calc(100% + 30px);
+  }
+  
+  .result-district,
+  .result-area,
+  .result-cost {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  
+  .result-district {
+    margin-bottom: 9px;
+  }
+
+  .result-area {
+    margin-bottom: 20px;
+  }
+
+  .result-cost {
+    margin-bottom: 5px;
+  }
+  
+  #resultContentDistrict,
+  #resultContentArea,
+  #resultContentCost {
+    color: #222220;
+  }
+  
+  #resultContentCost {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .apply-btn {
+    padding: 10px 24px;
+    width: 184px;
+    height: 40px;
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .arrow-mobile {
+    display: block;
+  }
+
 }

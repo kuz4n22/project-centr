@@ -3,6 +3,10 @@ document.getElementById('login-btn').addEventListener('click', function() {
   const form = document.getElementById('login-form');
   const formData = new FormData(form);
 
+  let phoneNumber = formData.get('phone'); 
+  phoneNumber = phoneNumber.replace(/[\s()-]/g, '');
+  formData.set('phone', phoneNumber);
+
   fetch(form.action, {
       method: 'POST',
       headers: {

@@ -18,13 +18,6 @@
   line-height: 28px;
 }
 
-.politic-container p {  
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-}
-
 .fz-link {
   text-decoration: underline;
   color: #222220;
@@ -38,4 +31,22 @@
 .main-link, .main-link:visited  {
   color: #194F9E;
   font-weight: 500;
+}
+
+@media (max-width: 935px) {
+  .politic-container {
+    margin: 100px auto 100px;
+  }
+
+  .politic-container h1 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .politic-container p {  
+    font-size: 16px;
+  }
+
+
+
 }

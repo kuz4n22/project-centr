@@ -638,37 +638,62 @@ const data = {
   },
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+    const districtsRadio = document.getElementById('districtsRadio');
+    const districtSelect = document.getElementById('district-mobile');
+  
+    function checkResolution() {
+      if (window.matchMedia('(max-width: 1000px)').matches) {
+        districtsRadio.querySelectorAll('input').forEach(input => input.disabled = true);
+        districtSelect.disabled = false;
+      } else {
+        districtsRadio.querySelectorAll('input').forEach(input => input.disabled = false);
+        districtSelect.disabled = true;
+      }
+      countPrice();
+    }
+  
+    // Проверить разрешение при загрузке страницы
+    checkResolution();
+  
+    // Проверить разрешение при изменении размера окна
+    window.addEventListener('resize', checkResolution);
+    window.addEventListener('resize', countPrice);
+});
+
 // area
 const areaValue = document.getElementById('areaValue');
 const resultAreaValue = document.getElementById('resultContentArea');
 const rangeSlider = document.getElementById('rangeSlider');
 
 rangeSlider.addEventListener('input', () => {
-  const value = rangeSlider.value;
-  areaValue.textContent = `${value} м²`;
-  const percentage = ((value - 40) / (200 - 40)) * 100;
-  rangeSlider.style.background = `linear-gradient(to right, #FFF ${percentage}%, rgba(255, 255, 255, 0.4) ${percentage}%)`;
-  resultAreaValue.textContent = `${value} м²`;
+    const value = rangeSlider.value;
+    areaValue.textContent = `${value} м²`;
+    const percentage = ((value - 40) / (200 - 40)) * 100;
+    rangeSlider.style.background = `linear-gradient(to right, #FFF ${percentage}%, rgba(255, 255, 255, 0.4) ${percentage}%)`;
+    resultAreaValue.textContent = `${value} м²`;
 });
 
 // districts
 const districtRadios = document.querySelectorAll('input[name="district"]');
+const districtSelectMobile = document.getElementById('district-mobile');
 const resultDistrictValue = document.getElementById('resultContentDistrict');
 
 function handleDistrictChange(event) {
-  const selectedValue = event.target.value;
-  resultDistrictValue.textContent = selectedValue;
-  countPrice();
+    const selectedValue = event.target.value;
+    resultDistrictValue.textContent = selectedValue;
+    countPrice();
 };
 
 districtRadios.forEach(radio => {
-  radio.addEventListener('change', handleDistrictChange);
+    radio.addEventListener('change', handleDistrictChange);
 });
 
+districtSelectMobile.addEventListener('change', handleDistrictChange);
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', countPrice);
+    checkbox.addEventListener('change', countPrice);
 });
 
 // count on load
@@ -676,37 +701,43 @@ countPrice();
 
 // update when change area
 rangeSlider.addEventListener('input', () => {
-  countPrice();
+    countPrice();
 });
 
 function countPrice() {
+    // get selected district name
+    let selectedDistrict;
+    if (window.matchMedia('(max-width: 1000px)').matches) {
+        selectedDistrict = document.querySelector('#district-mobile');
+    } else {
+        selectedDistrict = document.querySelector('input[name="district"]:checked');
+    }
+    
+    const currentDistrict = selectedDistrict ? selectedDistrict.value : null;
+    if (!currentDistrict) return;
 
-  // get selected district name
-  const selectedDistrict = document.querySelector('input[name="district"]:checked');
-  const currentDistrict = selectedDistrict.value;
+    // get area and interpret it in range
+    const currentArea = rangeSlider.value;
+    let area;
+    if (currentArea < 100) {
+        area = "<100";
+    } else if (currentArea < 150) {
+        area = "100-150";
+    } else {
+        area = "150-200";
+    }
 
-  // get area and intrpretate it in range
-  const currentArea = rangeSlider.value;
-  let area;
-  if (currentArea < 100) {
-    area =  "<100";
-  } else if (currentArea < 150) {
-    area =  "100-150";
-  } else {
-    area =  "150-200";
-  };
-  
-  // collect all checked checkboxes
-  const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    // collect all checked checkboxes
+    const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
 
-  // calculation cicle
-  let price = 0;
+    // calculation cycle
+    let price = 0;
 
-  for (let i = 0; i < checkedCheckboxes.length; i++) {
-    price += data[currentDistrict][area][checkedCheckboxes[i].id];
-  };
+    for (let i = 0; i < checkedCheckboxes.length; i++) {
+        price += data[currentDistrict][area][checkedCheckboxes[i].id];
+    }
 
-  // write price in result window
-  priceThousands = price / 1000;
-  resultContentCost.textContent = `от ${priceThousands} 000 рублей`;
+    // write price in result window
+    const priceThousands = price / 1000;
+    resultContentCost.textContent = `от ${priceThousands} 000 рублей`;
 }
