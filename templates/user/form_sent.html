@@ -10,7 +10,7 @@
       <h1>Спасибо за вашу заявку!</h1>
       <p>Мы получили ваш запрос и скоро свяжемся с вами<br>для обсуждения деталей.</p>
       <img src="{% static 'img/form_ok.svg' %}" alt="">
-      <a href="" class="request-close">Вернуться на главную</a>
+      <a href="{% url 'main' %}" class="request-close">Вернуться на главную</a>
     </div>
 {% endblock %}
   

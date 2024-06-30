@@ -6,10 +6,11 @@
 .person-container {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .contact-data {
-  padding: 20px 20px;
+  padding: 20px;
   width: 225px;
   height: 233px;
   border-radius: 20px;
@@ -19,6 +20,7 @@
   color: #FFF;
   justify-content: space-between;
   gap: 30px;
+  flex-shrink: 0;
 }
 
 .contact-data h2 {
@@ -68,6 +70,10 @@
   flex-wrap: wrap;
 }
 
+.data-and-id-mobile {
+  display: none;
+}
+
 .data-and-id p, .data-and-id h3  {
   margin: 0;
   margin-right: 10px;
@@ -105,6 +111,7 @@
 .stage-element {
   padding: 20px;
   width: 130px;
+  height: 150px;
   /* height: 128px;  cant fit text */
   border-radius: 20px;
   border: 1px solid #222220;
@@ -116,7 +123,7 @@
   gap: 10px;
   opacity: 0.6;
   word-wrap: break-word;
-
+  flex-shrink: 0;
 }
 
 .stage-element-current {
@@ -133,8 +140,110 @@
 }
 
 .stage-element p {
+  width: 130px;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 20px;
+}
+
+@media (max-width: 770px) {
+
+  .lk-container {
+    margin: 110px auto 100px;
+    max-width: 1120px;
+  }
+
+  .person-container {
+    flex-wrap: wrap;
+    
+  }
+
+  .contact-data {
+    width: calc(100% - 40px);
+    height: 173px;
+    gap: 20px;
+  }
+  
+  .contact-data h2 {
+    font-size: 20px;    
+    margin-bottom: 10px;
+  }
+
+  .contact-data-mobile h2 {
+    font-size: 16px;    
+    margin-bottom: 0px;
+  }
+  
+  .contact-data p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+
+  .order-data {
+    width: calc(100% - 40px);
+    height: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .order-data h3 {
+    font-size: 12px;
+    margin-bottom: 10px;    
+  }
+  
+  .order-data p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .data-and-id {
+    display: none;
+  }
+
+  .data-and-id-mobile {
+    display: block;
+  }
+
+  .data-and-id-mobile-divide {
+    margin-top: 30px;
+  }
+
+}
+
+@media (max-width: 410px) {
+
+
+  .client-stages-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+  .client-stages-container h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .stage-element {
+    width: calc(100% - 40px);
+    height: 60px;
+  }
+
+  .stage-element h3 {
+    font-size: 20px;
+    line-height: normal;
+  }
+
+  .stage-element p {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px; 
+  }
+
 }

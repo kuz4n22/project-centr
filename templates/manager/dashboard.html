@@ -13,7 +13,7 @@
 
     <div class="top-container">
       <div class="contact-data">
-        <h2>Менеджер</h2>
+        <h1>Менеджер</h1>
         <div>
           <h2>Телефон</h2>
           <p>{{ request.user.phone_number }}</p>
@@ -58,95 +58,114 @@
                     <p>Номер договора: <span>{{ client.contract_id }}</span></p>
                   </div>
                 </div>
+                <div class="client-info-mobile">
+                  <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
+                  <p>Услуга:</p>
+                  <div><span>
+                    {% if client.service_type == 1 %}Перепланировка квартир
+                    {% elif client.service_type == 2 %}Перепланировка нежилых помещений
+                    {% elif client.service_type == 3 %}Перепланировка нежилых зданий
+                    {% elif client.service_type == 4 %}Кадастровые работы
+                    {% endif %}
+                  </span></div>
+                  <p>Login:</p> 
+                  <div><span>{{ client.phone_number|format_phone }}</span></div>
+                  <p>Email:</p>
+                  <div><span>{{ client.email }}</span></div>
+                  <p>Дата заключения договора:</p>
+                  <div><span>{{ client.contract_date|date:"d.m.Y" }}</span></div>
+                  <p>Номер договора:</p>
+                  <div><span>{{ client.contract_id }}</span></div>
+                </div>
 
                 <div class="client-stages-container">
                   <h2>Cтатус</h2>
                   <div class="stage-elements" id="stage-elements" data-service-type="{{ client.service_type }}" data-status="{{ client.status }}">
                     {% if client.service_type == 1 %}
-                      <div class="stage-element {% if client.status == 1 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 1 %}stage-element-current{% endif %}">
                         <h3>1 этап</h3>
                         <p>Заказ исходной документации</p>
                       </div>
-                      <div class="stage-element {% if client.status == 2 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 2 %}stage-element-current{% endif %}">
                         <h3>2 этап</h3>
                         <p>Разработка проекта перепланировки</p>
                       </div>
-                      <div class="stage-element {% if client.status == 3 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 3 %}stage-element-current{% endif %}">
                         <h3>3 этап</h3>
                         <p>Согласование пожарного надзора</p>
                       </div>
-                      <div class="stage-element {% if client.status == 4 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 4 %}stage-element-current{% endif %}">
                         <h3>4 этап</h3>
                         <p>Согласование документации в МВК</p>
                       </div>
-                      <div class="stage-element {% if client.status == 5 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 5 %}stage-element-current{% endif %}">
                         <h3>5 этап</h3>
                         <p>Ввод квартиры в эксплуатацию</p>
                       </div>
-                      <div class="stage-element {% if client.status == 6 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 6 %}stage-element-current{% endif %}">
                         <h3>6 этап</h3>
                         <p>Подготовка технического плана и регистрация в Росреестре</p>
                       </div>
                     {% elif client.service_type == 2 %}
-                      <div class="stage-element {% if client.status == 1 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 1 %}stage-element-current{% endif %}">
                         <h3>1 этап</h3>
                         <p>Заказ исходной документации</p>
                       </div>
-                      <div class="stage-element {% if client.status == 2 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 2 %}stage-element-current{% endif %}">
                         <h3>2 этап</h3>
                         <p>Разработка проекта перепланировки</p>
                       </div>
-                      <div class="stage-element {% if client.status == 3 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 3 %}stage-element-current{% endif %}">
                         <h3>3 этап</h3>
                         <p>Согласование пожарного надзора и Роспотребнадзора</p>
                       </div>
-                      <div class="stage-element {% if client.status == 4 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 4 %}stage-element-current{% endif %}">
                         <h3>4 этап</h3>
                         <p>Согласование документации в МВК</p>
                       </div>
-                      <div class="stage-element {% if client.status == 5 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 5 %}stage-element-current{% endif %}">
                         <h3>5 этап</h3>
                         <p>Ввод в эксплуатацию</p>
                       </div>
-                      <div class="stage-element {% if client.status == 6 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 6 %}stage-element-current{% endif %}">
                         <h3>6 этап</h3>
                         <p>Подготовка технического плана и регистрация в Росреестре</p>
                       </div>
                     {% elif client.service_type == 3 %}
-                      <div class="stage-element {% if client.status == 1 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 1 %}stage-element-current{% endif %}">
                         <h3>1 этап</h3>
                         <p>Заказ исходной документации</p>
                       </div>
-                      <div class="stage-element {% if client.status == 2 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 2 %}stage-element-current{% endif %}">
                         <h3>2 этап</h3>
                         <p>Разработка проекта перепланировки</p>
                       </div>
-                      <div class="stage-element {% if client.status == 3 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 3 %}stage-element-current{% endif %}">
                         <h3>3 этап</h3>
                         <p>Подготовка документов</p>
                       </div>
-                      <div class="stage-element {% if client.status == 4 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 4 %}stage-element-current{% endif %}">
                         <h3>4 этап</h3>
                         <p>Получение акта рабочей комиссии</p>
                       </div>
-                      <div class="stage-element {% if client.status == 5 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 5 %}stage-element-current{% endif %}">
                         <h3>5 этап</h3>
                         <p>Изготовление технического плана</p>
                       </div>
-                      <div class="stage-element {% if client.status == 6 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 6 %}stage-element-current{% endif %}">
                         <h3>6 этап</h3>
                         <p>Регистрация в Росреестре</p>
                       </div>
                     {% elif client.service_type == 4 %}
-                      <div class="stage-element {% if client.status == 1 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 1 %}stage-element-current{% endif %}">
                         <h3>1 этап</h3>
                         <p>Заказ исходной документации</p>
                       </div>
-                      <div class="stage-element {% if client.status == 2 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 2 %}stage-element-current{% endif %}">
                         <h3>2 этап</h3>
                         <p>Выезд на замер инженера</p>
                       </div>
-                      <div class="stage-element {% if client.status == 3 %}stage-element-current{% endif %}">
+                      <div class="stage-element {% if client.status >= 3 %}stage-element-current{% endif %}">
                         <h3>3 этап</h3>
                         <p>Формирование технического плана</p>
                       </div>
@@ -157,8 +176,8 @@
                 <div class="client-btns-container">
                   <h2>Действия</h2>
                   <div class="client-btns">
-                    <div class="client-finish-btn" data-client-id="{{ client.id }}">Завершить проект</div>
-                    <div class="client-notifi-btn" data-client-id="{{ client.id }}">Уведомить о новом этапе</div>
+                    <div class="client-finish-btn" data-contract-id="{{ client.contract_id }}">Завершить проект</div>
+                    <div class="client-notifi-btn" data-contract-id="{{ client.contract_id }}" {% if client.is_last_phase == true %}{% endif %}>Уведомить о новом этапе</div>
                     <div class="client-new-pass-btn" data-client-id="{{ client.id }}">Выслать новый пароль</div>
                   </div>
                 </div>
@@ -191,95 +210,114 @@
                 <p>Номер договора: <span>{{ client.contract_id }}</span></p>
               </div>
             </div>
+            <div class="client-info-mobile">
+              <h2> {{ client.id }}. {{ client.first_name }} {{ client.last_name }}</h2>
+              <p>Услуга:</p>
+              <div><span>
+                {% if client.service_type == 1 %}Перепланировка квартир
+                {% elif client.service_type == 2 %}Перепланировка нежилых помещений
+                {% elif client.service_type == 3 %}Перепланировка нежилых зданий
+                {% elif client.service_type == 4 %}Кадастровые работы
+                {% endif %}
+              </span></div>
+              <p>Login:</p> 
+              <div><span>{{ client.phone_number|format_phone }}</span></div>
+              <p>Email:</p>
+              <div><span>{{ client.email }}</span></div>
+              <p>Дата заключения договора:</p>
+              <div><span>{{ client.contract_date|date:"d.m.Y" }}</span></div>
+              <p>Номер договора:</p>
+              <div><span>{{ client.contract_id }}</span></div>
+            </div>
     
             <div class="client-stages-container">
               <h2>Cтатус</h2>
               <div class="stage-elements" id="stage-elements" data-service-type="{{ client.service_type }}" data-status="{{ client.status }}">
                 {% if client.service_type == 1 %}
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>1 этап</h3>
                     <p>Заказ исходной документации</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>2 этап</h3>
                     <p>Разработка проекта перепланировки</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>3 этап</h3>
                     <p>Согласование пожарного надзора</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>4 этап</h3>
                     <p>Согласование документации в МВК</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>5 этап</h3>
                     <p>Ввод квартиры в эксплуатацию</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>6 этап</h3>
                     <p>Подготовка технического плана и регистрация в Росреестре</p>
                   </div>
                 {% elif client.service_type == 2 %}
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>1 этап</h3>
                     <p>Заказ исходной документации</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>2 этап</h3>
                     <p>Разработка проекта перепланировки</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>3 этап</h3>
                     <p>Согласование пожарного надзора и Роспотребнадзора</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>4 этап</h3>
                     <p>Согласование документации в МВК</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>5 этап</h3>
                     <p>Ввод в эксплуатацию</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>6 этап</h3>
                     <p>Подготовка технического плана и регистрация в Росреестре</p>
                   </div>
                 {% elif client.service_type == 3 %}
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>1 этап</h3>
                     <p>Заказ исходной документации</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>2 этап</h3>
                     <p>Разработка проекта перепланировки</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>3 этап</h3>
                     <p>Подготовка документов</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>4 этап</h3>
                     <p>Получение акта рабочей комиссии</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>5 этап</h3>
                     <p>Изготовление технического плана</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>6 этап</h3>
                     <p>Регистрация в Росреестре</p>
                   </div>
                 {% elif client.service_type == 4 %}
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>1 этап</h3>
                     <p>Заказ исходной документации</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>2 этап</h3>
                     <p>Выезд на замер инженера</p>
                   </div>
-                  <div class="stage-element">
+                  <div class="stage-element stage-element-current">
                     <h3>3 этап</h3>
                     <p>Формирование технического плана</p>
                   </div>
@@ -334,7 +372,7 @@
         <div class="another-inputs">
           <div class="form-element-container">
             <p>3. Создание логина<br>(ввод телефона заказчика)</p>
-            <input type="tel" name="phone_number" placeholder="+7 (999) 999-99-99">
+            <input type="tel" id="customer-tel" name="phone_number" placeholder="+7 (999) 999-99-99">
           </div>
           <div class="form-element-container">
             <p>4. Адрес объекта</p>
@@ -362,6 +400,8 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="https://unpkg.com/imask"></script>
+<script src="{% static 'js/numberMask.js' %}"></script>
 <script src="{% static 'js/dashboard.js' %}"></script>
 <script src="{% static 'js/stages.js' %}"></script>
 <script src="{% static 'js/addClient.js' %}"></script>

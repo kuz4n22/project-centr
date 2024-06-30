@@ -73,10 +73,6 @@ nav a, nav a:visited {
   gap: 22px;
 }
 
-.nav-controls a {
-  font-weight: 400;
-}
-
 .nav-btns {
   display: flex;
   gap: 19px;
@@ -225,9 +221,11 @@ nav a, nav a:visited {
   gap: 16px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* nav mobile */
-
-
 
 @media (max-width: 1280px) {
   .container {

@@ -20,7 +20,7 @@ document.getElementById('request-pass-btn').addEventListener('click', function()
       }
   })
   .then(data => {
-      alert("Успешно");
+      alert("Сообщение отправлено. Проверьте ваш email.");
   })
   .catch(error => {
       alert('Ошибка: ' + error.message);
