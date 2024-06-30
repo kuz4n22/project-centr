@@ -28,7 +28,6 @@ nav a:visited {
   padding-right: 80px;
   margin: 0 auto;
   overflow: hidden;
-  background-color: lightblue;
 }
 
 nav {
@@ -273,4 +272,3 @@ nav a, nav a:visited {
     gap: 16px;
   }
 }
-
