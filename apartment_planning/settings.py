@@ -47,7 +47,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
 
 # List of managers 
-MANAGERS = [("Misha", "mishvkin@gmail.com"),]
+MANAGERS = [("Manager", "proectcetr@yandex.ru"),]
 
 LOGIN_URL = 'login'
 
