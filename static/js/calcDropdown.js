@@ -27,9 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.classList.remove('show');
               });
 
-          } else {
-              console.log("dropdown big");
           }
+      });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const checkboxElements = document.querySelectorAll('.checkbox-element');
+  checkboxElements.forEach(element => {
+      const infoIcon = element.querySelector('.checkbox-info');
+      const adviceContent = element.querySelector('.advice-content');
+      
+      const tooltip = document.createElement('div');
+      tooltip.classList.add('tooltip');
+      tooltip.textContent = adviceContent.textContent;
+      element.appendChild(tooltip);
+
+      infoIcon.addEventListener('mouseenter', function () {
+          const screenWidth = window.innerWidth;
+          if (screenWidth >= 450) {
+            tooltip.style.display = 'block';
+          }
+      });
+
+      infoIcon.addEventListener('mouseleave', function () {
+          tooltip.style.display = 'none';
       });
   });
 });
