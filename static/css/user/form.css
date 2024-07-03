@@ -264,6 +264,14 @@ span {
     color: #222220;
     font-size: 8px;
   }
+
+  .custom-checkbox-img {
+    background-image: url('../../img/checkbox/not_checked_mobile.svg');
+  }
+  
+  .custom-checkbox input:checked + .custom-checkbox-img {
+    background-image: url('../../img/checkbox/checked_mobile.svg');
+  }
   
   .request-send {
     width: 100%;
