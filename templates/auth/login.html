@@ -12,8 +12,17 @@
       <h1>Вход</h1>
       <form id="login-form" method="post" action="{% url 'login' %}">
           {% csrf_token %}
-          <input class="login-input" id="customer-tel" type="tel" placeholder="Номер телефона" name="phone" required>
-          <input class="login-input" type="password" placeholder="Пароль" name="password" required>
+          <div class="login-input-container">
+            <input class="login-input" id="customer-tel" type="tel" placeholder="Номер телефона" name="phone" required>
+            <label class="login-input-label" id="customer-tel-label">Номер телефона</label>
+            <p class="login-response-text" id="login-response-text"></p>
+          </div>
+          <div class="login-input-container">
+            <input class="login-input" id="customer-password" type="password" placeholder="Пароль" name="password" required>
+            <label class="password-input-label" id="customer-password-label">Пароль</label>
+            <p class="pass-response-text" id="pass-response-text"></p>
+          </div>
+          
           <button id="login-btn" class="login-btn" type="button">Войти</button>
       </form>
       <a href="{% url 'password_reset_form' %}">Забыли пароль?</a>
