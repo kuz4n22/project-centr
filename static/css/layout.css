@@ -7,6 +7,10 @@ body {
   color: #222220;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 a:visited {
   color: #FFF;
 }
