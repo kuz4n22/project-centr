@@ -171,6 +171,7 @@ input[type="range"] {
   left: 20px;
   position: absolute;
   -webkit-appearance: none;
+  appearance: none;
   width: calc(100% - 40px);
   height: 4px;
   background: linear-gradient(to right, #FFF 0%, rgba(255, 255, 255, 0.4) 15%);
@@ -329,6 +330,11 @@ input[type="range"]::-ms-track {
 
 /* result block */
 
+.result-container-wrapper {
+  position: relative;
+  pointer-events: none;
+}
+
 .result-container {
   display: flex;
   width: 415px;
@@ -337,7 +343,12 @@ input[type="range"]::-ms-track {
   border-radius: 20px;
   background: #FFF;
   flex-direction: column;
+  position: sticky;
+  top: 20px;
+  pointer-events: all;
 }
+
+
 
 .result-district,
 .result-area,
@@ -386,10 +397,6 @@ input[type="range"]::-ms-track {
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
-}
-
-.apply-btn:hover {
-
 }
 
 .apply-btn:visited {
@@ -566,13 +573,20 @@ height: 18px;
     transform:translateX(18px);
   }
 
+  .result-container-wrapper {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    width: 100%;
+    height: calc(100% + 110px);
+  }
+  
   .result-container {
     box-shadow: 0px -3px 10px 0px rgba(34, 34, 32, 0.10), 0px 3px 10px 0px rgba(34, 34, 32, 0.10);
-    position: absolute;
     width: calc(100% - 40px);
     height: auto;
-    left: 0;
-    top: calc(100% + 30px);
+    position: sticky;
+    top: calc(100vh - 300px)
   }
   
   .result-district,

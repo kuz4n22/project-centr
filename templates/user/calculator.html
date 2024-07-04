@@ -7,7 +7,7 @@
 
 {% block title %}Калькулятор{% endblock %}
 
-{% block content %}
+{% block calculator %}
 
 <div class="calc-description-container">
   <div class="calc-description">
@@ -381,17 +381,19 @@
       <input type="checkbox" id="ond" checked>
     </div>
   </div>
-
-  <div class="result-container">
-    <h3 class="result-district">Район: <span id="resultContentDistrict">Центральный район</span></h3>
-    <h3 class="result-area">Площадь: <span id="resultContentArea">50 м²</span></h3>
-    <h3 class="result-cost">Стоимость:</h3>
-    <p id="resultContentCost">от 80 000 рублей</p>
-    <a href="#" class="apply-btn">
-      <p>Подать заявку</p>
-      <img class="arrow" src="{% static 'img/arrow.svg' %}" alt="">
-      <img class="arrow-mobile" src="{% static 'img/arrow_mobile.svg' %}" alt="">
-    </a>
+  <div class="result-container-wrapper">
+    <div class="result-container">
+      <h3 class="result-district">Район: <span id="resultContentDistrict">Центральный район</span></h3>
+      <h3 class="result-area">Площадь: <span id="resultContentArea">50 м²</span></h3>
+      <h3 class="result-cost">Стоимость:</h3>
+      <p id="resultContentCost">от 80 000 рублей</p>
+      <a href="{% url 'form' %}" class="apply-btn">
+        <p>Подать заявку</p>
+        <img class="arrow" src="{% static 'img/arrow.svg' %}" alt="">
+        <img class="arrow-mobile" src="{% static 'img/arrow_mobile.svg' %}" alt="">
+      </a>
+    </div>
+    <div class="div"></div>
   </div>
 </div>
 

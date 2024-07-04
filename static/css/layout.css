@@ -24,6 +24,10 @@ nav a:visited {
   color: #222220;
 }
 
+.content {
+  overflow: hidden;
+}
+
 .container {
   position: relative;
   max-width: 1120px;
@@ -31,7 +35,6 @@ nav a:visited {
   padding-left: 80px;
   padding-right: 80px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 nav {
