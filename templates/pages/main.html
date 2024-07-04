@@ -45,33 +45,39 @@
         <a href="{% url 'cadastr' %}">Подробнее</a>
       </div>
     </div>
-    <div class="offers-slider-mobile" data-flickity='{
-      "freeScroll": false,
-      "contain": true,
-      "prevNextButtons": false,
-      "pageDots": true
-    }'>
-      <div class="slider-element">
-        <h3>Перепланировка<br>квартир</h3>
-        <p>Наша компания позволит избежать трудностей при согласовании проектной документации с контролирующими инстанциями, тем самым сэкономив Ваши силы и нервы.</p>
-        <a href="{% url 'apartments' %}">Подробнее</a>
+    <div class="carousel-container">
+      <div class="offers-slider-mobile carousel" data-flickity='{
+        "freeScroll": false,
+        "contain": true,
+        "prevNextButtons": false,
+        "pageDots": false
+      }'>
+        <div class="slider-element">
+          <h3>Перепланировка<br>квартир</h3>
+          <p>Наша компания позволит избежать трудностей при согласовании проектной документации с контролирующими инстанциями, тем самым сэкономив Ваши силы и нервы.</p>
+          <a href="{% url 'apartments' %}">Подробнее</a>
+        </div>
+        <div class="slider-element">
+          <h3>Перепланировка<br>нежилого помещения</h3>
+          <p>Мы гарантируем быстрое и качественное согласование перепланировки  в нежилом помещении. Доверьтесь нам – мы обеспечим его идеальное обновление.</p>
+          <a href="{% url 'spaces' %}">Подробнее</a>
+        </div>
+        <div class="slider-element">
+          <h3>Перепланировка<br>нежилого здания</h3>
+          <p>Наши эксперты гарантируют профессиональное согласование перепланировки в нежилых зданиях, учитывая все строительные и законодательные нормы.</p>
+          <a href="{% url 'buildings' %}">Подробнее</a>
+        </div>
+        <div class="slider-element">
+          <h3>Кадастровые<br>работы</h3>
+          <p>Наша компания выполняет все виды кадастровых работ, в том числе изготовление технических планов, технических паспортов и обмерных планов в отношении любых объектов недвижимости.</p>
+          <a href="{% url 'cadastr' %}">Подробнее</a>
+        </div>
       </div>
-      <div class="slider-element">
-        <h3>Перепланировка<br>нежилого помещения</h3>
-        <p>Мы гарантируем быстрое и качественное согласование перепланировки  в нежилом помещении. Доверьтесь нам – мы обеспечим его идеальное обновление.</p>
-        <a href="{% url 'spaces' %}">Подробнее</a>
-      </div>
-      <div class="slider-element">
-        <h3>Перепланировка<br>нежилого здания</h3>
-        <p>Наши эксперты гарантируют профессиональное согласование перепланировки в нежилых зданиях, учитывая все строительные и законодательные нормы.</p>
-        <a href="{% url 'buildings' %}">Подробнее</a>
-      </div>
-      <div class="slider-element">
-        <h3>Кадастровые<br>работы</h3>
-        <p>Наша компания выполняет все виды кадастровых работ, в том числе изготовление технических планов, технических паспортов и обмерных планов в отношении любых объектов недвижимости.</p>
-        <a href="{% url 'cadastr' %}">Подробнее</a>
+      <div class="pagination">
+        <div class="pagination-bar"></div>
       </div>
     </div>
+    
   </div>
 
   {% include 'includes/complex.html' %}
@@ -104,11 +110,12 @@
         <p>Выезд на замер. Предоставляем эскизный план перепланировки<br>для согласования.<br>Работа над проектом, включая разработку и согласование. </p>
       </div>
     </div>
-    <div class="plan-preview-mobile" data-flickity='{
+    <div class="carousel-container">
+    <div class="plan-preview-mobile carousel" data-flickity='{
       "freeScroll": false,
       "contain": true,
       "prevNextButtons": false,
-      "pageDots": true
+      "pageDots": false
     }'>
       <div class="plan-element">
         <h3>01</h3>
@@ -126,6 +133,10 @@
         <h3>03</h3>
         <p>Выезд на замер. Предоставляем эскизный план перепланировки<br>для согласования.<br>Работа над проектом, включая разработку и согласование. </p>
       </div>
+    </div>
+    <div class="pagination">
+      <div class="pagination-bar"></div>
+    </div>
     </div>
   </div>
 

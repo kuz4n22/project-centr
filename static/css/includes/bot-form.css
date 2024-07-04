@@ -84,6 +84,7 @@ input[type="radio"]:checked + .radio-button {
   border-bottom: 2px solid rgba(142, 142, 142, 0.2);
   margin-bottom: 20px;
   padding: 0;
+  padding-bottom: 5px;
 }
 
 .input-name input, .input-tel input {
@@ -92,7 +93,6 @@ input[type="radio"]:checked + .radio-button {
 
 .input-message input {
   width: 510px;
-  height: 26px;
   resize: none; 
 }
 

@@ -95,7 +95,7 @@
   position: relative;
   align-self: center;
   display: flex;
-  width: 184px;
+  width: calc(100% - 88px);
   height: 40px;
   padding: 10px 24px;
   justify-content: center;
@@ -165,6 +165,22 @@
   .complex-content img {
     width: 30px;
     height: auto;
+  }
+
+  .complex-btn {
+    position: absolute;
+    top: 402px;
+    left: 20px;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .complex-element {
+    justify-content: flex-start;
+    width: calc(100% - 40px);
+    height: 442px;
   }
 
   .complex-btn {
