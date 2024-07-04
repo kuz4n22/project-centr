@@ -1,5 +1,9 @@
 /* base */
 
+.container {
+  overflow: visible;
+}
+
 svg {
   flex-shrink: 0;
 }
@@ -414,7 +418,7 @@ height: 18px;
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1215px) {
 
   .calculator-container {
     position: relative;
