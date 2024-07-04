@@ -9,31 +9,6 @@
 
 {% block content %}
     <div class="request-container">
-      <h1>Заполни форму</h1>
-      <form id="form-send" method="post" action="/send_form/">
-        <div class="customer-name-container">
-          <input id="customer-name" class="customer-name" placeholder="ФИО" name="name" type="text" required>
-          <span id="textMessage"></span>
-       </div>
-        <div class="tel-email-container">
-          <div class="customer-tel-container">
-            <input id="customer-tel" class="customer-tel" placeholder="Мобильный телефон" name="phone" type="tel" required>
-            <span id="telMessage"></span>
-          </div>
-          <div class="customer-email-container">
-            <input id="customer-email" class="customer-email" placeholder="Email" name="email" type="email" required>
-            <span id="emailMessage"></span>
-          </div>  
-        </div>
-        <label class="custom-checkbox">
-          <input type="checkbox" id="customCheckbox">
-          <span class="custom-checkbox-img"></span>
-          <span>Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
-        </label>
-        <input id="submitButton" class="request-send" type="submit" value="Отправить заявку" disabled>
-      </form>
-    </div>
-    <div class="request-container-mobile">
       <a href="{% url 'main' %}" class="to-main" id="to-main">
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
           <path d="M6.99869 13L1 7L7 1" stroke="#222220" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,25 +16,42 @@
         <p>вернуться назад</p>
       </a>
       <h1>Заполни форму</h1>
-      <form id="form-send-mobile" method="post" action="/send_form/">
+      <form id="form-send" method="post" action="/send_form/">
         <div class="customer-name-container">
-          <input id="customer-name" class="customer-name" placeholder="ФИО" name="name" type="text" required>
-          <span id="textMessage"></span>
+          <input id="customer-name" class="customer-name" placeholder="ФИО" name="name" type="text">
+          <div class="form-response-text" id="name-response-text">
+            <img src="{% static 'img/red_cross.svg' %}" alt="">
+            <p></p>
+          </div>
+       </div>
+        <div class="tel-email-container">
+          <div class="customer-tel-container">
+            <input id="customer-tel" class="customer-tel" placeholder="Мобильный телефон" name="phone" type="tel">
+            <label class="сustomer-tel-label" id="customer-tel-label">Мобильный телефон</label>
+            <div class="form-response-text" id="tel-response-text">
+              <img src="{% static 'img/red_cross.svg' %}" alt="">
+              <p></p>
+            </div>
+          </div>
+          <div class="customer-email-container">
+            <input id="customer-email" class="customer-email" placeholder="Email" name="email" type="email">
+            <label class="сustomer-email-label" id="customer-email-label">Email</label>
+            <div class="form-response-text" id="email-response-text">
+              <img src="{% static 'img/red_cross.svg' %}" alt="">
+              <p></p>
+            </div>
+          </div>  
         </div>
-        <div class="customer-tel-container">
-          <input id="customer-tel-mobile" class="customer-tel" placeholder="Мобильный телефон" name="phone" type="tel" required>
-          <span id="telMessage"></span>
-        </div>
-        <div class="customer-email-container">
-          <input id="customer-email" class="customer-email" placeholder="Email" name="email" type="email" required>
-          <span id="emailMessage"></span>
-        </div>  
         <label class="custom-checkbox">
-          <input type="checkbox" id="customCheckboxMobile">
+          <input type="checkbox" id="customCheckbox">
           <span class="custom-checkbox-img"></span>
           <span>Я соглашаюсь с условиями обработки и использования<br>моих персональных данных.</span>
+          <div class="form-response-text" id="checkbox-response-text">
+            <img src="{% static 'img/red_cross.svg' %}" alt="">
+            <p></p>
+          </div>
         </label>
-        <input id="submitButtonMobile" class="request-send" type="submit" value="Отправить заявку" disabled>
+        <input id="submitButton" class="request-send" type="submit" value="Отправить заявку" disabled>
       </form>
     </div>
 {% endblock %}

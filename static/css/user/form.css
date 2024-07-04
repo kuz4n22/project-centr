@@ -1,18 +1,15 @@
 .request-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  margin: 100px auto;
+  margin: 160px auto 100px;
   padding: 50px 0;
   max-width: 1120px;
   height: 436px;
   border-radius: 20px;
   background: #222220;
   text-align: center;
-}
-
-.request-container-mobile {
-  display: none;
 }
 
 .request-container h1 {
@@ -22,6 +19,10 @@
   font-weight: 700;
   line-height: normal;
   margin-bottom: 80px;
+}
+
+.to-main {
+  display: none;
 }
 
 .request-container form {
@@ -35,6 +36,12 @@
 
 /* inputs */
 
+.customer-name-container,
+.customer-tel-container,
+.customer-email-container {
+  position: relative;
+}
+
 .customer-name,
 .customer-tel,
 .customer-email {
@@ -43,6 +50,39 @@
   border-radius: 10px;
   background: #FFF;
   padding: 19px 20px;
+  position: relative;
+}
+
+.сustomer-tel-label,
+.сustomer-email-label {
+  display: none;
+  position: absolute;
+  top: 9px;
+  left: 20px;
+  color: #0041C0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  pointer-events: none;
+}
+
+.customer-tel:focus,
+.customer-email:focus,
+.customer-tel:not(:placeholder-shown),
+.customer-email:not(:placeholder-shown) {
+  height: 20px;
+  padding: 30px 20px 10px;
+}
+
+.customer-tel:focus + .сustomer-tel-label,
+.customer-tel:not(:placeholder-shown) + .сustomer-tel-label {
+    display: block;
+}
+
+.customer-email:focus + .сustomer-email-label,
+.customer-email:not(:placeholder-shown) + .сustomer-email-label {
+    display: block;
 }
 
 .customer-name {
@@ -63,6 +103,7 @@
 /* submit button */
 
 .custom-checkbox {
+  position: relative;
   align-self: start;
   display: flex;
   justify-content: flex-start;
@@ -71,6 +112,7 @@
   cursor: pointer;
   max-width: 466px;
   text-align: start;
+  margin-top: 10px;
 }
 
 .custom-checkbox input {
@@ -169,52 +211,42 @@
 
 /* validation */
 
-.customer-name-container,
-.customer-tel-container,
-.customer-email-container {
-  position: relative;
-}
 
-.customer-name-container span,
-.customer-tel-container span,
-.customer-email-container span {
-  position: absolute;
-  top: 50px;
-  left: -100px;
-}
-
-.textMessage,
-.emailMessage,
-.telMessage {
+.form-response-text {
   display: none;
+  justify-content: row;
+  gap: 5px;
+  position: absolute;
+  color: #FF0F00;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  top: 65px;
 }
 
-.valid {
-  border-color: green;
-}
-
-.invalid {
-  border-color: red;
-}
-
-span {
-  font-size: 14px;
-  margin-left: 10px;
+#checkbox-response-text {
+  top: 38px;
 }
 
 @media (max-width: 545px) {
-  .request-container {
-    display: none;
-  }
 
-  .request-container-mobile {
+  .request-container {
     display: flex;
+    background: none;
     margin: 110px 0 50px;
+    padding: 0;
     flex-direction: column;
     justify-content: space-between;
+    color: #222220;
+    height: auto;
+    width: 100%;
   }
 
-  .request-container-mobile h1 {
+  .request-container h1 {
+    align-self: start;
+    color: #222220;
     margin-bottom: 50px;
     font-size: 20px;
     font-style: normal;
@@ -227,6 +259,7 @@ span {
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 30px;
+    align-self: flex-start;
   }
 
   .to-main svg {
@@ -243,6 +276,14 @@ span {
     color: #222220;
   }
 
+  .request-container form {
+    width: 100%;
+  }
+
+  .customer-name-container {
+    width: 100%;
+  }
+
   .customer-name,
   .customer-tel,
   .customer-email {
@@ -251,13 +292,36 @@ span {
     height: 40px;
     background: #FFF;
     padding: 20px 20px;
-  }
-
-  .customer-name,
-  .customer-tel,
-  .customer-email {
     width: calc(100% - 40px);
     margin-bottom: 30px;
+  }
+
+  .сustomer-tel-label,
+  .сustomer-email-label {
+    display: none;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    color: #0041C0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    pointer-events: none;
+  }
+
+  .customer-tel:focus,
+  .customer-email:focus,
+  .customer-tel:not(:placeholder-shown),
+  .customer-email:not(:placeholder-shown) {
+    height: 22px;
+    padding: 42px 20px 16px;
+  }
+
+  .tel-email-container {
+    display: block;
+    gap: 0px;
+    width: 100%;
   }
 
   .custom-checkbox span {
@@ -320,5 +384,23 @@ span {
     background: #FFF;
     color:#222220;
     font-weight: 700;
+  }
+
+  .form-response-text {
+    font-size: 8px;
+    top: 85px;
+  }
+
+  .custom-checkbox {
+    margin-top: 0px;
+  }
+  
+  #checkbox-response-text {
+    top: 29px;
+  }
+
+  .сustomer-tel-label,
+  .сustomer-email-label {
+    display: none;
   }
 }
