@@ -43,11 +43,12 @@
         <a class="about-to-form" href="{% url 'form' %}">Подать заявку</a>
       </div>
     </div>
-    <div class="advantages-container-mobile" data-flickity='{
+    <div class="carousel-container">
+    <div class="advantages-container-mobile carousel" data-flickity='{
       "freeScroll": false,
       "contain": true,
       "prevNextButtons": false,
-      "pageDots": true
+      "pageDots": false
     }'>
       <div class="advantages-element">
         <h3>Персональная<br>консультация от экспертов</h3>
@@ -64,6 +65,10 @@
         <p>Наша компания специализируется на объектах в Центральном районе,обеспечивая эффективное и оперативное согласование.</p>
         <a class="about-to-form" href="{% url 'form' %}">Подать заявку</a>
       </div>
+    </div>
+    <div class="pagination">
+      <div class="pagination-bar"></div>
+    </div>
     </div>
   </div>
 
@@ -103,11 +108,12 @@
         <p>Coffeshop Company</p>
       </div>
     </div>
-    <div class="clients-container-mobile" data-flickity='{
+    <div class="carousel-container">
+    <div class="clients-container-mobile carousel" data-flickity='{
       "freeScroll": false,
       "contain": true,
       "prevNextButtons": false,
-      "pageDots": true
+      "pageDots": false
     }'>
       <div class="clients-element">
         <img src="{% static 'img/clients_icons/komitet.png' %}" alt="">
@@ -142,10 +148,14 @@
         <p>Coffeshop Company</p>
       </div>
     </div>
+    <div class="pagination">
+      <div class="pagination-bar"></div>
+    </div>
+    </div>
   </div>
 
   <div class="about-certificates">
-    <h2>Свидетельства и сертификаты</h2>
+    <h2>Свидетельства и допуски</h2>
     <div class="certificates-container">
       <a class="certificates-element" href="{% static 'pdf/cpo_ip.pdf' %}">
         <div class="pdf-icon">
@@ -166,11 +176,12 @@
         <p>Лицензия</p>
       </a>
     </div>
-    <div class="certificates-container-mobile" data-flickity='{
+    <div class="carousel-container">
+    <div class="certificates-container-mobile carousel" data-flickity='{
       "freeScroll": false,
       "contain": true,
       "prevNextButtons": false,
-      "pageDots": true
+      "pageDots": false
     }'>
       <a class="certificates-element" href="{% static 'pdf/cpo_ip.pdf' %}">
         <div class="pdf-icon">
@@ -190,6 +201,10 @@
         </div>
         <p>Лицензия</p>
       </a>
+    </div>
+    <div class="pagination">
+      <div class="pagination-bar"></div>
+    </div>
     </div>
   </div>
 </div>

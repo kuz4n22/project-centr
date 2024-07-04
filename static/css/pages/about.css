@@ -363,7 +363,32 @@
   
 }
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
+
+  .about-to-form-header {
+    width: calc(100% - 50px);
+  }
+
+  .facts-element {
+    width: 100%; 
+  }
+
+  .pagination {
+    display: block;
+  }
+
+  .advantages-element {
+    width: calc(100% - 40px);
+  }
+
+  .clients-element {
+    width: calc(100% - 40px);
+  }
+
+  .certificates-element {
+    width: 45%;
+  }
+
   .certificates-container {
     display: none;
   }
