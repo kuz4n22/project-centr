@@ -23,6 +23,7 @@
   border-radius: 20px;
   background: #222220;
   flex-shrink: 0;
+  font-weight: 500;
 }
 
 
@@ -147,6 +148,7 @@
   background-color:#222220;
   border-radius: 20px;
   color: #FFF;
+  font-weight: 500;
 }
 
 .slider-element a:hover {
