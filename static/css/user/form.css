@@ -143,6 +143,7 @@
 
 .request-send {
   display: flex;
+  border: none;
   width: 466px;
   height: 60px;
   padding: 10px 24px;
