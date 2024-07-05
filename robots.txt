@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /login/
+Disallow: /profile/
+Disallow: /dashboard/
+
+User-agent: Googlebot
+Disallow: /login/
+Disallow: /profile/
+Disallow: /dashboard/
+
+User-agent: Yandex
+Disallow: /login/
+Disallow: /profile/
+Disallow: /dashboard/
