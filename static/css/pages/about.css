@@ -369,6 +369,10 @@
     width: calc(100% - 50px);
   }
 
+  .about-to-form {
+    width: calc(100% - 50px);
+  }
+
   .facts-element {
     width: 100%; 
   }
