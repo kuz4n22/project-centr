@@ -290,10 +290,10 @@ nav a, nav a:visited {
     display: flex;
     gap: 16px;
   }
+
 }
 
 /* for custom slider pagination */
-
 
 .pagination {
   display: none;
@@ -311,3 +311,4 @@ nav a, nav a:visited {
   background-color: #F4A32A;
   transition: width 0.3s ease;
 }
+
