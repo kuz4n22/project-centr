@@ -32,7 +32,7 @@ select {
 /* header */
 
 .calc-description-container {
-  margin: 100px auto;
+  margin: 160px auto 100px;
   max-width: 1120px;
   display: flex;
   justify-content: space-between;
