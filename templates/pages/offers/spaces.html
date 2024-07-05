@@ -48,11 +48,12 @@
       <p>Устройство дополнительного входа</p>
     </div>
   </div>
-  <div class="tasks-container-mobile" data-flickity='{
+  <div class="carousel-container">
+  <div class="tasks-container-mobile carousel" data-flickity='{
     "freeScroll": false,
     "contain": true,
     "prevNextButtons": false,
-    "pageDots": true
+    "pageDots": false
   }'>
     <div class="tasks-column">
       <div class="tasks-element">
@@ -82,6 +83,10 @@
         <p>Устройство дополнительного входа</p>
       </div>
     </div>
+  </div>
+  <div class="pagination">
+    <div class="pagination-bar"></div>
+  </div>
   </div>
 </div>
 
@@ -125,7 +130,7 @@
       <p>Ввод в эксплуатацию  </p>
       <div class="stages-time">
         <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
-        <p>1 недели</p>
+        <p>1 неделя</p>
       </div>
     </div>
     <div class="stages-element">
@@ -137,11 +142,12 @@
       </div>
     </div>
   </div>
-  <div class="stages-container-mobile" data-flickity='{
+  <div class="carousel-container">
+  <div class="stages-container-mobile carousel" data-flickity='{
     "freeScroll": false,
     "contain": true,
     "prevNextButtons": false,
-    "pageDots": true
+    "pageDots": false
   }'>
     <div class="stages-element">
       <h3>1 этап</h3>
@@ -180,7 +186,7 @@
       <p>Ввод в эксплуатацию  </p>
       <div class="stages-time">
         <img src="{% static 'img/tasks_icons/calendar.svg' %}" alt="">
-        <p>1 недели</p>
+        <p>1 неделя</p>
       </div>
     </div>
     <div class="stages-element">
@@ -191,6 +197,10 @@
         <p>3 недели</p>
       </div>
     </div>
+  </div>
+  <div class="pagination">
+    <div class="pagination-bar"></div>
+  </div>
   </div>
 </div>
 {% include 'includes/complex.html' %}  

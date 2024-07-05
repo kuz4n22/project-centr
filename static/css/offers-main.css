@@ -6,7 +6,7 @@
   top: 0px;
   left: -40px;
   z-index: 1;
-  padding-left: 80px;
+  padding-left: 120px;
   margin: 0 auto;
   width: 100%;
   height: 838px;
@@ -337,4 +337,30 @@ height: 30px;
     margin-right: 16px;
   }
 
+}
+
+@media (max-width: 450px) {
+  .pagination {
+    display: block;
+  }
+
+  .header a {
+    width: calc(100% - 114px);
+  }
+
+  .tasks-column {
+    width: calc(100%);
+  }
+
+  .tasks-element {
+    width: calc(100% - 40px);
+  }
+
+  .stages-element {
+    width: calc(100% - 40px);
+  }
+
+  .stages-time {
+    width: calc(100% - 40px);
+  }
 }

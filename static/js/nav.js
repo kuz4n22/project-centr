@@ -39,11 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
   openBurger.addEventListener('click', () => {
     burger.style.display = 'flex';
     burgerMainMenu.style.display = 'flex';
+    document.body.classList.add('no-scroll');
   });
 
   closeBurger.addEventListener('click', () => {
     burger.style.display = 'none';
     burgerServices.style.display = 'none';
+    document.body.classList.remove('no-scroll');
   });
 
   openBurgerServices.addEventListener('click', () => {

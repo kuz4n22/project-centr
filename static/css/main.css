@@ -221,18 +221,6 @@
   letter-spacing: 0.32px;
 }
 
-.flickity-page-dots {
-  bottom: -22px;
-}
-
-.flickity-page-dots.dot {
-  height: 4px;
-  width: 40px;
-  margin: 0;
-  border-radius: 0;
-  color: red;
-}
-
 /* mobile */
 
 @media (max-width: 1200px) {
@@ -280,10 +268,15 @@
     display: flex;
     align-items: end;
     justify-content: center;
+    width: 100%;
   }
   
   .header-content h2 {
     display: none;
+  }
+
+  .header-content a {
+    width: calc(100% - 40px);
   }
 
   .offers-slider,
@@ -360,3 +353,38 @@
   
 }
 
+@media (max-width: 450px) {
+  .slider-element {
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    height: 248px;
+    margin-right: 16px;
+  }
+
+  .slider-element p {
+    width: calc(100% - 40px);
+    position: absolute;
+    top: 78px;
+    font-size: 12px;
+    word-wrap: break-word;
+    line-height: 20px;
+  }
+
+  .pagination {
+    display: block;
+  }
+
+  .calc-btn {
+    width: calc(100% - 48px);
+  }
+
+  .plan-element {
+    width: calc(100% - 40px);
+    max-width: 450px;
+  }
+
+  .plan-element p {
+    width: 100%;
+  }
+}
