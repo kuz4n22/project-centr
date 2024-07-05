@@ -176,7 +176,7 @@ nav a, nav a:visited {
   margin: 50px auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
  }
  
@@ -189,10 +189,12 @@ nav a, nav a:visited {
  .burger-nav-list,
  .burger-services-list {
   display: flex;
+  position: absolute;
+  top: 20vh;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 30px;
+  gap: 7vh;
   margin-bottom: 50px;
  }
 
@@ -207,17 +209,18 @@ nav a, nav a:visited {
 
  .burger-form,
  .burger-form:visited {
-  display: flex;
-  width: 224px;
-  height: 40px;
-  padding: 10px 24px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  background: #222220;
-  color: #FFF;
-  margin-bottom: 30px;
-  border: 1px solid #222220;
+    position: absolute;
+    top: 70vh;
+    display: flex;
+    width: 224px;
+    height: 40px;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #222220;
+    color: #FFF;
+    border: 1px solid #222220;
 }
 
 .burger-form:hover {
@@ -226,7 +229,8 @@ nav a, nav a:visited {
 }
 
 .burger-divider {
-  margin-bottom: 30px;
+  position: absolute;
+  top: 84vh;
   width: 100vw;
   height: 1px;
   opacity: 0.1;
