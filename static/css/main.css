@@ -164,10 +164,18 @@
   max-width: 1068px;
   height: 288px;
   border-radius: 10px;
-  background: url(../img/main/calc_img.png) center / cover no-repeat;
+  background: url(../img/main/calc_img_desktop.png) center / cover no-repeat;
   padding-top: 127px;
   padding-left: 52px;
   gap: 20px;
+}
+
+@media (max-width: 810px) {
+
+  .calculator-img {
+  background: url(../img/main/calc_img.png) center / cover no-repeat;
+  }
+
 }
 
 .calculator-img h3 {
