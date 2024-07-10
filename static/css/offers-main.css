@@ -1,15 +1,13 @@
-
-/* header */
-
 .header {
   position: absolute;
   top: 0px;
-  left: -40px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
-  padding-left: 120px;
   margin: 0 auto;
-  width: 100%;
+  width: 100vw;
   height: 838px;
+
 }
 
 .header::before {
@@ -22,6 +20,17 @@
   background-color: #222220;
   opacity: 0.6;
   pointer-events: none;
+}
+
+.header-content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .header-content {
+    margin-left: 80px;
+  }
 }
 
 .header h2 {
@@ -202,6 +211,10 @@ height: 30px;
 }
 
 @media (max-width: 935px) {
+
+  .header-content {
+    margin-left: 0;
+  }
 
   .header {
     height: 568px;

@@ -1,7 +1,7 @@
 /* diff */
 
 .header {
-  background: url(../../img/offers/spaces_img.png) 50% / cover no-repeat;
+  background: url(../../img/offers/spaces_img.jpg) 50% / cover no-repeat;
 }
 
 .tasks-container {
@@ -25,6 +25,10 @@
 }
 
 @media (max-width: 935px) {
+
+  .header {
+    background: url(../../img/offers/spaces_img_mobile.png) 50% / cover no-repeat;
+  }
   
   .header h2 {
     top: 312px;
