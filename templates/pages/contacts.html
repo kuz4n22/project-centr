@@ -3,6 +3,7 @@
 
 {% block link %}
   <link rel="stylesheet" href="{% static 'css/pages/contacts.css' %}">
+
 {% endblock %}
 
 {% block title %}Контакты{% endblock %}
@@ -11,7 +12,7 @@
 <div class="contacts-container">
   <h1>Контакты</h1>
   <div class="contacts-bloсk">
-    <img src="{% static 'img/map.png' %}" alt="map">
+    <div class="map" id="map"></div>
     <div class="contacts">
       <h3>Адрес</h3>
       <a class="contacts-element" href="https://yandex.ru/maps/-/CDrQF2Iw">Московские ворота. 195112 г. Санкт-Петербург, Московский проспект, 107, к. 4, офис 23.</a>
@@ -34,4 +35,9 @@
   
 {% include 'includes/bot-form.html' %} 
 {% include 'includes/footer.html' %} 
+{% endblock %}
+
+{% block scripts %}
+<script src="https://api-maps.yandex.ru/2.1/?apikey=31896495-118a-4ed4-bc92-c0448675882b&lang=ru_RU" type="text/javascript"></script>
+<script src="{% static 'js/map.js' %}"></script>
 {% endblock %}
