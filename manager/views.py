@@ -84,6 +84,7 @@ def notify_next_phase(request, contract_id):
                 status=400,
             )
 
+        contract.next_phase()
         
         msg = EmailMessage(subject='Новый этап')
         email_message = f'Здравствуйте, {user.first_name} { user.last_name }!'
@@ -91,8 +92,6 @@ def notify_next_phase(request, contract_id):
         email_message += f'\nДата заключения договора: { contract.contract_date }'
         msg.body = escape(email_message)
         msg.to = [user.email]  
-        
-        contract.next_phase()
         
         try:       
             msg.send(fail_silently=False)
