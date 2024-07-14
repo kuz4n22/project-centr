@@ -35,7 +35,7 @@
     <div class="input-container">
       <div class="name-tel-container">
         <div class="input-name">
-          <input type="text" placeholder="Имя" name="name" required>
+          <input id="customer-name" type="text" placeholder="Имя" name="name" required>
         </div>
         <div class="input-tel">
           <input id="customer-tel" type="tel" placeholder="Номер телефона" name="phone" required>
@@ -60,5 +60,5 @@
 <script src="https://unpkg.com/imask"></script>
 <script src="{% static 'js/numberMask.js' %}"></script>
 <script src="{% static 'js/sendForm.js' %}"></script>
-<script src="{% static 'js/checkbox.js' %}"></script>
+<script src="{% static 'js/validateBotForm.js' %}"></script>
 {% endblock %}

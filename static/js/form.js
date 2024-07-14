@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
   telInput.addEventListener('input', () => validateInput(telInput, telMessage));
   checkboxInput.addEventListener('input', () => validateInput(checkboxInput, checkboxMessage));
 
+  let nameFill = false;
+  let telFill = false;
+  let emailFill = false;
+  let checkboxFill = false;
+
   function validateInput(input, messageElement) {
     if (valid(input) === 'empty') {
       input.style.border= '1px solid #FF0F00';
@@ -20,16 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Обязательное поле";
+        nameFill = false;
       }
       if (input.type === 'tel') {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Обязательное поле";
+        telFill = false;
       }
       if (input.type === 'email') {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Обязательное поле";
+        emailFill = false;
       }
     } else if (valid(input)) {
       input.style.border= '1px solid #1DBC19';
@@ -37,21 +45,25 @@ document.addEventListener("DOMContentLoaded", () => {
         messageElement.style.display = "none";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "";
+        nameFill = true;
       }
       if (input.type === 'tel') {
         messageElement.style.display = "none";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "";
+        telFill = true;
       }
       if (input.type === 'email') {
         messageElement.style.display = "none";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "";
+        emailFill = true;
       }
       if (input.type === 'checkbox') {
         messageElement.style.display = "none";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "";
+        checkboxFill = true;
       }
     } else {
       input.style.border= '1px solid #FF0F00';
@@ -59,24 +71,47 @@ document.addEventListener("DOMContentLoaded", () => {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Обязательное поле";
+        nameFill = false;
       }
       if (input.type === 'tel') {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Некорректный номер телефона";
+        telFill = false;
       }
       if (input.type === 'email') {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Некорректный Email";
+        emailFill = false;
       }
       if (input.type === 'checkbox') {
         messageElement.style.display = "flex";
         const messageContent = messageElement.querySelector('p');
         messageContent.textContent = "Необходимо дать своё согласие";
+        checkboxFill = false;
       }
     }
   }
+
+  textInput.addEventListener('input', () => activateBtn());
+  emailInput.addEventListener('input', () => activateBtn());
+  telInput.addEventListener('input', () => activateBtn());
+  checkboxInput.addEventListener('input', () => activateBtn());
+
+
+  const submitButton = document.getElementById('submitButton');
+
+  function activateBtn() {
+    if (nameFill === true && telFill === true && emailFill === true && checkboxFill === true) {
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
+    }
+  }
+
+  
+  
 
   function valid(input) {
     const value = input.value.trim();
