@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
       const tooltip = document.createElement('div');
       tooltip.classList.add('tooltip');
+      tooltip.classList.add('fix-preprositons');
       tooltip.textContent = adviceContent.textContent;
       element.appendChild(tooltip);
 

@@ -41,10 +41,6 @@ select {
   flex-wrap: wrap;
 }
 
-.calc-description {
-  max-width: 459px;
-}
-
 .calc-description h2 {
   font-size: 32px;
   font-style: normal;
@@ -487,18 +483,6 @@ input[type="range"]::-ms-track {
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-  }
-
-  .calc-img img {
-    display: none;
-  }
-
-  .calc-img {
-    width: 100%;
-    max-width: 459px;
-    aspect-ratio: 272/170;
-    border-radius: 20px;
-    background: url('../../img/calc_mobile.png') lightgray 50% / cover no-repeat;
   }
 
   .options-container {
