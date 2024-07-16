@@ -13,4 +13,4 @@ Disallow: /login/
 Disallow: /profile/
 Disallow: /dashboard/
 
-Sitemap: https://proectcetr.ru/sitemap.xml
+Sitemap: https://proectcentr.ru/sitemap.xml
