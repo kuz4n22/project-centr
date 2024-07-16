@@ -1,5 +1,9 @@
 AddDefaultCharset utf-8
 AddHandler wsgi-script .py
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.proectcentr.ru$ [NC]
+RewriteRule ^(.*)$ https://proectcentr.ru/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www.proectcetr.ru$ [NC]
+RewriteRule ^(.*)$ https://proectcentr.ru/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ /apartment_planning/wsgi.py/$1 [QSA,L]
